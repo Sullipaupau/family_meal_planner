@@ -1,200 +1,249 @@
-# 🍽️ Family Meal Planner
+# 🍽️ Meal Plan Automator
 
-An intelligent, mobile-first web application that eliminates meal planning decision fatigue for busy UK families.
+A mobile-first web application designed to eliminate decision fatigue for busy UK families. Automatically generates a practical, 4-week rotating meal plan based on your family's recipes and lifestyle.
 
-## 🎯 Overview
+## 📱 Features
 
-The Meal Plan Automator is a single-page web application designed specifically for a UK family (two parents + 3-year-old Ava) that automatically generates practical 4-week rotating meal plans. The app follows their real-life cooking habits: batch cooking on Sundays, utilizing leftovers, and ensuring variety without the weekly stress of deciding what to cook.
+- **4-Week Rotating Meal Plan**: Automatically generates varied, practical meal plans
+- **Batch Cooking Strategy**: Built-in support for Sunday batch cooking
+- **Smart Leftovers**: Automatically schedules leftovers for lunches
+- **Variety Rules**: Ensures protein variety and includes fish weekly
+- **Recipe Details**: Tap any meal to see full recipe with Ava-friendly tips
+- **Shopping Lists**: Generate organized shopping lists by UK supermarket category
+- **Offline Support**: Saves your meal plan in your browser
+- **iPhone Optimized**: Designed to feel like a native iOS app
 
-## ✨ Key Features
-
-- **🔄 Automated 4-Week Meal Plans**: Generate complete meal plans with one click
-- **📅 Batch Cooking Support**: Built-in Sunday batch cooking day strategy
-- **♻️ Smart Leftovers Management**: Automatically schedules leftovers for lunches
-- **🐟 Variety Rules**: Ensures no same protein consecutive days, includes fish weekly
-- **👧 Ava-Friendly**: All recipes are 3-year-old approved with special notes
-- **🛒 Shopping Lists**: Auto-generate organized shopping lists by UK supermarket category
-- **📱 Mobile-First Design**: Optimized for iPhone, works like a native app
-- **💾 Offline Support**: Uses localStorage to save your meal plan
-- **🇬🇧 UK-Focused**: Recipes and ingredients from Aldi & Asda
-
-## 🏗️ Technology Stack
-
-- **Frontend**: Vanilla HTML5, CSS3, JavaScript (ES6+)
-- **Styling**: Mobile-first responsive design with CSS Grid and Flexbox
-- **Data**: JSON-based recipe storage
-- **Storage**: Browser localStorage for persistence
-- **Deployment**: GitHub Pages ready (zero cost hosting)
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
-family_meal_planner/
-├── README.md                    # This file
-└── website/                     # Main application directory
-    ├── index.html              # Single-page application
-    ├── README.md               # Deployment guide
-    ├── css/
-    │   └── styles.css         # Mobile-first styles
-    ├── js/
-    │   ├── app.js             # Main application controller
-    │   ├── mealPlanGenerator.js    # Meal planning logic
-    │   ├── shoppingListGenerator.js # Shopping list generator
-    │   └── ui.js              # UI interactions and rendering
-    └── data/
-        └── recipes.json       # 20 family recipes
+website/
+├── index.html              # Main application page
+├── README.md              # This file
+├── css/
+│   └── styles.css         # Mobile-first responsive styles
+├── js/
+│   ├── app.js             # Main application logic
+│   ├── mealPlanGenerator.js  # Meal plan generation with family rules
+│   ├── shoppingListGenerator.js  # Shopping list organization
+│   └── ui.js              # User interface interactions
+└── data/
+    └── recipes.json       # Recipe database
 ```
 
-## 🚀 Quick Start
+## 🚀 Viewing Locally
 
-### Option 1: View Locally
+To view the application on your computer:
 
-1. Clone this repository
-2. Open `website/index.html` in your web browser
-3. Click "Generate New Plan" to create your first meal plan
+1. **Download the website folder** to your computer
+2. **Open index.html** in a web browser:
+   - Right-click on `index.html`
+   - Select "Open with" → Your preferred browser (Chrome, Safari, Firefox)
+3. The app will load and be ready to use!
 
-### Option 2: Deploy to GitHub Pages
+**Note**: The app uses only HTML, CSS, and JavaScript - no server required!
 
-See the detailed deployment guide in `website/README.md`.
+## 🌐 Deploying to GitHub Pages
 
-Quick version:
-1. Fork this repository
-2. Go to Settings → Pages
-3. Select main branch and root folder
-4. Access your site at `https://[username].github.io/family_meal_planner/`
+Follow these simple steps to host your Meal Plan Automator online for free using GitHub Pages:
 
-## 🎨 Design Philosophy
+### Step 1: Create a GitHub Account (if you don't have one)
 
-### Mobile-First
-The app is designed primarily for iPhone use, as meal planning often happens on-the-go. The interface is:
-- Touch-optimized with large tap targets
-- Clean and minimal to reduce cognitive load
-- Fast-loading with no framework overhead
+1. Go to [github.com](https://github.com)
+2. Click "Sign up"
+3. Follow the registration steps
 
-### Intelligent Automation
-The meal plan generator follows real family cooking patterns:
-- **Sunday**: Batch cooking 2-3 large recipes
-- **Monday**: Uses Sunday leftovers
-- **Tuesday-Thursday**: Mix of quick meals and frozen batch-cooked meals
-- **Friday**: Flexible (often leftovers or quick meal)
-- **Saturday**: Regular cooking day
-- **All Lunches**: Primarily leftovers from previous dinners
+### Step 2: Create a New Repository
 
-### Family-Centric
-Every recipe includes:
-- Ava-friendly notes (no alcohol, child-appropriate)
-- Storage and freezing information
-- Optional adults-only variations
-- UK supermarket availability (Aldi/Asda)
+1. Log in to GitHub
+2. Click the **+** icon in the top-right corner
+3. Select **"New repository"**
+4. Fill in the details:
+   - **Repository name**: `meal-plan-automator` (or any name you prefer)
+   - **Description**: "4-week family meal planner"
+   - **Public** or **Private**: Choose "Public" (required for free GitHub Pages)
+   - **DO NOT** check "Initialize with README" (we already have files)
+5. Click **"Create repository"**
 
-## 📝 Customizing Recipes
+### Step 3: Upload Your Files
 
-To add your own recipes, edit `website/data/recipes.json`. Each recipe follows this structure:
+GitHub provides several ways to upload files. Here's the easiest method for non-technical users:
+
+#### Method 1: Using GitHub's Web Interface (Easiest)
+
+1. On your new repository page, click **"uploading an existing file"**
+2. Drag and drop ALL the files from your `website` folder:
+   - `index.html`
+   - The `css` folder
+   - The `js` folder
+   - The `data` folder
+   - `README.md`
+3. Add a commit message: "Initial upload of Meal Plan Automator"
+4. Click **"Commit changes"**
+
+#### Method 2: Using GitHub Desktop (Recommended if you'll update recipes)
+
+1. Download and install [GitHub Desktop](https://desktop.github.com)
+2. Open GitHub Desktop and sign in
+3. Click **File** → **Clone repository**
+4. Select your `meal-plan-automator` repository and choose where to save it
+5. Copy all files from your `website` folder into the cloned repository folder
+6. In GitHub Desktop:
+   - You'll see all the new files listed
+   - Add a summary: "Initial upload"
+   - Click **"Commit to main"**
+   - Click **"Push origin"**
+
+### Step 4: Enable GitHub Pages
+
+1. Go to your repository on GitHub.com
+2. Click **"Settings"** (top menu)
+3. Scroll down and click **"Pages"** in the left sidebar
+4. Under **"Source"**, select:
+   - Branch: **main**
+   - Folder: **/ (root)**
+5. Click **"Save"**
+
+### Step 5: Access Your Website
+
+1. GitHub will take 1-2 minutes to publish your site
+2. Your website will be available at:
+   ```
+   https://[your-username].github.io/meal-plan-automator/
+   ```
+   Replace `[your-username]` with your GitHub username
+
+3. You can find the exact URL on the "Pages" settings page
+
+### 🎉 Done!
+
+Your Meal Plan Automator is now live and accessible from any device with internet access!
+
+## 📝 Customizing Your Recipes
+
+To add your own 20 recipes to the app:
+
+1. Open `data/recipes.json` in a text editor (Notepad, TextEdit, or VS Code)
+2. Follow the existing recipe format:
 
 ```json
 {
-  "id": "unique-id",
+  "id": "unique-recipe-id",
   "name": "Recipe Name",
   "protein": "chicken|beef|pork|fish|lamb",
   "cookingTime": "45 minutes",
-  "difficulty": "easy",
+  "difficulty": "easy|medium|hard",
   "servings": 4,
-  "tags": ["batch-cooking", "freezer-friendly"],
-  "ingredients": ["ingredient 1", "ingredient 2"],
-  "instructions": ["step 1", "step 2"],
-  "avaFriendly": "Child-friendly notes",
-  "adultsVariation": "Optional adult additions",
-  "storageNotes": "Freezing/storage info"
+  "tags": ["batch-cooking", "quick-prep", "freezer-friendly", "weeknight"],
+  "ingredients": [
+    "List of ingredients",
+    "With quantities"
+  ],
+  "instructions": [
+    "Step-by-step instructions",
+    "One step per line"
+  ],
+  "avaFriendly": "Tips for making this suitable for Ava",
+  "adultsVariation": "Optional additions for adults",
+  "storageNotes": "Freezing and storage information"
 }
 ```
 
-### Recipe Tags
+3. Save the file
+4. If using GitHub Pages, upload the updated `recipes.json` file:
+   - Go to your repository
+   - Navigate to `data/recipes.json`
+   - Click the pencil icon to edit
+   - Paste your new content
+   - Commit changes
 
-- `batch-cooking`: Large recipes suitable for Sunday
-- `sunday-special`: Specifically for Sunday roasts/big meals
-- `quick-prep`: Weeknight-friendly (< 30 mins)
-- `weeknight`: Regular evening meals
-- `freezer-friendly`: Can be frozen and reheated
-- `kid-favorite`: Ava's favorites
-- `comfort-food`: Hearty, filling meals
-- `interactive-meal`: Build-your-own (fajitas, tacos)
-- `one-pan`: Easy cleanup
+## 🏪 UK Shopping Categories
 
-## 🔧 Technical Details
+The app organizes shopping lists into these categories:
+- 🥬 Fresh Produce
+- 🥩 Meat & Fish
+- 🥛 Dairy & Eggs
+- 🍞 Bakery
+- 🥫 Pantry
+- ❄️ Frozen
+- 📦 Other
 
-### Meal Plan Generation Algorithm
+## 🔄 Updating Your Live Site
 
-The generator ensures:
-1. **Protein Variety**: Tracks previous day's protein, excludes same protein next day
-2. **Fish Requirement**: Ensures at least 1 fish meal per week
-3. **Batch Cooking**: Prioritizes batch-cooking tagged recipes for Sunday
-4. **Smart Leftovers**: Links leftovers to their source recipes
-5. **Day-Specific Logic**: Different meal selection for each day type
+After making any changes to your recipes or website:
 
-### Shopping List Categories
+**Using Web Interface:**
+1. Go to your GitHub repository
+2. Navigate to the file you want to update
+3. Click the pencil icon (Edit)
+4. Make your changes
+5. Commit changes
+6. Wait 1-2 minutes for GitHub Pages to update
 
-Ingredients are automatically sorted into UK supermarket sections:
-- Fresh Produce
-- Meat & Fish
-- Dairy & Eggs
-- Bakery
-- Pantry
-- Frozen
-- Other
+**Using GitHub Desktop:**
+1. Make changes to your local files
+2. Open GitHub Desktop
+3. Commit your changes
+4. Push to origin
+5. Wait 1-2 minutes for GitHub Pages to update
 
-### Browser Compatibility
+## 💾 Browser Storage
 
-Tested and optimized for:
-- ✅ Safari (iOS & macOS)
-- ✅ Chrome (desktop & mobile)
-- ✅ Firefox
-- ✅ Edge
+The app automatically saves your current meal plan in your browser's localStorage. This means:
+- ✅ Your plan persists between sessions
+- ✅ No internet required after first load
+- ⚠️ Clearing browser data will delete your saved plan
+- ⚠️ Plans are device-specific (not synced between devices)
 
-## 📱 Installing as iPhone App
+## 📱 Adding to iPhone Home Screen
 
-1. Open the site in Safari
-2. Tap Share button
-3. Select "Add to Home Screen"
-4. Name it and tap "Add"
+For the best mobile experience:
 
-The app will behave like a native iOS app with full-screen mode and app icon.
+1. Open the website in Safari on your iPhone
+2. Tap the Share button (box with arrow)
+3. Scroll down and tap "Add to Home Screen"
+4. Name it "Meal Planner"
+5. Tap "Add"
+
+The app will now appear on your home screen like a native app!
+
+## 🐛 Troubleshooting
+
+**Problem**: Website shows "Failed to load recipes"
+- **Solution**: Make sure `data/recipes.json` is uploaded and in the correct folder
+
+**Problem**: GitHub Pages shows 404 error
+- **Solution**: Wait 2-3 minutes after enabling Pages, then refresh
+
+**Problem**: Changes don't appear on live site
+- **Solution**: Clear your browser cache or wait a few minutes for GitHub to update
+
+**Problem**: Meal plan disappeared
+- **Solution**: Browser data was cleared. Click "Generate New Plan" to create a fresh plan
 
 ## 🎯 Family Requirements
 
 This app is specifically designed for:
-- 🇬🇧 UK-based families
-- 🏪 Shopping at Aldi & Asda
-- 👶 Young children (3+ years)
-- 🥩 Meat/fish eaters (no vegetarian)
-- 🍳 Batch cooking lifestyle
-- ⏰ Busy schedules
-- 📵 Minimal tech knowledge required
+- 🇬🇧 UK families shopping at Aldi & Asda
+- 👨‍👩‍👧 Two parents + 3-year-old (Ava)
+- 🥩 No vegetarian meals (all recipes include meat or fish)
+- 👶 Child-friendly (no alcohol in base recipes)
+- 🍳 Batch cooking on Sundays
+- ♻️ Smart leftover utilization
+- 🐟 Minimum one fish meal per week
+- 🔄 No same protein two days in a row
 
-## 🔄 Future Enhancements
+## 📞 Support
 
-Potential features to add:
-- [ ] Export shopping list to Notes app
-- [ ] Recipe search and filter
-- [ ] Custom recipe additions via UI
-- [ ] Dietary restriction filters
-- [ ] Meal plan sharing between devices
-- [ ] Print-friendly views
-- [ ] Nutritional information
-- [ ] Cost tracking
+If you encounter any issues or need help:
+1. Check the Troubleshooting section above
+2. Ensure all files are uploaded correctly
+3. Verify your recipes.json is valid JSON format
+4. Clear browser cache and refresh
 
 ## 📄 License
 
-This is a personal family project. Feel free to fork and customize for your own use.
-
-## 🙏 Acknowledgments
-
-Built with love for busy parents who want to:
-- ✅ Eat healthy, home-cooked meals
-- ✅ Avoid daily "what's for dinner?" stress
-- ✅ Make efficient use of batch cooking
-- ✅ Reduce food waste through smart leftover planning
-- ✅ Keep the whole family (including toddlers) happy
+This is a personal family project. Feel free to fork and customize for your own use!
 
 ---
 
-**Made with ❤️ for the modern family**
+**Made with ❤️ for busy families who want to eat well without the daily "what's for dinner?" stress!**
