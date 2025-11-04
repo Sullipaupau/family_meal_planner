@@ -24,6 +24,10 @@
                 <span class="btn-icon">🔄</span>
                 Generate New Plan
             </button>
+            <button id="browseRecipesBtn" class="btn btn-secondary">
+                <span class="btn-icon">📖</span>
+                Browse Recipes
+            </button>
             <button id="showShoppingListBtn" class="btn btn-secondary">
                 <span class="btn-icon">🛒</span>
                 Shopping List
@@ -135,6 +139,39 @@
                 <div class="recipe-section" id="storageNotesSection">
                     <h3>❄️ Storage Notes</h3>
                     <p id="modalStorageNotes"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe Browser Modal -->
+    <div id="recipeBrowserModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-body">
+                <h2>📖 Recipe Browser</h2>
+
+                <!-- Changing Mode Message -->
+                <div id="changingModeMessage" class="changing-mode-message" style="display: none;">
+                    <strong>Select a recipe to replace your meal</strong>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="recipe-filters">
+                    <label for="proteinFilter">Filter by Protein:</label>
+                    <select id="proteinFilter" class="filter-select">
+                        <option value="all">All Proteins</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="beef">Beef</option>
+                        <option value="pork">Pork</option>
+                        <option value="fish">Fish</option>
+                        <option value="lamb">Lamb</option>
+                    </select>
+                </div>
+
+                <!-- Recipe List -->
+                <div id="recipeListContainer" class="recipe-list-container">
+                    <!-- Recipe cards will be generated here -->
                 </div>
             </div>
         </div>
