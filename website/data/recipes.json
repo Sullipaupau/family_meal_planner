@@ -4,10 +4,13 @@
       "id": "chicken-casserole",
       "name": "Chicken and Vegetable Casserole",
       "protein": "chicken",
-      "cookingTime": "90 minutes",
       "difficulty": "easy",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "sunday-special"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "sunday-special"
+      ],
       "ingredients": [
         "1.5kg chicken thighs (bone-in, Aldi)",
         "3 large carrots, chopped",
@@ -21,7 +24,7 @@
         "Salt and pepper to taste"
       ],
       "instructions": [
-        "Preheat oven to 180°C (160°C fan).",
+        "Preheat oven to 180\u00b0C (160\u00b0C fan).",
         "Season chicken with salt, pepper, and thyme.",
         "Heat oil in a large casserole dish, brown chicken pieces on all sides. Remove and set aside.",
         "Add onions, carrots, and celery to the dish. Cook for 5 minutes until softened.",
@@ -33,23 +36,28 @@
       ],
       "avaFriendly": "Perfect for Ava! Mild flavors and soft textures. Cut chicken into small pieces for her.",
       "adultsVariation": "Add a splash of white wine when making the sauce for extra depth.",
-      "storageNotes": "Freezes brilliantly for up to 3 months. Perfect for batch cooking."
+      "storageNotes": "Freezes brilliantly for up to 3 months. Perfect for batch cooking.",
+      "prepTime": "20 minutes",
+      "cookTime": "75 minutes"
     },
     {
       "id": "spaghetti-bolognese",
       "name": "Classic Spaghetti Bolognese",
       "protein": "beef",
-      "cookingTime": "45 minutes",
       "difficulty": "easy",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "family-favorite"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "family-favorite"
+      ],
       "ingredients": [
         "500g beef mince (Asda)",
         "1 large onion, finely chopped",
         "2 garlic cloves, minced",
         "2 carrots, grated",
         "400g tinned chopped tomatoes",
-        "2 tbsp tomato purée",
+        "2 tbsp tomato pur\u00e9e",
         "300ml beef stock",
         "1 tsp dried oregano",
         "500g spaghetti",
@@ -58,7 +66,7 @@
       "instructions": [
         "Heat a large pan over medium-high heat. Add mince and cook until browned, breaking up with a spoon.",
         "Add onion, garlic, and carrots. Cook for 5 minutes.",
-        "Stir in tomato purée and cook for 1 minute.",
+        "Stir in tomato pur\u00e9e and cook for 1 minute.",
         "Add tinned tomatoes, stock, and oregano. Bring to a simmer.",
         "Reduce heat and simmer for 30 minutes, stirring occasionally.",
         "Meanwhile, cook spaghetti according to package instructions.",
@@ -66,16 +74,20 @@
       ],
       "avaFriendly": "Ava loves this! The grated carrots add hidden veg. Cut the spaghetti into shorter pieces for easier eating.",
       "adultsVariation": "Add a splash of red wine with the tomatoes for a richer sauce.",
-      "storageNotes": "Freeze the sauce (without pasta) in portions for up to 3 months."
+      "storageNotes": "Freeze the sauce (without pasta) in portions for up to 3 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "30 minutes"
     },
     {
       "id": "fish-fingers-chips",
       "name": "Homemade Fish Fingers with Chips",
       "protein": "fish",
-      "cookingTime": "35 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "kid-favorite"],
+      "tags": [
+        "quick-prep",
+        "kid-favorite"
+      ],
       "ingredients": [
         "400g white fish fillets (cod or haddock, Aldi)",
         "100g plain flour",
@@ -87,7 +99,7 @@
         "Peas to serve"
       ],
       "instructions": [
-        "Preheat oven to 200°C (180°C fan).",
+        "Preheat oven to 200\u00b0C (180\u00b0C fan).",
         "Toss potato chips with 1 tbsp oil and spread on a baking tray. Bake for 30 minutes.",
         "Cut fish into finger-sized pieces.",
         "Set up three bowls: flour in one, beaten eggs in another, breadcrumbs in the third.",
@@ -98,16 +110,20 @@
       ],
       "avaFriendly": "Total winner with Ava! Much healthier than shop-bought versions.",
       "adultsVariation": "Serve with tartar sauce and malt vinegar.",
-      "storageNotes": "Fish fingers can be frozen uncooked. Cook from frozen, adding 5 minutes to cooking time."
+      "storageNotes": "Fish fingers can be frozen uncooked. Cook from frozen, adding 5 minutes to cooking time.",
+      "prepTime": "15 minutes",
+      "cookTime": "30 minutes"
     },
     {
       "id": "chicken-stir-fry",
       "name": "Quick Chicken Stir-Fry",
       "protein": "chicken",
-      "cookingTime": "20 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight"],
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
       "ingredients": [
         "400g chicken breast, sliced",
         "300g mixed stir-fry vegetables (Asda frozen)",
@@ -127,23 +143,28 @@
       ],
       "avaFriendly": "Great for Ava! Mild and slightly sweet. Cut chicken into tiny pieces.",
       "adultsVariation": "Add chili flakes or sriracha for a kick.",
-      "storageNotes": "Best eaten fresh, but leftovers keep for 2 days in the fridge."
+      "storageNotes": "Best eaten fresh, but leftovers keep for 2 days in the fridge.",
+      "prepTime": "10 minutes",
+      "cookTime": "10 minutes"
     },
     {
       "id": "beef-chili",
       "name": "Family Beef Chili",
       "protein": "beef",
-      "cookingTime": "60 minutes",
       "difficulty": "easy",
       "servings": 8,
-      "tags": ["batch-cooking", "freezer-friendly", "sunday-special"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "sunday-special"
+      ],
       "ingredients": [
         "750g beef mince (Asda)",
         "2 onions, chopped",
         "3 garlic cloves, minced",
         "2 x 400g tins chopped tomatoes",
         "400g tin kidney beans, drained",
-        "2 tbsp tomato purée",
+        "2 tbsp tomato pur\u00e9e",
         "1 tbsp mild chili powder (reduce for Ava)",
         "1 tsp cumin",
         "300ml beef stock",
@@ -152,28 +173,32 @@
       "instructions": [
         "Brown the mince in a large pot, breaking it up as it cooks.",
         "Add onions and garlic, cook for 5 minutes.",
-        "Stir in chili powder, cumin, and tomato purée. Cook for 1 minute.",
+        "Stir in chili powder, cumin, and tomato pur\u00e9e. Cook for 1 minute.",
         "Add tinned tomatoes and stock. Bring to a boil.",
         "Reduce heat and simmer for 40 minutes.",
         "Add kidney beans, simmer for 10 more minutes.",
         "Serve with rice or jacket potatoes."
       ],
       "avaFriendly": "Keep Ava's portion mild - use less chili powder in her serving. She likes it with rice.",
-      "adultsVariation": "Add extra chili, jalapeños, or hot sauce to adult portions.",
-      "storageNotes": "Freezes perfectly for up to 3 months."
+      "adultsVariation": "Add extra chili, jalape\u00f1os, or hot sauce to adult portions.",
+      "storageNotes": "Freezes perfectly for up to 3 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "50 minutes"
     },
     {
       "id": "salmon-pasta",
       "name": "Creamy Salmon Pasta",
       "protein": "fish",
-      "cookingTime": "25 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight"],
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
       "ingredients": [
         "300g salmon fillets (Aldi)",
         "300g pasta (penne or fusilli)",
-        "200ml crème fraîche",
+        "200ml cr\u00e8me fra\u00eeche",
         "100g frozen peas",
         "1 lemon (juice and zest)",
         "2 garlic cloves, minced",
@@ -185,27 +210,32 @@
         "Meanwhile, heat oil in a pan. Season salmon and cook skin-side down for 4 minutes.",
         "Flip and cook for 3 more minutes. Remove from pan and flake into chunks.",
         "In the same pan, add garlic and cook for 30 seconds.",
-        "Add crème fraîche, lemon juice, and zest. Warm through.",
+        "Add cr\u00e8me fra\u00eeche, lemon juice, and zest. Warm through.",
         "Drain pasta and peas, add to the sauce with salmon.",
         "Toss gently and serve."
       ],
       "avaFriendly": "Ava enjoys this! Make sure to remove any bones and check the salmon carefully.",
       "adultsVariation": "Add capers or a splash of white wine to the sauce.",
-      "storageNotes": "Best eaten fresh. Leftovers keep for 1 day."
+      "storageNotes": "Best eaten fresh. Leftovers keep for 1 day.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
     },
     {
       "id": "cottage-pie",
       "name": "Traditional Cottage Pie",
       "protein": "beef",
-      "cookingTime": "75 minutes",
       "difficulty": "medium",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "comfort-food"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "comfort-food"
+      ],
       "ingredients": [
         "600g beef mince (Asda)",
         "1 large onion, diced",
         "2 carrots, diced",
-        "2 tbsp tomato purée",
+        "2 tbsp tomato pur\u00e9e",
         "300ml beef stock",
         "1 tbsp Worcestershire sauce",
         "1kg potatoes, peeled",
@@ -216,25 +246,30 @@
       "instructions": [
         "Boil potatoes until tender, about 20 minutes. Drain and mash with butter and milk.",
         "Brown mince in a large pan. Add onion and carrots, cook for 5 minutes.",
-        "Stir in tomato purée, cook for 1 minute.",
+        "Stir in tomato pur\u00e9e, cook for 1 minute.",
         "Add stock and Worcestershire sauce. Simmer for 20 minutes until thickened.",
         "Transfer mince mixture to an ovenproof dish.",
         "Spread mashed potato over the top, creating peaks with a fork.",
         "Sprinkle with cheese.",
-        "Bake at 200°C (180°C fan) for 25 minutes until golden."
+        "Bake at 200\u00b0C (180\u00b0C fan) for 25 minutes until golden."
       ],
       "avaFriendly": "Ava loves the creamy mash topping! Make sure the meat is well-cooked and not too chunky.",
       "adultsVariation": "Add a splash of red wine to the meat mixture.",
-      "storageNotes": "Freezes well for up to 2 months. Can be cooked from frozen."
+      "storageNotes": "Freezes well for up to 2 months. Can be cooked from frozen.",
+      "prepTime": "30 minutes",
+      "cookTime": "45 minutes"
     },
     {
       "id": "chicken-nuggets",
       "name": "Homemade Chicken Nuggets",
       "protein": "chicken",
-      "cookingTime": "30 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "kid-favorite", "freezer-friendly"],
+      "tags": [
+        "quick-prep",
+        "kid-favorite",
+        "freezer-friendly"
+      ],
       "ingredients": [
         "500g chicken breast, cut into chunks",
         "100g plain flour",
@@ -246,7 +281,7 @@
         "Vegetables and ketchup to serve"
       ],
       "instructions": [
-        "Preheat oven to 200°C (180°C fan).",
+        "Preheat oven to 200\u00b0C (180\u00b0C fan).",
         "Mix breadcrumbs with garlic powder and paprika.",
         "Set up three bowls: seasoned flour, beaten eggs, and breadcrumb mixture.",
         "Coat each chicken piece in flour, egg, then breadcrumbs.",
@@ -256,16 +291,21 @@
       ],
       "avaFriendly": "These are Ava's absolute favorite! So much better than shop-bought.",
       "adultsVariation": "Make a spicy version with cayenne pepper in the breadcrumbs.",
-      "storageNotes": "Freeze uncooked nuggets. Cook from frozen, adding 5 minutes to cooking time."
+      "storageNotes": "Freeze uncooked nuggets. Cook from frozen, adding 5 minutes to cooking time.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
     },
     {
       "id": "pork-sausage-casserole",
       "name": "Sausage and Bean Casserole",
       "protein": "pork",
-      "cookingTime": "50 minutes",
       "difficulty": "easy",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "comfort-food"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "comfort-food"
+      ],
       "ingredients": [
         "8 pork sausages (Aldi)",
         "1 onion, sliced",
@@ -273,7 +313,7 @@
         "400g tin chopped tomatoes",
         "400g tin cannellini beans, drained",
         "200ml chicken stock",
-        "1 tbsp tomato purée",
+        "1 tbsp tomato pur\u00e9e",
         "1 tsp dried mixed herbs",
         "Crusty bread to serve"
       ],
@@ -281,23 +321,28 @@
         "Brown sausages in a large casserole dish. Remove and set aside.",
         "Add onion to the dish, cook for 5 minutes until softened.",
         "Add garlic, cook for 1 minute.",
-        "Stir in tomato purée, chopped tomatoes, stock, and herbs.",
+        "Stir in tomato pur\u00e9e, chopped tomatoes, stock, and herbs.",
         "Return sausages to the dish, add beans.",
         "Bring to a simmer, then reduce heat and cook for 30 minutes.",
         "Serve with crusty bread."
       ],
       "avaFriendly": "Ava likes this with the sausages cut into small pieces. Very filling and comforting.",
       "adultsVariation": "Add a splash of balsamic vinegar or red wine for depth.",
-      "storageNotes": "Freezes well for up to 2 months."
+      "storageNotes": "Freezes well for up to 2 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "35 minutes"
     },
     {
       "id": "fish-pie",
       "name": "Easy Fish Pie",
       "protein": "fish",
-      "cookingTime": "60 minutes",
       "difficulty": "medium",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "sunday-special"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "sunday-special"
+      ],
       "ingredients": [
         "400g white fish (cod or haddock)",
         "200g salmon",
@@ -319,20 +364,25 @@
         "Add fish, prawns, peas, and parsley to the sauce. Transfer to an ovenproof dish.",
         "Top with mashed potato, creating peaks with a fork.",
         "Sprinkle with cheese.",
-        "Bake at 200°C (180°C fan) for 25-30 minutes until golden."
+        "Bake at 200\u00b0C (180\u00b0C fan) for 25-30 minutes until golden."
       ],
       "avaFriendly": "Ava enjoys the creamy texture. Check carefully for any fish bones before serving.",
       "adultsVariation": "Add a splash of white wine to the sauce or top with a cheese crust.",
-      "storageNotes": "Freezes well for up to 1 month."
+      "storageNotes": "Freezes well for up to 1 month.",
+      "prepTime": "30 minutes",
+      "cookTime": "30 minutes"
     },
     {
       "id": "chicken-fajitas",
       "name": "Chicken Fajitas",
       "protein": "chicken",
-      "cookingTime": "25 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight", "interactive-meal"],
+      "tags": [
+        "quick-prep",
+        "weeknight",
+        "interactive-meal"
+      ],
       "ingredients": [
         "400g chicken breast, sliced",
         "2 bell peppers, sliced",
@@ -351,17 +401,22 @@
         "Serve chicken mixture with tortillas and toppings."
       ],
       "avaFriendly": "Ava loves making her own! Use mild seasoning and let her build her own fajita (with help).",
-      "adultsVariation": "Add jalapeños, hot sauce, or extra seasoning for adults.",
-      "storageNotes": "Chicken mixture keeps for 2 days. Reheat thoroughly before serving."
+      "adultsVariation": "Add jalape\u00f1os, hot sauce, or extra seasoning for adults.",
+      "storageNotes": "Chicken mixture keeps for 2 days. Reheat thoroughly before serving.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
     },
     {
       "id": "meatballs-tomato-sauce",
       "name": "Italian Meatballs in Tomato Sauce",
       "protein": "beef",
-      "cookingTime": "45 minutes",
       "difficulty": "easy",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "family-favorite"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "family-favorite"
+      ],
       "ingredients": [
         "500g beef mince (Asda)",
         "1 onion, finely chopped",
@@ -370,7 +425,7 @@
         "1 egg",
         "1 tsp dried oregano",
         "400g tin chopped tomatoes",
-        "2 tbsp tomato purée",
+        "2 tbsp tomato pur\u00e9e",
         "300ml beef stock",
         "Spaghetti or rice to serve"
       ],
@@ -379,23 +434,27 @@
         "Form into 20 meatballs.",
         "Brown meatballs in a large pan (you may need to do this in batches). Set aside.",
         "In the same pan, cook remaining onion for 5 minutes. Add remaining garlic, cook for 1 minute.",
-        "Stir in tomato purée, tinned tomatoes, and stock.",
+        "Stir in tomato pur\u00e9e, tinned tomatoes, and stock.",
         "Return meatballs to the pan, bring to a simmer.",
         "Cover and simmer for 25 minutes.",
         "Serve with spaghetti or rice."
       ],
       "avaFriendly": "Ava thinks these are fun! Make smaller meatballs for her portions.",
       "adultsVariation": "Add red wine to the sauce or serve with parmesan.",
-      "storageNotes": "Freeze meatballs in sauce for up to 3 months."
+      "storageNotes": "Freeze meatballs in sauce for up to 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "30 minutes"
     },
     {
       "id": "roast-chicken-dinner",
       "name": "Classic Roast Chicken Dinner",
       "protein": "chicken",
-      "cookingTime": "120 minutes",
       "difficulty": "medium",
       "servings": 6,
-      "tags": ["sunday-special", "batch-cooking"],
+      "tags": [
+        "sunday-special",
+        "batch-cooking"
+      ],
       "ingredients": [
         "1.5kg whole chicken (Aldi)",
         "1kg potatoes, peeled and quartered",
@@ -408,7 +467,7 @@
         "Vegetables of choice"
       ],
       "instructions": [
-        "Preheat oven to 200°C (180°C fan).",
+        "Preheat oven to 200\u00b0C (180\u00b0C fan).",
         "Rub chicken with 1 tbsp oil, herbs, salt, and pepper. Place in a roasting tin.",
         "Toss potatoes and carrots with remaining oil, season, and arrange around chicken.",
         "Roast for 90 minutes (or until juices run clear when thigh is pierced).",
@@ -418,16 +477,20 @@
       ],
       "avaFriendly": "Ava loves roast chicken! Give her tender breast meat cut into small pieces.",
       "adultsVariation": "Stuff the cavity with lemon and herbs for extra flavor.",
-      "storageNotes": "Leftover chicken is perfect for sandwiches and meals throughout the week."
+      "storageNotes": "Leftover chicken is perfect for sandwiches and meals throughout the week.",
+      "prepTime": "20 minutes",
+      "cookTime": "100 minutes"
     },
     {
       "id": "pork-chops-apples",
       "name": "Pork Chops with Apples",
       "protein": "pork",
-      "cookingTime": "30 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight"],
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
       "ingredients": [
         "4 pork chops (Aldi)",
         "2 apples, sliced",
@@ -450,30 +513,35 @@
       ],
       "avaFriendly": "The sweet apples make this appealing to Ava. Cut the pork into small pieces for her.",
       "adultsVariation": "Add a splash of cider or cream to the sauce.",
-      "storageNotes": "Best eaten fresh. Leftovers keep for 1 day."
+      "storageNotes": "Best eaten fresh. Leftovers keep for 1 day.",
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes"
     },
     {
       "id": "tuna-pasta-bake",
       "name": "Tuna Pasta Bake",
       "protein": "fish",
-      "cookingTime": "40 minutes",
       "difficulty": "easy",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "budget-friendly"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "budget-friendly"
+      ],
       "ingredients": [
         "400g pasta (penne or fusilli)",
         "2 x 160g tins tuna in spring water, drained",
         "400g tin chopped tomatoes",
-        "200ml crème fraîche",
+        "200ml cr\u00e8me fra\u00eeche",
         "150g frozen sweetcorn",
         "100g grated cheese",
         "1 tsp dried oregano",
         "Salt and pepper"
       ],
       "instructions": [
-        "Preheat oven to 180°C (160°C fan).",
+        "Preheat oven to 180\u00b0C (160\u00b0C fan).",
         "Cook pasta for 2 minutes less than package instructions. Drain.",
-        "Mix pasta with tuna, tomatoes, crème fraîche, sweetcorn, and oregano.",
+        "Mix pasta with tuna, tomatoes, cr\u00e8me fra\u00eeche, sweetcorn, and oregano.",
         "Transfer to an ovenproof dish.",
         "Top with grated cheese.",
         "Bake for 25-30 minutes until bubbling and golden.",
@@ -481,16 +549,20 @@
       ],
       "avaFriendly": "Ava enjoys the cheesy topping! Make sure tuna is well mixed in.",
       "adultsVariation": "Add chili flakes or capers for extra flavor.",
-      "storageNotes": "Freezes well for up to 2 months."
+      "storageNotes": "Freezes well for up to 2 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "30 minutes"
     },
     {
       "id": "chicken-curry",
       "name": "Mild Chicken Curry",
       "protein": "chicken",
-      "cookingTime": "40 minutes",
       "difficulty": "easy",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
       "ingredients": [
         "600g chicken breast, cubed",
         "1 onion, chopped",
@@ -512,16 +584,21 @@
       ],
       "avaFriendly": "Very mild and slightly sweet - perfect for Ava! She likes it with plain rice.",
       "adultsVariation": "Add extra curry powder, fresh chilies, or garam masala for adults.",
-      "storageNotes": "Freezes perfectly for up to 3 months. Freeze without rice."
+      "storageNotes": "Freezes perfectly for up to 3 months. Freeze without rice.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
     },
     {
       "id": "beef-tacos",
       "name": "Easy Beef Tacos",
       "protein": "beef",
-      "cookingTime": "25 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight", "interactive-meal"],
+      "tags": [
+        "quick-prep",
+        "weeknight",
+        "interactive-meal"
+      ],
       "ingredients": [
         "500g beef mince (Asda)",
         "1 onion, finely chopped",
@@ -539,17 +616,22 @@
         "Serve with toppings and let everyone build their own tacos."
       ],
       "avaFriendly": "Ava loves the interactive element! Use soft tortillas for her and mild seasoning.",
-      "adultsVariation": "Add jalapeños, hot sauce, or extra seasoning.",
-      "storageNotes": "Meat mixture keeps for 2 days in the fridge."
+      "adultsVariation": "Add jalape\u00f1os, hot sauce, or extra seasoning.",
+      "storageNotes": "Meat mixture keeps for 2 days in the fridge.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
     },
     {
       "id": "chicken-traybake",
       "name": "One-Pan Chicken Traybake",
       "protein": "chicken",
-      "cookingTime": "50 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight", "one-pan"],
+      "tags": [
+        "quick-prep",
+        "weeknight",
+        "one-pan"
+      ],
       "ingredients": [
         "4 chicken thighs (skin-on, Aldi)",
         "500g baby potatoes, halved",
@@ -561,7 +643,7 @@
         "Salt and pepper"
       ],
       "instructions": [
-        "Preheat oven to 200°C (180°C fan).",
+        "Preheat oven to 200\u00b0C (180\u00b0C fan).",
         "Toss potatoes, peppers, and onion with 1 tbsp oil, half the paprika, and thyme in a roasting tin.",
         "Make space in the center, place chicken thighs skin-side up.",
         "Rub chicken with remaining oil and paprika, season with salt and pepper.",
@@ -570,16 +652,21 @@
       ],
       "avaFriendly": "Easy meal with everything cooked together. Remove chicken skin for Ava if preferred.",
       "adultsVariation": "Add chili flakes or garlic for extra flavor.",
-      "storageNotes": "Leftovers keep for 2 days in the fridge."
+      "storageNotes": "Leftovers keep for 2 days in the fridge.",
+      "prepTime": "15 minutes",
+      "cookTime": "50 minutes"
     },
     {
       "id": "salmon-vegetables",
       "name": "Baked Salmon with Roasted Vegetables",
       "protein": "fish",
-      "cookingTime": "30 minutes",
       "difficulty": "easy",
       "servings": 4,
-      "tags": ["quick-prep", "weeknight", "healthy"],
+      "tags": [
+        "quick-prep",
+        "weeknight",
+        "healthy"
+      ],
       "ingredients": [
         "4 salmon fillets (Aldi)",
         "300g tenderstem broccoli",
@@ -591,7 +678,7 @@
         "Couscous or new potatoes to serve"
       ],
       "instructions": [
-        "Preheat oven to 200°C (180°C fan).",
+        "Preheat oven to 200\u00b0C (180\u00b0C fan).",
         "Arrange broccoli and tomatoes on a baking tray. Drizzle with 1 tbsp oil and season.",
         "Roast for 10 minutes.",
         "Place salmon fillets among the vegetables. Drizzle with remaining oil, lemon juice, and garlic.",
@@ -600,21 +687,26 @@
       ],
       "avaFriendly": "Healthy and colorful! Check salmon carefully for bones before serving to Ava.",
       "adultsVariation": "Add white wine, capers, or herbs to the roasting tray.",
-      "storageNotes": "Best eaten fresh. Leftovers keep for 1 day."
+      "storageNotes": "Best eaten fresh. Leftovers keep for 1 day.",
+      "prepTime": "10 minutes",
+      "cookTime": "25 minutes"
     },
     {
       "id": "shepherds-pie",
       "name": "Classic Shepherd's Pie",
       "protein": "lamb",
-      "cookingTime": "75 minutes",
       "difficulty": "medium",
       "servings": 6,
-      "tags": ["batch-cooking", "freezer-friendly", "comfort-food"],
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "comfort-food"
+      ],
       "ingredients": [
         "600g lamb mince (Asda)",
         "1 large onion, diced",
         "2 carrots, diced",
-        "2 tbsp tomato purée",
+        "2 tbsp tomato pur\u00e9e",
         "300ml lamb or beef stock",
         "1 tbsp Worcestershire sauce",
         "1kg potatoes, peeled",
@@ -625,16 +717,18 @@
       "instructions": [
         "Boil potatoes until tender, about 20 minutes. Drain and mash with butter and milk.",
         "Brown lamb mince in a large pan. Add onion and carrots, cook for 5 minutes.",
-        "Stir in tomato purée, cook for 1 minute.",
+        "Stir in tomato pur\u00e9e, cook for 1 minute.",
         "Add stock and Worcestershire sauce. Simmer for 20 minutes until thickened.",
         "Transfer lamb mixture to an ovenproof dish.",
         "Spread mashed potato over the top, creating peaks with a fork.",
         "Sprinkle with cheese.",
-        "Bake at 200°C (180°C fan) for 25 minutes until golden."
+        "Bake at 200\u00b0C (180\u00b0C fan) for 25 minutes until golden."
       ],
       "avaFriendly": "Similar to cottage pie which Ava loves. Ensure the lamb is well-cooked and tender.",
       "adultsVariation": "Add a splash of red wine or fresh rosemary to the lamb.",
-      "storageNotes": "Freezes well for up to 2 months."
+      "storageNotes": "Freezes well for up to 2 months.",
+      "prepTime": "30 minutes",
+      "cookTime": "45 minutes"
     }
   ]
 }
