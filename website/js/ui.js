@@ -7,14 +7,19 @@ const UI = {
     // DOM Elements
     elements: {
         generatePlanBtn: null,
+        browseRecipesBtn: null,
         showShoppingListBtn: null,
         weekTabs: null,
         weekViews: null,
         emptyState: null,
         recipeModal: null,
+        recipeBrowserModal: null,
         shoppingListModal: null,
         loadingOverlay: null
     },
+
+    // State for recipe changing
+    changingMeal: null, // { weekNumber, dayIndex, mealIndex }
 
     /**
      * Initialize UI event listeners
@@ -22,17 +27,23 @@ const UI = {
     init() {
         // Cache DOM elements
         this.elements.generatePlanBtn = document.getElementById('generatePlanBtn');
+        this.elements.browseRecipesBtn = document.getElementById('browseRecipesBtn');
         this.elements.showShoppingListBtn = document.getElementById('showShoppingListBtn');
         this.elements.weekTabs = document.querySelectorAll('.week-tab');
         this.elements.weekViews = document.querySelectorAll('.week-view');
         this.elements.emptyState = document.getElementById('emptyState');
         this.elements.recipeModal = document.getElementById('recipeModal');
+        this.elements.recipeBrowserModal = document.getElementById('recipeBrowserModal');
         this.elements.shoppingListModal = document.getElementById('shoppingListModal');
         this.elements.loadingOverlay = document.getElementById('loadingOverlay');
 
         // Event listeners
         this.elements.generatePlanBtn.addEventListener('click', () => {
             App.generateNewPlan();
+        });
+
+        this.elements.browseRecipesBtn.addEventListener('click', () => {
+            this.showRecipeBrowserModal();
         });
 
         this.elements.showShoppingListBtn.addEventListener('click', () => {
@@ -57,13 +68,21 @@ const UI = {
         });
 
         // Close modal on background click
-        [this.elements.recipeModal, this.elements.shoppingListModal].forEach(modal => {
+        [this.elements.recipeModal, this.elements.recipeBrowserModal, this.elements.shoppingListModal].forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     this.closeModal(modal);
                 }
             });
         });
+
+        // Recipe filter
+        const proteinFilter = document.getElementById('proteinFilter');
+        if (proteinFilter) {
+            proteinFilter.addEventListener('change', () => {
+                this.filterRecipes();
+            });
+        }
 
         // Shopping list generation
         const generateShoppingBtn = document.getElementById('generateShoppingListBtn');
@@ -91,8 +110,8 @@ const UI = {
                 daysContainer.innerHTML = '';
 
                 // Render each day
-                week.days.forEach(day => {
-                    const dayCard = this.createDayCard(day);
+                week.days.forEach((day, dayIndex) => {
+                    const dayCard = this.createDayCard(day, week.weekNumber, dayIndex);
                     daysContainer.appendChild(dayCard);
                 });
             }
@@ -102,7 +121,7 @@ const UI = {
     /**
      * Create a day card element
      */
-    createDayCard(day) {
+    createDayCard(day, weekNumber, dayIndex) {
         const card = document.createElement('div');
         card.className = 'day-card';
 
@@ -129,8 +148,8 @@ const UI = {
         const mealsList = document.createElement('div');
         mealsList.className = 'meals-list';
 
-        day.meals.forEach(meal => {
-            const mealItem = this.createMealItem(meal);
+        day.meals.forEach((meal, mealIndex) => {
+            const mealItem = this.createMealItem(meal, weekNumber, dayIndex, mealIndex);
             mealsList.appendChild(mealItem);
         });
 
@@ -142,7 +161,7 @@ const UI = {
     /**
      * Create a meal item element
      */
-    createMealItem(meal) {
+    createMealItem(meal, weekNumber, dayIndex, mealIndex) {
         const item = document.createElement('div');
         item.className = 'meal-item';
 
@@ -168,17 +187,32 @@ const UI = {
         item.appendChild(name);
         item.appendChild(icon);
 
-        // Click handler for recipe details (not for leftovers without recipe ID)
-        if (meal.recipeId) {
-            item.style.cursor = 'pointer';
-            item.addEventListener('click', () => {
-                this.showRecipeModal(meal.recipeId);
+        // Add change button for non-generic-leftover meals
+        const isGenericLeftover = meal.isLeftover && !meal.fromRecipeId && !meal.recipeId;
+        if (!isGenericLeftover) {
+            const changeBtn = document.createElement('button');
+            changeBtn.className = 'meal-change-btn';
+            changeBtn.textContent = 'Change';
+            changeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.startChangingMeal(weekNumber, dayIndex, mealIndex);
             });
-        } else if (meal.fromRecipeId) {
-            item.style.cursor = 'pointer';
-            item.addEventListener('click', () => {
-                this.showRecipeModal(meal.fromRecipeId);
-            });
+            item.appendChild(changeBtn);
+        }
+
+        // Click handler for recipe details (not for generic leftovers)
+        if (meal.recipeId || meal.fromRecipeId) {
+            name.style.cursor = 'pointer';
+            icon.style.cursor = 'pointer';
+
+            const showRecipe = () => {
+                const recipeId = meal.recipeId || meal.fromRecipeId;
+                this.showRecipeModal(recipeId);
+            };
+
+            name.addEventListener('click', showRecipe);
+            icon.addEventListener('click', showRecipe);
+            item.classList.add('clickable');
         }
 
         return item;
@@ -435,5 +469,189 @@ const UI = {
      */
     hideLoading() {
         this.elements.loadingOverlay.classList.remove('active');
+    },
+
+    /**
+     * Show recipe browser modal
+     */
+    showRecipeBrowserModal(forChanging = false) {
+        if (!forChanging && !App.recipes.length) {
+            alert('No recipes available!');
+            return;
+        }
+
+        // Show/hide changing mode message
+        const changingMessage = document.getElementById('changingModeMessage');
+        if (changingMessage) {
+            changingMessage.style.display = forChanging ? 'block' : 'none';
+        }
+
+        // Render recipe list
+        this.renderRecipeList();
+
+        // Open modal
+        this.openModal(this.elements.recipeBrowserModal);
+    },
+
+    /**
+     * Render recipe list
+     */
+    renderRecipeList(filterProtein = 'all') {
+        const container = document.getElementById('recipeListContainer');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        // Filter recipes
+        let recipes = App.recipes;
+        if (filterProtein !== 'all') {
+            recipes = recipes.filter(r => r.protein === filterProtein);
+        }
+
+        // Render each recipe card
+        recipes.forEach(recipe => {
+            const card = this.createRecipeBrowserCard(recipe);
+            container.appendChild(card);
+        });
+
+        if (recipes.length === 0) {
+            container.innerHTML = '<div class="shopping-empty">No recipes found for this filter.</div>';
+        }
+    },
+
+    /**
+     * Create a recipe browser card
+     */
+    createRecipeBrowserCard(recipe) {
+        const card = document.createElement('div');
+        card.className = 'recipe-browser-card';
+
+        // Header
+        const header = document.createElement('div');
+        header.className = 'recipe-browser-header';
+
+        const icon = document.createElement('div');
+        icon.className = 'recipe-browser-icon';
+        const iconMap = {
+            'chicken': '🐔',
+            'beef': '🐄',
+            'pork': '🐷',
+            'lamb': '🐑',
+            'fish': '🐟'
+        };
+        icon.textContent = iconMap[recipe.protein] || '🍽️';
+
+        const name = document.createElement('div');
+        name.className = 'recipe-browser-name';
+        name.textContent = recipe.name;
+
+        header.appendChild(icon);
+        header.appendChild(name);
+        card.appendChild(header);
+
+        // Meta info
+        const meta = document.createElement('div');
+        meta.className = 'recipe-browser-meta';
+
+        const time = document.createElement('div');
+        time.className = 'recipe-browser-meta-item';
+        time.innerHTML = `⏱️ ${recipe.cookingTime}`;
+
+        const servings = document.createElement('div');
+        servings.className = 'recipe-browser-meta-item';
+        servings.innerHTML = `👥 ${recipe.servings} servings`;
+
+        const difficulty = document.createElement('div');
+        difficulty.className = 'recipe-browser-meta-item';
+        difficulty.innerHTML = `📊 ${recipe.difficulty}`;
+
+        meta.appendChild(time);
+        meta.appendChild(servings);
+        meta.appendChild(difficulty);
+        card.appendChild(meta);
+
+        // Click handler
+        card.addEventListener('click', () => {
+            if (this.changingMeal) {
+                // User is changing a meal
+                this.confirmChangeRecipe(recipe);
+            } else {
+                // Just viewing recipe details
+                this.showRecipeModal(recipe.id);
+            }
+        });
+
+        return card;
+    },
+
+    /**
+     * Filter recipes by protein
+     */
+    filterRecipes() {
+        const filterSelect = document.getElementById('proteinFilter');
+        const filterValue = filterSelect.value;
+        this.renderRecipeList(filterValue);
+    },
+
+    /**
+     * Start changing a meal
+     */
+    startChangingMeal(weekNumber, dayIndex, mealIndex) {
+        this.changingMeal = { weekNumber, dayIndex, mealIndex };
+
+        // Show recipe browser in "changing mode"
+        this.showRecipeBrowserModal(true);
+    },
+
+    /**
+     * Confirm and execute recipe change
+     */
+    confirmChangeRecipe(recipe) {
+        if (!this.changingMeal) return;
+
+        const { weekNumber, dayIndex, mealIndex } = this.changingMeal;
+
+        // Get the week
+        const week = App.currentMealPlan.weeks.find(w => w.weekNumber === weekNumber);
+        if (!week) {
+            alert('Error: Week not found');
+            return;
+        }
+
+        // Get the day
+        const day = week.days[dayIndex];
+        if (!day) {
+            alert('Error: Day not found');
+            return;
+        }
+
+        // Get the meal
+        const meal = day.meals[mealIndex];
+        if (!meal) {
+            alert('Error: Meal not found');
+            return;
+        }
+
+        // Update the meal
+        meal.name = recipe.name;
+        meal.recipeId = recipe.id;
+        meal.protein = recipe.protein;
+        meal.isLeftover = false;
+        delete meal.fromRecipeId;
+
+        // Save and re-render
+        App.savePlan();
+        this.renderMealPlan(App.currentMealPlan);
+
+        // Close modal and reset state
+        this.closeModal(this.elements.recipeBrowserModal);
+        this.changingMeal = null;
+
+        // Reset filter and hide changing message
+        document.getElementById('proteinFilter').value = 'all';
+        const changingMessage = document.getElementById('changingModeMessage');
+        if (changingMessage) {
+            changingMessage.style.display = 'none';
+        }
     }
 };
