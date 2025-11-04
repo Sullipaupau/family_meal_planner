@@ -250,7 +250,8 @@ const UI = {
 
         // Populate modal content
         document.getElementById('modalRecipeName').textContent = recipe.name;
-        document.getElementById('modalCookingTime').textContent = recipe.cookingTime;
+        document.getElementById('modalPrepTime').textContent = recipe.prepTime;
+        document.getElementById('modalCookTime').textContent = recipe.cookTime;
         document.getElementById('modalServings').textContent = recipe.servings;
         document.getElementById('modalDifficulty').textContent = recipe.difficulty;
 
@@ -553,9 +554,13 @@ const UI = {
         const meta = document.createElement('div');
         meta.className = 'recipe-browser-meta';
 
-        const time = document.createElement('div');
-        time.className = 'recipe-browser-meta-item';
-        time.innerHTML = `⏱️ ${recipe.cookingTime}`;
+        const prepTime = document.createElement('div');
+        prepTime.className = 'recipe-browser-meta-item';
+        prepTime.innerHTML = `🔪 Prep: ${recipe.prepTime}`;
+
+        const cookTime = document.createElement('div');
+        cookTime.className = 'recipe-browser-meta-item';
+        cookTime.innerHTML = `⏱️ Cook: ${recipe.cookTime}`;
 
         const servings = document.createElement('div');
         servings.className = 'recipe-browser-meta-item';
@@ -565,7 +570,8 @@ const UI = {
         difficulty.className = 'recipe-browser-meta-item';
         difficulty.innerHTML = `📊 ${recipe.difficulty}`;
 
-        meta.appendChild(time);
+        meta.appendChild(prepTime);
+        meta.appendChild(cookTime);
         meta.appendChild(servings);
         meta.appendChild(difficulty);
         card.appendChild(meta);
