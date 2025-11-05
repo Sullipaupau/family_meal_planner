@@ -1158,3 +1158,105 @@ body {
         font-size: 1.1rem;
     }
 }
+
+/* ===================================
+   EDIT BATCH DAYS MODAL
+   =================================== */
+
+.modal-subtitle {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.recipe-being-edited {
+    background: var(--bg-light);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.day-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.day-checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.day-checkbox-label:hover {
+    background: var(--bg-white);
+    border-color: var(--primary-color);
+}
+
+.day-checkbox-label input[type="checkbox"] {
+    margin-right: var(--spacing-sm);
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.day-checkbox-label input[type="checkbox"]:checked + .day-name {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.day-checkbox-label:has(input:checked) {
+    background: var(--bg-white);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.day-name {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.portions-summary {
+    background: #e8f4f8;
+    border-left: 4px solid var(--primary-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+}
+
+.portions-summary strong {
+    color: var(--primary-color);
+}
+
+.edit-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-end;
+}
+
+.edit-actions .btn {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+    .day-selector-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edit-actions {
+        flex-direction: column;
+    }
+
+    .edit-actions .btn {
+        width: 100%;
+    }
+}

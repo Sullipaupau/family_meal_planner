@@ -301,6 +301,61 @@
         </div>
     </div>
 
+    <!-- Edit Batch Days Modal -->
+    <div id="editBatchDaysModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-body">
+                <h2>✏️ Edit Meal Days</h2>
+                <p class="modal-subtitle">Select which days this recipe covers</p>
+
+                <div class="recipe-being-edited" id="editingRecipeInfo">
+                    <!-- Recipe name will be shown here -->
+                </div>
+
+                <div class="day-selector-grid">
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Monday" class="day-checkbox">
+                        <span class="day-name">Monday</span>
+                    </label>
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Tuesday" class="day-checkbox">
+                        <span class="day-name">Tuesday</span>
+                    </label>
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Wednesday" class="day-checkbox">
+                        <span class="day-name">Wednesday</span>
+                    </label>
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Thursday" class="day-checkbox">
+                        <span class="day-name">Thursday</span>
+                    </label>
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Friday" class="day-checkbox">
+                        <span class="day-name">Friday</span>
+                    </label>
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Saturday" class="day-checkbox">
+                        <span class="day-name">Saturday</span>
+                    </label>
+                    <label class="day-checkbox-label">
+                        <input type="checkbox" value="Sunday" class="day-checkbox">
+                        <span class="day-name">Sunday</span>
+                    </label>
+                </div>
+
+                <div class="portions-summary" id="portionsSummary">
+                    <!-- Will show calculated portions based on selected days -->
+                </div>
+
+                <div class="edit-actions">
+                    <button id="splitToDailyBtn" class="btn btn-secondary">Split to Daily Recipes</button>
+                    <button id="saveDaysBtn" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay">
         <div class="spinner"></div>

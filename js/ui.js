@@ -17,11 +17,15 @@ const UI = {
         recipeBrowserModal: null,
         shoppingListModal: null,
         configModal: null,
+        editBatchDaysModal: null,
         loadingOverlay: null
     },
 
     // State for recipe changing
     changingMeal: null, // { weekNumber, dayIndex, mealIndex }
+
+    // State for editing batch days
+    editingBatch: null, // { weekNumber, mealType, item }
 
     /**
      * Initialize UI event listeners
@@ -39,6 +43,7 @@ const UI = {
         this.elements.recipeBrowserModal = document.getElementById('recipeBrowserModal');
         this.elements.shoppingListModal = document.getElementById('shoppingListModal');
         this.elements.configModal = document.getElementById('configModal');
+        this.elements.editBatchDaysModal = document.getElementById('editBatchDaysModal');
         this.elements.loadingOverlay = document.getElementById('loadingOverlay');
 
         // Event listeners
@@ -76,7 +81,7 @@ const UI = {
         });
 
         // Close modal on background click
-        [this.elements.recipeModal, this.elements.recipeBrowserModal, this.elements.shoppingListModal, this.elements.configModal].forEach(modal => {
+        [this.elements.recipeModal, this.elements.recipeBrowserModal, this.elements.shoppingListModal, this.elements.configModal, this.elements.editBatchDaysModal].forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     this.closeModal(modal);
@@ -118,6 +123,29 @@ const UI = {
                 });
             });
         }
+
+        // Edit batch days modal buttons
+        const saveDaysBtn = document.getElementById('saveDaysBtn');
+        if (saveDaysBtn) {
+            saveDaysBtn.addEventListener('click', () => {
+                this.saveBatchDaysChanges();
+            });
+        }
+
+        const splitToDailyBtn = document.getElementById('splitToDailyBtn');
+        if (splitToDailyBtn) {
+            splitToDailyBtn.addEventListener('click', () => {
+                this.splitBatchToDaily();
+            });
+        }
+
+        // Day checkboxes - listen for changes to update portions summary
+        const dayCheckboxes = document.querySelectorAll('.day-checkbox');
+        dayCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                this.updatePortionsSummary();
+            });
+        });
     },
 
     /**
@@ -344,17 +372,39 @@ const UI = {
 
         card.appendChild(details);
 
-        // Add change button
+        // Add buttons container
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.className = 'batch-recipe-buttons';
+        buttonsContainer.style.display = 'flex';
+        buttonsContainer.style.gap = '0.5rem';
+        buttonsContainer.style.marginTop = '1rem';
+
+        // Add edit days button
+        const editDaysBtn = document.createElement('button');
+        editDaysBtn.className = 'btn btn-secondary';
+        editDaysBtn.textContent = '✏️ Edit Days';
+        editDaysBtn.style.flex = '1';
+        editDaysBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isLunch = card.closest('.batch-section').querySelector('.batch-section-header').textContent.includes('Lunch');
+            this.openEditDaysModal(weekNumber, isLunch ? 'lunch' : 'dinner', item);
+        });
+        buttonsContainer.appendChild(editDaysBtn);
+
+        // Add change recipe button
         const changeBtn = document.createElement('button');
         changeBtn.className = 'change-recipe-btn';
         changeBtn.textContent = 'Change Recipe';
+        changeBtn.style.flex = '1';
         changeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             // Figure out if this is lunch or dinner
             const isLunch = card.closest('.batch-section').querySelector('.batch-section-header').textContent.includes('Lunch');
             this.startChangingBatchRecipe(weekNumber, isLunch ? 'lunch' : 'dinner', item);
         });
-        card.appendChild(changeBtn);
+        buttonsContainer.appendChild(changeBtn);
+
+        card.appendChild(buttonsContainer);
 
         return card;
     },
@@ -1078,5 +1128,154 @@ const UI = {
 
             summary.textContent = `${adultText} + ${childText}`;
         }
+    },
+
+    /**
+     * Open edit days modal for a batch recipe
+     */
+    openEditDaysModal(weekNumber, mealType, item) {
+        this.editingBatch = { weekNumber, mealType, item };
+
+        // Show recipe name
+        const recipeInfo = document.getElementById('editingRecipeInfo');
+        recipeInfo.textContent = `Editing: ${item.recipe.name}`;
+
+        // Populate checkboxes with current days
+        const dayCheckboxes = document.querySelectorAll('.day-checkbox');
+        dayCheckboxes.forEach(checkbox => {
+            checkbox.checked = item.days.includes(checkbox.value);
+        });
+
+        // Update portions summary
+        this.updatePortionsSummary();
+
+        // Open modal
+        this.openModal(this.elements.editBatchDaysModal);
+    },
+
+    /**
+     * Update portions summary based on selected days
+     */
+    updatePortionsSummary() {
+        if (!this.editingBatch) return;
+
+        const dayCheckboxes = document.querySelectorAll('.day-checkbox:checked');
+        const selectedDays = Array.from(dayCheckboxes).map(cb => cb.value);
+        const numDays = selectedDays.length;
+
+        const summary = document.getElementById('portionsSummary');
+
+        if (numDays === 0) {
+            summary.innerHTML = '<strong>⚠️ Please select at least one day</strong>';
+            return;
+        }
+
+        // Calculate portions needed
+        const config = App.config;
+        const portionsPerDay = config.adults + (config.children * 0.5);
+        const totalPortions = Math.ceil(portionsPerDay * numDays);
+
+        // Get base servings
+        let baseServings = 4;
+        if (typeof this.editingBatch.item.recipe.servings === 'number') {
+            baseServings = this.editingBatch.item.recipe.servings;
+        } else if (typeof this.editingBatch.item.recipe.servings === 'string') {
+            const match = this.editingBatch.item.recipe.servings.match(/(\d+)/);
+            baseServings = match ? parseInt(match[1]) : 4;
+        }
+
+        const multiplier = (totalPortions / baseServings).toFixed(1);
+
+        summary.innerHTML = `<strong>Selected:</strong> ${numDays} day${numDays > 1 ? 's' : ''} (${selectedDays.join(', ')})<br>` +
+                           `<strong>Total portions needed:</strong> ${totalPortions}<br>` +
+                           `<strong>Recipe multiplier:</strong> ${multiplier}x`;
+    },
+
+    /**
+     * Save batch days changes
+     */
+    saveBatchDaysChanges() {
+        if (!this.editingBatch) return;
+
+        const dayCheckboxes = document.querySelectorAll('.day-checkbox:checked');
+        const selectedDays = Array.from(dayCheckboxes).map(cb => cb.value);
+
+        if (selectedDays.length === 0) {
+            alert('Please select at least one day');
+            return;
+        }
+
+        // Update the item with new days and portions
+        const { weekNumber, mealType, item } = this.editingBatch;
+        const config = App.config;
+        const portionsPerDay = config.adults + (config.children * 0.5);
+        const totalPortions = Math.ceil(portionsPerDay * selectedDays.length);
+
+        item.days = selectedDays;
+        item.portions = totalPortions;
+
+        // Save and re-render
+        App.savePlan();
+        UI.renderMealPlan(App.currentMealPlan);
+
+        // Close modal
+        this.closeModal(this.elements.editBatchDaysModal);
+        this.editingBatch = null;
+
+        console.log('Batch days updated:', { weekNumber, mealType, days: selectedDays, portions: totalPortions });
+    },
+
+    /**
+     * Split batch recipe to daily recipes
+     */
+    splitBatchToDaily() {
+        if (!this.editingBatch) return;
+
+        if (!confirm('This will split this batch recipe into separate daily entries. Continue?')) {
+            return;
+        }
+
+        const { weekNumber, mealType, item } = this.editingBatch;
+        const week = App.currentMealPlan.weeks[weekNumber - 1];
+        const array = mealType === 'lunch' ? week.lunches : week.dinners;
+
+        // Find the item in the array
+        const index = array.findIndex(i =>
+            i.recipe.id === item.recipe.id &&
+            JSON.stringify(i.days) === JSON.stringify(item.days)
+        );
+
+        if (index === -1) {
+            alert('Could not find recipe to split');
+            return;
+        }
+
+        // Remove the batch item
+        array.splice(index, 1);
+
+        // Create individual daily items
+        const config = App.config;
+        const portionsPerDay = Math.ceil(config.adults + (config.children * 0.5));
+
+        item.days.forEach(day => {
+            array.push({
+                recipe: item.recipe,
+                days: [day],
+                portions: portionsPerDay,
+                prepTime: item.prepTime,
+                cookTime: item.cookTime,
+                isFamilyMeal: item.isFamilyMeal
+            });
+        });
+
+        // Save and re-render
+        App.savePlan();
+        UI.renderMealPlan(App.currentMealPlan);
+
+        // Close modal
+        this.closeModal(this.elements.editBatchDaysModal);
+        this.editingBatch = null;
+
+        console.log('Batch recipe split to daily entries');
     }
 };
