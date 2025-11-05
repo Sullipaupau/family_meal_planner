@@ -152,23 +152,31 @@ const UI = {
         // Render each week
         mealPlan.weeks.forEach((week, index) => {
             const weekView = document.querySelector(`.week-view[data-week="${week.weekNumber}"]`);
-            if (weekView) {
-                const container = weekView.querySelector('.days-container');
-                container.innerHTML = '';
-                container.className = 'batch-cooking-container';
-
-                // Render cooking time summary
-                const timeSummary = this.createCookingTimeSummary(week);
-                container.appendChild(timeSummary);
-
-                // Render lunches section
-                const lunchesSection = this.createBatchSection('🥗 Lunches (Mon-Fri)', week.lunches, week.weekNumber);
-                container.appendChild(lunchesSection);
-
-                // Render dinners section
-                const dinnersSection = this.createBatchSection('🍽️ Dinners', week.dinners, week.weekNumber);
-                container.appendChild(dinnersSection);
+            if (!weekView) {
+                console.warn(`Week view not found for week ${week.weekNumber}`);
+                return;
             }
+
+            const container = weekView.querySelector('.days-container');
+            if (!container) {
+                console.error(`Days container not found for week ${week.weekNumber}`);
+                return;
+            }
+
+            container.innerHTML = '';
+            container.className = 'batch-cooking-container';
+
+            // Render cooking time summary
+            const timeSummary = this.createCookingTimeSummary(week);
+            container.appendChild(timeSummary);
+
+            // Render lunches section
+            const lunchesSection = this.createBatchSection('🥗 Lunches (Mon-Fri)', week.lunches, week.weekNumber);
+            container.appendChild(lunchesSection);
+
+            // Render dinners section
+            const dinnersSection = this.createBatchSection('🍽️ Dinners', week.dinners, week.weekNumber);
+            container.appendChild(dinnersSection);
         });
 
         // Make sure week 1 is active
