@@ -25,31 +25,40 @@ const ShoppingListGenerator = {
         }
 
         const week = mealPlan.weeks[weekNumber - 1];
-        const recipeIds = new Set();
+        const ingredientMap = new Map(); // Track ingredients with portions needed
 
-        // Collect all unique recipe IDs from the week (excluding leftovers)
-        week.days.forEach(day => {
-            day.meals.forEach(meal => {
-                if (meal.recipeId) {
-                    recipeIds.add(meal.recipeId);
-                }
-                // Also include recipes that leftovers come from
-                if (meal.fromRecipeId) {
-                    recipeIds.add(meal.fromRecipeId);
+        // Collect all ingredients from lunches (batch cooking format)
+        if (week.lunches && Array.isArray(week.lunches)) {
+            week.lunches.forEach(item => {
+                if (item.recipe && item.recipe.ingredients) {
+                    const multiplier = item.portions / (item.recipe.servings || 4);
+                    item.recipe.ingredients.forEach(ingredient => {
+                        // For now, just collect unique ingredients
+                        // (Future enhancement: scale quantities by multiplier)
+                        if (!ingredientMap.has(ingredient)) {
+                            ingredientMap.set(ingredient, true);
+                        }
+                    });
                 }
             });
-        });
+        }
 
-        // Get all ingredients from these recipes
-        const allIngredients = [];
-        recipeIds.forEach(recipeId => {
-            const recipe = recipes.find(r => r.id === recipeId);
-            if (recipe && recipe.ingredients) {
-                recipe.ingredients.forEach(ingredient => {
-                    allIngredients.push(ingredient);
-                });
-            }
-        });
+        // Collect all ingredients from dinners (batch cooking format)
+        if (week.dinners && Array.isArray(week.dinners)) {
+            week.dinners.forEach(item => {
+                if (item.recipe && item.recipe.ingredients) {
+                    const multiplier = item.portions / (item.recipe.servings || 4);
+                    item.recipe.ingredients.forEach(ingredient => {
+                        if (!ingredientMap.has(ingredient)) {
+                            ingredientMap.set(ingredient, true);
+                        }
+                    });
+                }
+            });
+        }
+
+        // Convert map to array
+        const allIngredients = Array.from(ingredientMap.keys());
 
         // Organize into categories
         const categorizedList = this.categorizeIngredients(allIngredients);
