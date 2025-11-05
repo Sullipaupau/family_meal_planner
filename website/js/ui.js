@@ -121,7 +121,7 @@ const UI = {
     },
 
     /**
-     * Render the complete meal plan
+     * Render the complete meal plan (batch cooking format)
      */
     renderMealPlan(mealPlan) {
         if (!mealPlan || !mealPlan.weeks) {
@@ -133,16 +133,170 @@ const UI = {
         mealPlan.weeks.forEach((week, index) => {
             const weekView = document.querySelector(`.week-view[data-week="${week.weekNumber}"]`);
             if (weekView) {
-                const daysContainer = weekView.querySelector('.days-container');
-                daysContainer.innerHTML = '';
+                const container = weekView.querySelector('.days-container');
+                container.innerHTML = '';
+                container.className = 'batch-cooking-container';
 
-                // Render each day
-                week.days.forEach((day, dayIndex) => {
-                    const dayCard = this.createDayCard(day, week.weekNumber, dayIndex);
-                    daysContainer.appendChild(dayCard);
-                });
+                // Render cooking time summary
+                const timeSummary = this.createCookingTimeSummary(week);
+                container.appendChild(timeSummary);
+
+                // Render lunches section
+                const lunchesSection = this.createBatchSection('🥗 Lunches (Mon-Fri)', week.lunches, week.weekNumber);
+                container.appendChild(lunchesSection);
+
+                // Render dinners section
+                const dinnersSection = this.createBatchSection('🍽️ Dinners', week.dinners, week.weekNumber);
+                container.appendChild(dinnersSection);
             }
         });
+    },
+
+    /**
+     * Create cooking time summary banner
+     */
+    createCookingTimeSummary(week) {
+        const banner = document.createElement('div');
+        banner.className = 'cooking-time-banner';
+
+        const icon = document.createElement('span');
+        icon.className = 'time-icon';
+        icon.textContent = '⏱️';
+
+        const label = document.createElement('span');
+        label.className = 'time-label';
+        label.textContent = 'Total Batch Cooking Time:';
+
+        const time = document.createElement('span');
+        time.className = 'time-value';
+        time.textContent = week.totalCookingTime.formatted;
+
+        const breakdown = document.createElement('span');
+        breakdown.className = 'time-breakdown';
+        const prepFormatted = MealPlanGenerator.formatCookingTime(week.totalCookingTime.prep);
+        const cookFormatted = MealPlanGenerator.formatCookingTime(week.totalCookingTime.cook);
+        breakdown.textContent = '(' + prepFormatted + ' prep + ' + cookFormatted + ' cook)';
+
+        banner.appendChild(icon);
+        banner.appendChild(label);
+        banner.appendChild(time);
+        banner.appendChild(breakdown);
+
+        return banner;
+    },
+
+    /**
+     * Create a batch cooking section
+     */
+    createBatchSection(title, items, weekNumber) {
+        const section = document.createElement('div');
+        section.className = 'batch-section';
+
+        const header = document.createElement('h3');
+        header.className = 'batch-section-header';
+        header.textContent = title;
+        section.appendChild(header);
+
+        if (!items || items.length === 0) {
+            const empty = document.createElement('p');
+            empty.className = 'batch-empty';
+            empty.textContent = 'No items planned';
+            section.appendChild(empty);
+            return section;
+        }
+
+        items.forEach(item => {
+            const card = this.createBatchRecipeCard(item, weekNumber);
+            section.appendChild(card);
+        });
+
+        return section;
+    },
+
+    /**
+     * Create a batch recipe card
+     */
+    createBatchRecipeCard(item, weekNumber) {
+        const card = document.createElement('div');
+        card.className = 'batch-recipe-card';
+
+        if (item.isFamilyMeal) {
+            card.classList.add('family-meal');
+        }
+
+        // Header with recipe name
+        const header = document.createElement('div');
+        header.className = 'batch-recipe-header';
+
+        const icon = document.createElement('span');
+        icon.className = 'batch-recipe-icon';
+        const iconMap = {
+            'chicken': '🐔',
+            'beef': '🐄',
+            'pork': '🐷',
+            'lamb': '🐑',
+            'fish': '🐟'
+        };
+        icon.textContent = iconMap[item.recipe.protein] || '🍽️';
+
+        const name = document.createElement('span');
+        name.className = 'batch-recipe-name';
+        name.textContent = item.recipe.name;
+        name.style.cursor = 'pointer';
+        name.addEventListener('click', () => {
+            this.showRecipeModal(item.recipe.id);
+        });
+
+        header.appendChild(icon);
+        header.appendChild(name);
+
+        if (item.isFamilyMeal) {
+            const familyBadge = document.createElement('span');
+            familyBadge.className = 'family-badge';
+            familyBadge.textContent = '👨‍👩‍👧 Family';
+            header.appendChild(familyBadge);
+        }
+
+        card.appendChild(header);
+
+        // Details
+        const details = document.createElement('div');
+        details.className = 'batch-recipe-details';
+
+        // Days
+        const days = document.createElement('div');
+        days.className = 'batch-detail-item';
+        let daysText;
+        if (item.days.length === 1) {
+            daysText = item.days[0];
+        } else if (item.days.length === 7) {
+            daysText = 'Mon-Sun';
+        } else if (item.days.length === 5 && item.days[0] === 'Monday') {
+            daysText = 'Mon-Fri';
+        } else {
+            daysText = item.days[0] + '-' + item.days[item.days.length - 1];
+        }
+        days.innerHTML = '<strong>Days:</strong> ' + daysText;
+
+        // Portions
+        const portions = document.createElement('div');
+        portions.className = 'batch-detail-item';
+        portions.innerHTML = '<strong>Make:</strong> ' + item.portions + ' portions';
+
+        // Times
+        const times = document.createElement('div');
+        times.className = 'batch-detail-item';
+        const prepTime = MealPlanGenerator.formatCookingTime(item.prepTime);
+        const cookTime = MealPlanGenerator.formatCookingTime(item.cookTime);
+        times.innerHTML = '<strong>Time:</strong> ' + prepTime + ' prep + ' + cookTime + ' cook';
+
+        details.appendChild(days);
+        details.appendChild(portions);
+        details.appendChild(times);
+
+        card.appendChild(details);
+
+        return card;
     },
 
     /**
@@ -695,12 +849,17 @@ const UI = {
         // Load current config values
         const adultsInput = document.getElementById('adultsCount');
         const childrenInput = document.getElementById('childrenCount');
+        const lunchPortions = document.getElementById('lunchPortions');
+        const dinnerRecipes = document.getElementById('dinnerRecipes');
+        const weekendFamily = document.getElementById('weekendFamilyMeals');
+        const childSeparate = document.getElementById('childSeparateWeekdays');
 
-        if (adultsInput && childrenInput) {
-            adultsInput.value = App.config.adults;
-            childrenInput.value = App.config.children;
-            this.updateHouseholdSummary();
-        }
+        if (adultsInput) adultsInput.value = App.config.adults;
+        if (childrenInput) childrenInput.value = App.config.children;
+        if (lunchPortions) lunchPortions.value = App.config.lunchPortions || 10;
+        if (dinnerRecipes) dinnerRecipes.value = App.config.dinnerRecipes || 3;
+        if (weekendFamily) weekendFamily.checked = App.config.weekendFamilyMeals !== false;
+        if (childSeparate) childSeparate.checked = App.config.childSeparateWeekdays !== false;
 
         this.openModal(this.elements.configModal);
     },
@@ -711,18 +870,29 @@ const UI = {
     saveConfig() {
         const adultsInput = document.getElementById('adultsCount');
         const childrenInput = document.getElementById('childrenCount');
+        const lunchPortions = document.getElementById('lunchPortions');
+        const dinnerRecipes = document.getElementById('dinnerRecipes');
+        const weekendFamily = document.getElementById('weekendFamilyMeals');
+        const childSeparate = document.getElementById('childSeparateWeekdays');
 
-        if (adultsInput && childrenInput) {
-            const adults = parseInt(adultsInput.value) || 2;
-            const children = parseInt(childrenInput.value) || 0;
+        const config = {
+            adults: parseInt(adultsInput?.value) || 2,
+            children: parseInt(childrenInput?.value) || 0,
+            lunchPortions: parseInt(lunchPortions?.value) || 10,
+            dinnerRecipes: parseInt(dinnerRecipes?.value) || 3,
+            weekendFamilyMeals: weekendFamily?.checked !== false,
+            childSeparateWeekdays: childSeparate?.checked !== false
+        };
 
-            App.updateConfig(adults, children);
+        App.updateConfig(config);
 
-            // Show success message
-            alert(`Settings saved!\n\nHousehold: ${adults} adult${adults !== 1 ? 's' : ''} + ${children} child${children !== 1 ? 'ren' : ''}`);
+        // Show success message
+        alert(`Settings saved!\n\n` +
+            `Household: ${config.adults} adult${config.adults !== 1 ? 's' : ''} + ${config.children} child${config.children !== 1 ? 'ren' : ''}\n` +
+            `Lunch portions/week: ${config.lunchPortions}\n` +
+            `Different dinners/week: ${config.dinnerRecipes}`);
 
-            this.closeModal(this.elements.configModal);
-        }
+        this.closeModal(this.elements.configModal);
     },
 
     /**

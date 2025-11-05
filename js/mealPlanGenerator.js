@@ -1,28 +1,36 @@
 /**
- * Meal Plan Generator
- * Generates a 4-week meal plan following family rules:
- * - Sunday: Batch cooking day (2-3 large recipes)
- * - Lunches: Primarily leftovers from previous dinner
- * - Mid-week: Mix of quick-prep and freezer meals
- * - Variety: No same protein two days in row, 1+ fish per week
- * - Friday: Often flexible/leftovers
+ * Meal Plan Generator - Batch Cooking Edition
+ * Generates realistic batch cooking meal plans:
+ * - 1 lunch recipe for the whole week
+ * - 2-4 dinner recipes covering different days
+ * - Portion-based planning
+ * - Total cooking time calculation
  */
 
 const MealPlanGenerator = {
-    // Days of the week
     DAYS: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    WEEKDAYS: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    WEEKEND: ['Saturday', 'Sunday'],
 
     /**
      * Generate complete 4-week meal plan
      */
     generate(recipes) {
+        const config = App.config || {
+            lunchPortions: 10,
+            dinnerRecipes: 3,
+            weekendFamilyMeals: true,
+            childSeparateWeekdays: true
+        };
+
         const plan = {
-            weeks: []
+            weeks: [],
+            config: config
         };
 
         // Generate each week
         for (let weekNum = 1; weekNum <= 4; weekNum++) {
-            const week = this.generateWeek(recipes, weekNum);
+            const week = this.generateWeek(recipes, weekNum, config);
             plan.weeks.push(week);
         }
 
@@ -30,224 +38,87 @@ const MealPlanGenerator = {
     },
 
     /**
-     * Generate a single week's meal plan
+     * Generate a single week's batch cooking plan
      */
-    generateWeek(recipes, weekNumber) {
+    generateWeek(recipes, weekNumber, config) {
         const week = {
             weekNumber,
-            days: []
+            lunches: [],
+            dinners: [],
+            totalCookingTime: { prep: 0, cook: 0 }
         };
 
-        let previousDinnerProtein = null;
-        let previousDinnerRecipe = null;
-        let fishCount = 0;
-        let weekStart = true; // Track if we're at the start of the week
+        // Generate lunch plan (1 recipe for the whole week)
+        const lunchRecipe = this.selectRecipe(recipes, {
+            tags: ['batch-cooking', 'freezer-friendly'],
+            preferProtein: null
+        });
 
-        for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
-            const dayName = this.DAYS[dayIndex];
-            const day = {
-                name: dayName,
-                meals: []
-            };
+        if (lunchRecipe) {
+            week.lunches.push({
+                recipe: lunchRecipe,
+                portions: config.lunchPortions || 10,
+                days: this.WEEKDAYS,
+                prepTime: this.parseTime(lunchRecipe.prepTime),
+                cookTime: this.parseTime(lunchRecipe.cookTime)
+            });
 
-            // Sunday is batch cooking day
-            if (dayName === 'Sunday') {
-                day.special = 'Batch Day';
-
-                // Lunch: Light meal or leftovers (but not if it's the first day of the week)
-                if (previousDinnerRecipe && !weekStart) {
-                    day.meals.push({
-                        type: 'Lunch',
-                        name: 'Leftovers',
-                        isLeftover: true
-                    });
-                } else {
-                    // First Sunday or no previous meal - add a simple lunch recipe
-                    const lunchRecipe = this.selectRecipe(recipes, {
-                        tags: ['quick-prep'],
-                        excludeProtein: previousDinnerProtein
-                    });
-                    if (lunchRecipe) {
-                        day.meals.push({
-                            type: 'Lunch',
-                            recipeId: lunchRecipe.id,
-                            name: lunchRecipe.name,
-                            protein: lunchRecipe.protein
-                        });
-                    }
-                }
-
-                // Dinner: Big batch cooking recipe
-                const sundayRecipe = this.selectRecipe(recipes, {
-                    tags: ['batch-cooking', 'sunday-special'],
-                    excludeProtein: previousDinnerProtein,
-                    preferFish: fishCount === 0 && dayIndex > 4 // Ensure fish if haven't had any
-                });
-
-                if (sundayRecipe) {
-                    day.meals.push({
-                        type: 'Dinner',
-                        recipeId: sundayRecipe.id,
-                        name: sundayRecipe.name,
-                        protein: sundayRecipe.protein
-                    });
-                    previousDinnerProtein = sundayRecipe.protein;
-                    previousDinnerRecipe = sundayRecipe;
-                    if (sundayRecipe.protein === 'fish') fishCount++;
-                }
-                weekStart = false; // No longer at week start
-            }
-            // Monday typically uses Sunday leftovers
-            else if (dayName === 'Monday') {
-                // Lunch: Leftovers from weekend (only if there was a previous dinner this week)
-                if (previousDinnerRecipe && !weekStart) {
-                    day.meals.push({
-                        type: 'Lunch',
-                        name: 'Leftovers',
-                        isLeftover: true
-                    });
-                } else {
-                    // First Monday or no previous meal - add a simple lunch recipe
-                    const lunchRecipe = this.selectRecipe(recipes, {
-                        tags: ['quick-prep'],
-                        excludeProtein: previousDinnerProtein
-                    });
-                    if (lunchRecipe) {
-                        day.meals.push({
-                            type: 'Lunch',
-                            recipeId: lunchRecipe.id,
-                            name: lunchRecipe.name,
-                            protein: lunchRecipe.protein
-                        });
-                    }
-                }
-                weekStart = false; // No longer at week start
-
-                // Dinner: Can be leftover from Sunday batch or quick meal
-                if (previousDinnerRecipe && Math.random() > 0.3) {
-                    // 70% chance to use Sunday leftovers
-                    day.meals.push({
-                        type: 'Dinner',
-                        name: `${previousDinnerRecipe.name} (from Sunday)`,
-                        isLeftover: true,
-                        fromRecipeId: previousDinnerRecipe.id,
-                        protein: previousDinnerRecipe.protein
-                    });
-                } else {
-                    // Quick meal
-                    const recipe = this.selectRecipe(recipes, {
-                        tags: ['quick-prep', 'weeknight'],
-                        excludeProtein: previousDinnerProtein,
-                        preferFish: fishCount === 0 && dayIndex > 3
-                    });
-
-                    if (recipe) {
-                        day.meals.push({
-                            type: 'Dinner',
-                            recipeId: recipe.id,
-                            name: recipe.name,
-                            protein: recipe.protein
-                        });
-                        previousDinnerProtein = recipe.protein;
-                        previousDinnerRecipe = recipe;
-                        if (recipe.protein === 'fish') fishCount++;
-                    }
-                }
-            }
-            // Friday is flexible
-            else if (dayName === 'Friday') {
-                day.special = 'Flexible';
-
-                // Lunch: Leftovers
-                day.meals.push({
-                    type: 'Lunch',
-                    name: 'Leftovers',
-                    isLeftover: true
-                });
-
-                // Dinner: Often leftovers or quick meal
-                if (Math.random() > 0.5) {
-                    day.meals.push({
-                        type: 'Dinner',
-                        name: 'Flexible / Leftovers',
-                        isLeftover: true
-                    });
-                } else {
-                    const recipe = this.selectRecipe(recipes, {
-                        tags: ['quick-prep', 'weeknight'],
-                        excludeProtein: previousDinnerProtein,
-                        preferFish: fishCount === 0
-                    });
-
-                    if (recipe) {
-                        day.meals.push({
-                            type: 'Dinner',
-                            recipeId: recipe.id,
-                            name: recipe.name,
-                            protein: recipe.protein
-                        });
-                        previousDinnerProtein = recipe.protein;
-                        previousDinnerRecipe = recipe;
-                        if (recipe.protein === 'fish') fishCount++;
-                    }
-                }
-            }
-            // Regular weekdays (Tue-Thu, Sat)
-            else {
-                // Lunch: Leftovers from previous dinner
-                if (previousDinnerRecipe && !previousDinnerRecipe.isLeftover) {
-                    day.meals.push({
-                        type: 'Lunch',
-                        name: `${previousDinnerRecipe.name} (Leftovers)`,
-                        isLeftover: true,
-                        fromRecipeId: previousDinnerRecipe.id
-                    });
-                } else {
-                    day.meals.push({
-                        type: 'Lunch',
-                        name: 'Leftovers',
-                        isLeftover: true
-                    });
-                }
-
-                // Dinner: Mix of quick meals and batch-cooked freezer meals
-                let recipeOptions = {};
-
-                // Mid-week: prefer quick or freezer-friendly meals
-                if (['Tuesday', 'Wednesday', 'Thursday'].includes(dayName)) {
-                    recipeOptions = {
-                        tags: Math.random() > 0.5 ?
-                            ['quick-prep', 'weeknight'] :
-                            ['freezer-friendly'],
-                        excludeProtein: previousDinnerProtein,
-                        preferFish: fishCount === 0 && dayIndex > 2
-                    };
-                }
-                // Saturday: can be anything
-                else {
-                    recipeOptions = {
-                        excludeProtein: previousDinnerProtein,
-                        preferFish: fishCount === 0
-                    };
-                }
-
-                const recipe = this.selectRecipe(recipes, recipeOptions);
-
-                if (recipe) {
-                    day.meals.push({
-                        type: 'Dinner',
-                        recipeId: recipe.id,
-                        name: recipe.name,
-                        protein: recipe.protein
-                    });
-                    previousDinnerProtein = recipe.protein;
-                    previousDinnerRecipe = recipe;
-                    if (recipe.protein === 'fish') fishCount++;
-                }
-            }
-
-            week.days.push(day);
+            week.totalCookingTime.prep += this.parseTime(lunchRecipe.prepTime);
+            week.totalCookingTime.cook += this.parseTime(lunchRecipe.cookTime);
         }
+
+        // Generate dinner plan (2-4 recipes covering the week)
+        const numDinnerRecipes = config.dinnerRecipes || 3;
+        const availableDays = [...this.DAYS];
+        let usedProteins = lunchRecipe ? [lunchRecipe.protein] : [];
+
+        for (let i = 0; i < numDinnerRecipes; i++) {
+            if (availableDays.length === 0) break;
+
+            // Decide how many days this recipe will cover
+            const remainingRecipes = numDinnerRecipes - i;
+            const remainingDays = availableDays.length;
+            const daysForThisRecipe = Math.ceil(remainingDays / remainingRecipes);
+
+            // Select days for this recipe
+            const recipeDays = [];
+            for (let d = 0; d < daysForThisRecipe && availableDays.length > 0; d++) {
+                recipeDays.push(availableDays.shift());
+            }
+
+            // Determine if this is a family meal
+            const isFamilyMeal = config.weekendFamilyMeals &&
+                recipeDays.some(day => this.WEEKEND.includes(day));
+
+            // Select appropriate recipe
+            const dinnerRecipe = this.selectRecipe(recipes, {
+                tags: isFamilyMeal ? ['sunday-special', 'family-favorite'] : ['batch-cooking', 'weeknight'],
+                excludeProteins: usedProteins,
+                preferProtein: i === 0 ? 'fish' : null // Try to get fish in first dinner
+            });
+
+            if (dinnerRecipe) {
+                const portions = recipeDays.length * (App.config.adults + App.config.children);
+
+                week.dinners.push({
+                    recipe: dinnerRecipe,
+                    portions: portions,
+                    days: recipeDays,
+                    isFamilyMeal: isFamilyMeal,
+                    prepTime: this.parseTime(dinnerRecipe.prepTime),
+                    cookTime: this.parseTime(dinnerRecipe.cookTime)
+                });
+
+                week.totalCookingTime.prep += this.parseTime(dinnerRecipe.prepTime);
+                week.totalCookingTime.cook += this.parseTime(dinnerRecipe.cookTime);
+
+                usedProteins.push(dinnerRecipe.protein);
+            }
+        }
+
+        // Calculate total time in hours and minutes
+        week.totalCookingTime.total = week.totalCookingTime.prep + week.totalCookingTime.cook;
+        week.totalCookingTime.formatted = this.formatCookingTime(week.totalCookingTime.total);
 
         return week;
     },
@@ -258,14 +129,14 @@ const MealPlanGenerator = {
     selectRecipe(recipes, options = {}) {
         const {
             tags = [],
-            excludeProtein = null,
-            preferFish = false
+            excludeProteins = [],
+            preferProtein = null
         } = options;
 
-        // Filter recipes based on criteria
+        // Filter recipes
         let candidates = recipes.filter(recipe => {
-            // Exclude same protein as previous meal
-            if (excludeProtein && recipe.protein === excludeProtein) {
+            // Exclude used proteins
+            if (excludeProteins.includes(recipe.protein)) {
                 return false;
             }
 
@@ -282,23 +153,56 @@ const MealPlanGenerator = {
             return true;
         });
 
-        // If no candidates found, try without tag requirements
+        // If no candidates, try without tag requirements
         if (candidates.length === 0 && tags.length > 0) {
             candidates = recipes.filter(recipe =>
-                !excludeProtein || recipe.protein !== excludeProtein
+                !excludeProteins.includes(recipe.protein)
             );
         }
 
-        // If prefer fish, try to get fish first
-        if (preferFish) {
-            const fishRecipes = candidates.filter(r => r.protein === 'fish');
-            if (fishRecipes.length > 0) {
-                return this.getRandomElement(fishRecipes);
+        // If prefer specific protein, try that first
+        if (preferProtein) {
+            const preferred = candidates.filter(r => r.protein === preferProtein);
+            if (preferred.length > 0) {
+                return this.getRandomElement(preferred);
             }
         }
 
         // Return random candidate
         return candidates.length > 0 ? this.getRandomElement(candidates) : null;
+    },
+
+    /**
+     * Parse time string to minutes
+     */
+    parseTime(timeStr) {
+        if (!timeStr) return 0;
+
+        const match = timeStr.match(/(\d+)\s*(hour|minute|min|hr)/i);
+        if (!match) return 0;
+
+        const value = parseInt(match[1]);
+        const unit = match[2].toLowerCase();
+
+        if (unit.startsWith('hour') || unit.startsWith('hr')) {
+            return value * 60;
+        }
+        return value;
+    },
+
+    /**
+     * Format cooking time for display
+     */
+    formatCookingTime(minutes) {
+        if (minutes < 60) {
+            return `${minutes} min`;
+        }
+        const hours = Math.floor(minutes / 60);
+        const mins = minutes % 60;
+        if (mins === 0) {
+            return `${hours}h`;
+        }
+        return `${hours}h ${mins}min`;
     },
 
     /**
