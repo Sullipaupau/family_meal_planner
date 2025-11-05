@@ -14,7 +14,8 @@ const App = {
         lunchPortions: 10,
         dinnerRecipes: 3,
         weekendFamilyMeals: true,
-        childSeparateWeekdays: true
+        childSeparateWeekdays: true,
+        numberOfWeeks: 1
     },
 
     /**
