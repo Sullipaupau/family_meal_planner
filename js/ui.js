@@ -9,12 +9,14 @@ const UI = {
         generatePlanBtn: null,
         browseRecipesBtn: null,
         showShoppingListBtn: null,
+        showConfigBtn: null,
         weekTabs: null,
         weekViews: null,
         emptyState: null,
         recipeModal: null,
         recipeBrowserModal: null,
         shoppingListModal: null,
+        configModal: null,
         loadingOverlay: null
     },
 
@@ -29,12 +31,14 @@ const UI = {
         this.elements.generatePlanBtn = document.getElementById('generatePlanBtn');
         this.elements.browseRecipesBtn = document.getElementById('browseRecipesBtn');
         this.elements.showShoppingListBtn = document.getElementById('showShoppingListBtn');
+        this.elements.showConfigBtn = document.getElementById('showConfigBtn');
         this.elements.weekTabs = document.querySelectorAll('.week-tab');
         this.elements.weekViews = document.querySelectorAll('.week-view');
         this.elements.emptyState = document.getElementById('emptyState');
         this.elements.recipeModal = document.getElementById('recipeModal');
         this.elements.recipeBrowserModal = document.getElementById('recipeBrowserModal');
         this.elements.shoppingListModal = document.getElementById('shoppingListModal');
+        this.elements.configModal = document.getElementById('configModal');
         this.elements.loadingOverlay = document.getElementById('loadingOverlay');
 
         // Event listeners
@@ -48,6 +52,10 @@ const UI = {
 
         this.elements.showShoppingListBtn.addEventListener('click', () => {
             this.showShoppingListModal();
+        });
+
+        this.elements.showConfigBtn.addEventListener('click', () => {
+            this.showConfigModal();
         });
 
         // Week tab switching
@@ -68,7 +76,7 @@ const UI = {
         });
 
         // Close modal on background click
-        [this.elements.recipeModal, this.elements.recipeBrowserModal, this.elements.shoppingListModal].forEach(modal => {
+        [this.elements.recipeModal, this.elements.recipeBrowserModal, this.elements.shoppingListModal, this.elements.configModal].forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     this.closeModal(modal);
@@ -89,6 +97,25 @@ const UI = {
         if (generateShoppingBtn) {
             generateShoppingBtn.addEventListener('click', () => {
                 this.generateShoppingList();
+            });
+        }
+
+        // Config save button
+        const saveConfigBtn = document.getElementById('saveConfigBtn');
+        if (saveConfigBtn) {
+            saveConfigBtn.addEventListener('click', () => {
+                this.saveConfig();
+            });
+        }
+
+        // Update household summary when inputs change
+        const adultsInput = document.getElementById('adultsCount');
+        const childrenInput = document.getElementById('childrenCount');
+        if (adultsInput && childrenInput) {
+            [adultsInput, childrenInput].forEach(input => {
+                input.addEventListener('input', () => {
+                    this.updateHouseholdSummary();
+                });
             });
         }
     },
@@ -255,12 +282,12 @@ const UI = {
         document.getElementById('modalServings').textContent = recipe.servings;
         document.getElementById('modalDifficulty').textContent = recipe.difficulty;
 
-        // Ava-friendly section
-        if (recipe.avaFriendly) {
-            document.getElementById('modalAvaFriendly').textContent = recipe.avaFriendly;
-            document.getElementById('avaFriendlySection').style.display = 'block';
+        // Child-friendly section
+        if (recipe.childFriendly) {
+            document.getElementById('modalChildFriendly').textContent = recipe.childFriendly;
+            document.getElementById('childFriendlySection').style.display = 'block';
         } else {
-            document.getElementById('avaFriendlySection').style.display = 'none';
+            document.getElementById('childFriendlySection').style.display = 'none';
         }
 
         // Ingredients
@@ -658,6 +685,62 @@ const UI = {
         const changingMessage = document.getElementById('changingModeMessage');
         if (changingMessage) {
             changingMessage.style.display = 'none';
+        }
+    },
+
+    /**
+     * Show config modal
+     */
+    showConfigModal() {
+        // Load current config values
+        const adultsInput = document.getElementById('adultsCount');
+        const childrenInput = document.getElementById('childrenCount');
+
+        if (adultsInput && childrenInput) {
+            adultsInput.value = App.config.adults;
+            childrenInput.value = App.config.children;
+            this.updateHouseholdSummary();
+        }
+
+        this.openModal(this.elements.configModal);
+    },
+
+    /**
+     * Save config from modal
+     */
+    saveConfig() {
+        const adultsInput = document.getElementById('adultsCount');
+        const childrenInput = document.getElementById('childrenCount');
+
+        if (adultsInput && childrenInput) {
+            const adults = parseInt(adultsInput.value) || 2;
+            const children = parseInt(childrenInput.value) || 0;
+
+            App.updateConfig(adults, children);
+
+            // Show success message
+            alert(`Settings saved!\n\nHousehold: ${adults} adult${adults !== 1 ? 's' : ''} + ${children} child${children !== 1 ? 'ren' : ''}`);
+
+            this.closeModal(this.elements.configModal);
+        }
+    },
+
+    /**
+     * Update household summary display
+     */
+    updateHouseholdSummary() {
+        const adultsInput = document.getElementById('adultsCount');
+        const childrenInput = document.getElementById('childrenCount');
+        const summary = document.getElementById('householdSummary');
+
+        if (adultsInput && childrenInput && summary) {
+            const adults = parseInt(adultsInput.value) || 0;
+            const children = parseInt(childrenInput.value) || 0;
+
+            const adultText = adults === 1 ? '1 adult' : `${adults} adults`;
+            const childText = children === 0 ? 'no children' : children === 1 ? '1 child' : `${children} children`;
+
+            summary.textContent = `${adultText} + ${childText}`;
         }
     }
 };
