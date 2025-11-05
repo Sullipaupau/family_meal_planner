@@ -309,10 +309,21 @@ const UI = {
         }
         days.innerHTML = '<strong>Days:</strong> ' + daysText;
 
-        // Portions
+        // Portions with multiplier
         const portions = document.createElement('div');
         portions.className = 'batch-detail-item';
-        portions.innerHTML = '<strong>Make:</strong> ' + item.portions + ' portions';
+
+        // Parse recipe servings (e.g., "4-6" or "6")
+        const servingsMatch = item.recipe.servings.match(/(\d+)/);
+        const baseServings = servingsMatch ? parseInt(servingsMatch[1]) : 4;
+        const multiplier = (item.portions / baseServings).toFixed(1);
+
+        if (multiplier === '1.0') {
+            portions.innerHTML = '<strong>Make:</strong> ' + item.portions + ' portions (as per recipe)';
+        } else {
+            portions.innerHTML = '<strong>Make:</strong> ' + multiplier + 'x the recipe (' + item.portions + ' portions)';
+        }
+
 
         // Times
         const times = document.createElement('div');
@@ -837,6 +848,8 @@ const UI = {
      * Start changing a batch recipe
      */
     startChangingBatchRecipe(weekNumber, mealType, item) {
+        console.log('Starting to change batch recipe:', { weekNumber, mealType, recipeName: item.recipe.name });
+
         this.changingMeal = {
             weekNumber,
             mealType, // 'lunch' or 'dinner'
@@ -852,15 +865,22 @@ const UI = {
      * Confirm and execute recipe change
      */
     confirmChangeRecipe(recipe) {
-        if (!this.changingMeal) return;
+        console.log('confirmChangeRecipe called with:', { recipeName: recipe.name, changingMeal: this.changingMeal });
+
+        if (!this.changingMeal) {
+            console.log('No meal being changed - just viewing recipe');
+            return;
+        }
 
         // Handle batch recipe change
         if (this.changingMeal.isBatch) {
+            console.log('Handling batch recipe change');
             const { weekNumber, mealType, item } = this.changingMeal;
 
             // Get the week
             const week = App.currentMealPlan.weeks.find(w => w.weekNumber === weekNumber);
             if (!week) {
+                console.error('Week not found:', weekNumber);
                 alert('Error: Week not found');
                 return;
             }
@@ -869,7 +889,10 @@ const UI = {
             const array = mealType === 'lunch' ? week.lunches : week.dinners;
             const index = array.findIndex(i => i.recipe.id === item.recipe.id);
 
+            console.log('Found recipe at index:', index, 'in', mealType, 'array');
+
             if (index !== -1) {
+                console.log('Replacing', array[index].recipe.name, 'with', recipe.name);
                 // Update the recipe while keeping portions and days
                 array[index].recipe = recipe;
                 array[index].prepTime = MealPlanGenerator.parseTime(recipe.prepTime);
@@ -884,6 +907,9 @@ const UI = {
                 });
                 week.totalCookingTime.total = week.totalCookingTime.prep + week.totalCookingTime.cook;
                 week.totalCookingTime.formatted = MealPlanGenerator.formatCookingTime(week.totalCookingTime.total);
+                console.log('Recipe changed successfully, re-rendering');
+            } else {
+                console.error('Could not find recipe in array');
             }
 
             // Save and re-render
