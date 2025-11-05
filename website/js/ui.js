@@ -129,6 +129,26 @@ const UI = {
             return;
         }
 
+        // Show/hide week tabs based on number of weeks
+        const allWeekTabs = document.querySelectorAll('.week-tab');
+        const allWeekViews = document.querySelectorAll('.week-view');
+
+        allWeekTabs.forEach((tab, index) => {
+            if (index < mealPlan.weeks.length) {
+                tab.style.display = '';
+            } else {
+                tab.style.display = 'none';
+            }
+        });
+
+        allWeekViews.forEach((view, index) => {
+            if (index < mealPlan.weeks.length) {
+                view.style.display = '';
+            } else {
+                view.style.display = 'none';
+            }
+        });
+
         // Render each week
         mealPlan.weeks.forEach((week, index) => {
             const weekView = document.querySelector(`.week-view[data-week="${week.weekNumber}"]`);
@@ -150,6 +170,9 @@ const UI = {
                 container.appendChild(dinnersSection);
             }
         });
+
+        // Make sure week 1 is active
+        App.switchWeek(1);
     },
 
     /**
@@ -295,6 +318,18 @@ const UI = {
         details.appendChild(times);
 
         card.appendChild(details);
+
+        // Add change button
+        const changeBtn = document.createElement('button');
+        changeBtn.className = 'change-recipe-btn';
+        changeBtn.textContent = 'Change Recipe';
+        changeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Figure out if this is lunch or dinner
+            const isLunch = card.closest('.batch-section').querySelector('.batch-section-header').textContent.includes('Lunch');
+            this.startChangingBatchRecipe(weekNumber, isLunch ? 'lunch' : 'dinner', item);
+        });
+        card.appendChild(changeBtn);
 
         return card;
     },
@@ -791,11 +826,76 @@ const UI = {
     },
 
     /**
+     * Start changing a batch recipe
+     */
+    startChangingBatchRecipe(weekNumber, mealType, item) {
+        this.changingMeal = {
+            weekNumber,
+            mealType, // 'lunch' or 'dinner'
+            item,
+            isBatch: true
+        };
+
+        // Show recipe browser in "changing mode"
+        this.showRecipeBrowserModal(true);
+    },
+
+    /**
      * Confirm and execute recipe change
      */
     confirmChangeRecipe(recipe) {
         if (!this.changingMeal) return;
 
+        // Handle batch recipe change
+        if (this.changingMeal.isBatch) {
+            const { weekNumber, mealType, item } = this.changingMeal;
+
+            // Get the week
+            const week = App.currentMealPlan.weeks.find(w => w.weekNumber === weekNumber);
+            if (!week) {
+                alert('Error: Week not found');
+                return;
+            }
+
+            // Find and update the item in the correct array
+            const array = mealType === 'lunch' ? week.lunches : week.dinners;
+            const index = array.findIndex(i => i.recipe.id === item.recipe.id);
+
+            if (index !== -1) {
+                // Update the recipe while keeping portions and days
+                array[index].recipe = recipe;
+                array[index].prepTime = MealPlanGenerator.parseTime(recipe.prepTime);
+                array[index].cookTime = MealPlanGenerator.parseTime(recipe.cookTime);
+
+                // Recalculate total cooking time
+                week.totalCookingTime.prep = 0;
+                week.totalCookingTime.cook = 0;
+                [...week.lunches, ...week.dinners].forEach(item => {
+                    week.totalCookingTime.prep += item.prepTime;
+                    week.totalCookingTime.cook += item.cookTime;
+                });
+                week.totalCookingTime.total = week.totalCookingTime.prep + week.totalCookingTime.cook;
+                week.totalCookingTime.formatted = MealPlanGenerator.formatCookingTime(week.totalCookingTime.total);
+            }
+
+            // Save and re-render
+            App.savePlan();
+            this.renderMealPlan(App.currentMealPlan);
+
+            // Close modal and reset state
+            this.closeModal(this.elements.recipeBrowserModal);
+            this.changingMeal = null;
+
+            // Reset filter and hide changing message
+            document.getElementById('proteinFilter').value = 'all';
+            const changingMessage = document.getElementById('changingModeMessage');
+            if (changingMessage) {
+                changingMessage.style.display = 'none';
+            }
+            return;
+        }
+
+        // Handle old day-based meal change
         const { weekNumber, dayIndex, mealIndex } = this.changingMeal;
 
         // Get the week
@@ -853,6 +953,7 @@ const UI = {
         const dinnerRecipes = document.getElementById('dinnerRecipes');
         const weekendFamily = document.getElementById('weekendFamilyMeals');
         const childSeparate = document.getElementById('childSeparateWeekdays');
+        const numberOfWeeks = document.getElementById('numberOfWeeks');
 
         if (adultsInput) adultsInput.value = App.config.adults;
         if (childrenInput) childrenInput.value = App.config.children;
@@ -860,6 +961,7 @@ const UI = {
         if (dinnerRecipes) dinnerRecipes.value = App.config.dinnerRecipes || 3;
         if (weekendFamily) weekendFamily.checked = App.config.weekendFamilyMeals !== false;
         if (childSeparate) childSeparate.checked = App.config.childSeparateWeekdays !== false;
+        if (numberOfWeeks) numberOfWeeks.value = App.config.numberOfWeeks || 1;
 
         this.openModal(this.elements.configModal);
     },
@@ -874,6 +976,7 @@ const UI = {
         const dinnerRecipes = document.getElementById('dinnerRecipes');
         const weekendFamily = document.getElementById('weekendFamilyMeals');
         const childSeparate = document.getElementById('childSeparateWeekdays');
+        const numberOfWeeks = document.getElementById('numberOfWeeks');
 
         const config = {
             adults: parseInt(adultsInput?.value) || 2,
@@ -881,7 +984,8 @@ const UI = {
             lunchPortions: parseInt(lunchPortions?.value) || 10,
             dinnerRecipes: parseInt(dinnerRecipes?.value) || 3,
             weekendFamilyMeals: weekendFamily?.checked !== false,
-            childSeparateWeekdays: childSeparate?.checked !== false
+            childSeparateWeekdays: childSeparate?.checked !== false,
+            numberOfWeeks: parseInt(numberOfWeeks?.value) || 1
         };
 
         App.updateConfig(config);
@@ -889,6 +993,7 @@ const UI = {
         // Show success message
         alert(`Settings saved!\n\n` +
             `Household: ${config.adults} adult${config.adults !== 1 ? 's' : ''} + ${config.children} child${config.children !== 1 ? 'ren' : ''}\n` +
+            `Weeks to plan: ${config.numberOfWeeks}\n` +
             `Lunch portions/week: ${config.lunchPortions}\n` +
             `Different dinners/week: ${config.dinnerRecipes}`);
 

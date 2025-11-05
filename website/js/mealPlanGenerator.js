@@ -13,14 +13,15 @@ const MealPlanGenerator = {
     WEEKEND: ['Saturday', 'Sunday'],
 
     /**
-     * Generate complete 4-week meal plan
+     * Generate complete meal plan (1-4 weeks)
      */
     generate(recipes) {
         const config = App.config || {
             lunchPortions: 10,
             dinnerRecipes: 3,
             weekendFamilyMeals: true,
-            childSeparateWeekdays: true
+            childSeparateWeekdays: true,
+            numberOfWeeks: 1
         };
 
         const plan = {
@@ -28,8 +29,9 @@ const MealPlanGenerator = {
             config: config
         };
 
-        // Generate each week
-        for (let weekNum = 1; weekNum <= 4; weekNum++) {
+        // Generate each week based on config
+        const numWeeks = config.numberOfWeeks || 1;
+        for (let weekNum = 1; weekNum <= numWeeks; weekNum++) {
             const week = this.generateWeek(recipes, weekNum, config);
             plan.weeks.push(week);
         }
