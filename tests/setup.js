@@ -1,19 +1,24 @@
 // Test setup file
-import '@testing-library/jest-dom';
+require('@testing-library/jest-dom');
 
 // Mock localStorage
-const localStorageMock = {
-  getItem: jest.fn(),
+global.localStorage = {
+  getItem: jest.fn(() => null),
   setItem: jest.fn(),
   removeItem: jest.fn(),
   clear: jest.fn(),
 };
-global.localStorage = localStorageMock;
+
+// Mock console methods to reduce noise in test output
+const originalConsole = global.console;
+global.console = {
+  ...originalConsole,
+  log: jest.fn((...args) => originalConsole.log(...args)),
+  error: jest.fn((...args) => originalConsole.error(...args)),
+  warn: jest.fn((...args) => originalConsole.warn(...args)),
+};
 
 // Reset mocks before each test
 beforeEach(() => {
-  localStorage.getItem.mockClear();
-  localStorage.setItem.mockClear();
-  localStorage.removeItem.mockClear();
-  localStorage.clear.mockClear();
+  jest.clearAllMocks();
 });
