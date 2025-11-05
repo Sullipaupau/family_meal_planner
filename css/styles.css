@@ -538,7 +538,7 @@ body {
     background: var(--bg-light);
     border-radius: var(--radius-md);
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 .recipe-filters label {
@@ -553,6 +553,8 @@ body {
     font-size: 1rem;
     background: white;
     color: var(--text-dark);
+    position: relative;
+    z-index: 100;
 }
 
 .recipe-list-container {
@@ -562,11 +564,15 @@ body {
     max-height: 60vh;
     overflow-y: auto;
     padding: var(--spacing-xs);
+    position: relative;
+    z-index: 2;
 }
 
 .recipe-browser-card {
     background: white;
     border: 2px solid var(--bg-light);
+    position: relative;
+    z-index: 1;
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     cursor: pointer;
