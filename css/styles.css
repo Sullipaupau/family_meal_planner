@@ -1260,3 +1260,252 @@ body {
         width: 100%;
     }
 }
+
+/* ===================================
+   CALENDAR GRID LAYOUT
+   =================================== */
+
+.calendar-grid {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.calendar-week-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* Header Row */
+.calendar-header-row {
+    display: table-row;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+.calendar-header-cell {
+    display: table-cell;
+    padding: var(--spacing-md);
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 120px;
+}
+
+.calendar-header-cell:last-child {
+    border-right: none;
+}
+
+.meal-type-header {
+    min-width: 100px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Meal Rows */
+.calendar-meal-row {
+    display: table-row;
+}
+
+.calendar-meal-row:nth-child(even) {
+    background: var(--bg-light);
+}
+
+.calendar-meal-label {
+    display: table-cell;
+    padding: var(--spacing-md);
+    font-weight: 600;
+    color: var(--text-dark);
+    vertical-align: middle;
+    border-right: 2px solid var(--border-color);
+    background: white;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+}
+
+/* Day Cells */
+.calendar-day-cell {
+    display: table-cell;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    vertical-align: top;
+    min-height: 100px;
+    position: relative;
+}
+
+.calendar-day-cell.empty-meal {
+    background: #fafafa;
+    text-align: center;
+}
+
+.empty-meal-text {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    padding: var(--spacing-lg);
+}
+
+/* Meal Cards in Calendar */
+.calendar-meal-card {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    position: relative;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.calendar-meal-card:hover {
+    box-shadow: 0 2px 8px var(--shadow);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.calendar-meal-card.cook-today {
+    border-left: 4px solid var(--secondary-color);
+    background: linear-gradient(to right, #e8f8f5, white);
+}
+
+.calendar-meal-card.leftover {
+    border-left: 4px solid #f39c12;
+    background: linear-gradient(to right, #fef5e7, white);
+    opacity: 0.9;
+}
+
+/* Meal Badges */
+.meal-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cook-badge {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.leftover-badge {
+    background: #f39c12;
+    color: white;
+}
+
+/* Meal Name */
+.calendar-meal-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-xs);
+}
+
+.calendar-meal-card.leftover .calendar-meal-name {
+    color: var(--text-light);
+}
+
+/* Portions */
+.calendar-meal-portions {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Action Buttons */
+.calendar-meal-actions {
+    display: flex;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.calendar-action-btn {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.calendar-action-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Responsive Design for Calendar */
+@media (max-width: 1200px) {
+    .calendar-header-cell {
+        min-width: 100px;
+        font-size: 0.85rem;
+    }
+
+    .calendar-meal-name {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .calendar-week-grid {
+        display: block;
+    }
+
+    .calendar-header-row {
+        display: none; /* Hide header on mobile */
+    }
+
+    .calendar-meal-row {
+        display: block;
+        margin-bottom: var(--spacing-lg);
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+    }
+
+    .calendar-meal-label {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-md);
+        background: var(--primary-color);
+        color: white;
+        border-right: none;
+        position: static;
+    }
+
+    .calendar-day-cell {
+        display: block;
+        width: 100%;
+        border: none;
+        border-top: 1px solid var(--border-color);
+        padding: var(--spacing-md);
+    }
+
+    .calendar-day-cell::before {
+        content: attr(data-day);
+        display: block;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .calendar-day-cell.empty-meal::before {
+        content: attr(data-day) " - No meal planned";
+        color: var(--text-light);
+    }
+
+    .calendar-day-cell.empty-meal .empty-meal-text {
+        display: none;
+    }
+}
