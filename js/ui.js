@@ -164,7 +164,7 @@ const UI = {
             }
 
             container.innerHTML = '';
-            container.className = 'batch-cooking-container';
+            container.className = 'days-container batch-cooking-container';
 
             // Render cooking time summary
             const timeSummary = this.createCookingTimeSummary(week);
