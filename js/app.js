@@ -75,15 +75,18 @@ const App = {
         // Small delay to show loading animation
         setTimeout(() => {
             try {
+                console.log('Generating meal plan with config:', this.config);
                 this.currentMealPlan = MealPlanGenerator.generate(this.recipes);
+                console.log('Generated meal plan:', this.currentMealPlan);
                 this.savePlan();
                 UI.hideLoading();
                 UI.hideEmptyState();
                 UI.renderMealPlan(this.currentMealPlan);
             } catch (error) {
                 console.error('Error generating meal plan:', error);
+                console.error('Error stack:', error.stack);
                 UI.hideLoading();
-                alert('Failed to generate meal plan. Please try again.');
+                alert('Failed to generate meal plan. Please try again.\n\nError: ' + error.message);
             }
         }, 500);
     },
@@ -107,8 +110,23 @@ const App = {
         try {
             const savedPlan = localStorage.getItem('mealPlan');
             if (savedPlan) {
-                this.currentMealPlan = JSON.parse(savedPlan);
-                console.log('Loaded saved meal plan');
+                const plan = JSON.parse(savedPlan);
+
+                // Validate plan structure (check if it's the new batch format)
+                if (plan && plan.weeks && Array.isArray(plan.weeks) && plan.weeks.length > 0) {
+                    const firstWeek = plan.weeks[0];
+                    // Check if it's the new format (has lunches/dinners arrays)
+                    if (firstWeek.lunches && firstWeek.dinners) {
+                        this.currentMealPlan = plan;
+                        console.log('Loaded saved meal plan (batch format)');
+                    } else {
+                        console.log('Old meal plan format detected, clearing');
+                        localStorage.removeItem('mealPlan');
+                    }
+                } else {
+                    console.log('Invalid meal plan structure, clearing');
+                    localStorage.removeItem('mealPlan');
+                }
             }
         } catch (error) {
             console.error('Error loading saved meal plan:', error);

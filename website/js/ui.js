@@ -978,6 +978,9 @@ const UI = {
         const childSeparate = document.getElementById('childSeparateWeekdays');
         const numberOfWeeks = document.getElementById('numberOfWeeks');
 
+        const oldWeeks = App.config.numberOfWeeks;
+        const newWeeks = parseInt(numberOfWeeks?.value) || 1;
+
         const config = {
             adults: parseInt(adultsInput?.value) || 2,
             children: parseInt(childrenInput?.value) || 0,
@@ -985,7 +988,7 @@ const UI = {
             dinnerRecipes: parseInt(dinnerRecipes?.value) || 3,
             weekendFamilyMeals: weekendFamily?.checked !== false,
             childSeparateWeekdays: childSeparate?.checked !== false,
-            numberOfWeeks: parseInt(numberOfWeeks?.value) || 1
+            numberOfWeeks: newWeeks
         };
 
         App.updateConfig(config);
@@ -995,9 +998,16 @@ const UI = {
             `Household: ${config.adults} adult${config.adults !== 1 ? 's' : ''} + ${config.children} child${config.children !== 1 ? 'ren' : ''}\n` +
             `Weeks to plan: ${config.numberOfWeeks}\n` +
             `Lunch portions/week: ${config.lunchPortions}\n` +
-            `Different dinners/week: ${config.dinnerRecipes}`);
+            `Different dinners/week: ${config.dinnerRecipes}\n\n` +
+            `Click "Generate Meal Plan" to create a new plan with these settings.`);
 
         this.closeModal(this.elements.configModal);
+
+        // If week count changed and there's an existing plan, regenerate automatically
+        if (oldWeeks !== newWeeks && App.currentMealPlan) {
+            console.log(`Week count changed from ${oldWeeks} to ${newWeeks}, regenerating plan`);
+            setTimeout(() => App.generateNewPlan(), 500);
+        }
     },
 
     /**
