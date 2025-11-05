@@ -8,11 +8,18 @@ const App = {
     recipes: [],
     currentMealPlan: null,
     currentWeek: 1,
+    config: {
+        adults: 2,
+        children: 1
+    },
 
     /**
      * Initialize the application
      */
     async init() {
+        // Load config from localStorage
+        this.loadConfig();
+
         try {
             // Load recipes from JSON
             await this.loadRecipes();
@@ -117,6 +124,41 @@ const App = {
     switchWeek(weekNumber) {
         this.currentWeek = weekNumber;
         UI.switchWeek(weekNumber);
+    },
+
+    /**
+     * Save config to localStorage
+     */
+    saveConfig() {
+        try {
+            localStorage.setItem('mealPlanConfig', JSON.stringify(this.config));
+        } catch (error) {
+            console.error('Error saving config:', error);
+        }
+    },
+
+    /**
+     * Load config from localStorage
+     */
+    loadConfig() {
+        try {
+            const savedConfig = localStorage.getItem('mealPlanConfig');
+            if (savedConfig) {
+                this.config = JSON.parse(savedConfig);
+                console.log('Loaded config:', this.config);
+            }
+        } catch (error) {
+            console.error('Error loading config:', error);
+        }
+    },
+
+    /**
+     * Update config
+     */
+    updateConfig(adults, children) {
+        this.config.adults = adults;
+        this.config.children = children;
+        this.saveConfig();
     }
 };
 

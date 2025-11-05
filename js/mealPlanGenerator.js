@@ -41,6 +41,7 @@ const MealPlanGenerator = {
         let previousDinnerProtein = null;
         let previousDinnerRecipe = null;
         let fishCount = 0;
+        let weekStart = true; // Track if we're at the start of the week
 
         for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
             const dayName = this.DAYS[dayIndex];
@@ -53,12 +54,28 @@ const MealPlanGenerator = {
             if (dayName === 'Sunday') {
                 day.special = 'Batch Day';
 
-                // Lunch: Light meal or leftovers
-                day.meals.push({
-                    type: 'Lunch',
-                    name: 'Leftovers',
-                    isLeftover: true
-                });
+                // Lunch: Light meal or leftovers (but not if it's the first day of the week)
+                if (previousDinnerRecipe && !weekStart) {
+                    day.meals.push({
+                        type: 'Lunch',
+                        name: 'Leftovers',
+                        isLeftover: true
+                    });
+                } else {
+                    // First Sunday or no previous meal - add a simple lunch recipe
+                    const lunchRecipe = this.selectRecipe(recipes, {
+                        tags: ['quick-prep'],
+                        excludeProtein: previousDinnerProtein
+                    });
+                    if (lunchRecipe) {
+                        day.meals.push({
+                            type: 'Lunch',
+                            recipeId: lunchRecipe.id,
+                            name: lunchRecipe.name,
+                            protein: lunchRecipe.protein
+                        });
+                    }
+                }
 
                 // Dinner: Big batch cooking recipe
                 const sundayRecipe = this.selectRecipe(recipes, {
@@ -78,15 +95,33 @@ const MealPlanGenerator = {
                     previousDinnerRecipe = sundayRecipe;
                     if (sundayRecipe.protein === 'fish') fishCount++;
                 }
+                weekStart = false; // No longer at week start
             }
             // Monday typically uses Sunday leftovers
             else if (dayName === 'Monday') {
-                // Lunch: Leftovers from weekend
-                day.meals.push({
-                    type: 'Lunch',
-                    name: 'Leftovers',
-                    isLeftover: true
-                });
+                // Lunch: Leftovers from weekend (only if there was a previous dinner this week)
+                if (previousDinnerRecipe && !weekStart) {
+                    day.meals.push({
+                        type: 'Lunch',
+                        name: 'Leftovers',
+                        isLeftover: true
+                    });
+                } else {
+                    // First Monday or no previous meal - add a simple lunch recipe
+                    const lunchRecipe = this.selectRecipe(recipes, {
+                        tags: ['quick-prep'],
+                        excludeProtein: previousDinnerProtein
+                    });
+                    if (lunchRecipe) {
+                        day.meals.push({
+                            type: 'Lunch',
+                            recipeId: lunchRecipe.id,
+                            name: lunchRecipe.name,
+                            protein: lunchRecipe.protein
+                        });
+                    }
+                }
+                weekStart = false; // No longer at week start
 
                 // Dinner: Can be leftover from Sunday batch or quick meal
                 if (previousDinnerRecipe && Math.random() > 0.3) {

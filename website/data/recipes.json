@@ -34,11 +34,11 @@
         "Bake for 75 minutes until chicken is tender and sauce has thickened.",
         "Let cool slightly before serving or freezing portions."
       ],
-      "avaFriendly": "Perfect for Ava! Mild flavors and soft textures. Cut chicken into small pieces for her.",
       "adultsVariation": "Add a splash of white wine when making the sauce for extra depth.",
       "storageNotes": "Freezes brilliantly for up to 3 months. Perfect for batch cooking.",
       "prepTime": "20 minutes",
-      "cookTime": "75 minutes"
+      "cookTime": "75 minutes",
+      "childFriendly": "Perfect for children! Mild flavors and soft textures. Cut chicken into small pieces for them."
     },
     {
       "id": "spaghetti-bolognese",
@@ -72,11 +72,11 @@
         "Meanwhile, cook spaghetti according to package instructions.",
         "Serve bolognese over spaghetti with grated cheese."
       ],
-      "avaFriendly": "Ava loves this! The grated carrots add hidden veg. Cut the spaghetti into shorter pieces for easier eating.",
       "adultsVariation": "Add a splash of red wine with the tomatoes for a richer sauce.",
       "storageNotes": "Freeze the sauce (without pasta) in portions for up to 3 months.",
       "prepTime": "15 minutes",
-      "cookTime": "30 minutes"
+      "cookTime": "30 minutes",
+      "childFriendly": "Children love this! The grated carrots add hidden veg. Cut the spaghetti into shorter pieces for easier eating."
     },
     {
       "id": "fish-fingers-chips",
@@ -108,11 +108,11 @@
         "Bake for 15-20 minutes until golden and cooked through.",
         "Serve with chips and peas."
       ],
-      "avaFriendly": "Total winner with Ava! Much healthier than shop-bought versions.",
       "adultsVariation": "Serve with tartar sauce and malt vinegar.",
       "storageNotes": "Fish fingers can be frozen uncooked. Cook from frozen, adding 5 minutes to cooking time.",
       "prepTime": "15 minutes",
-      "cookTime": "30 minutes"
+      "cookTime": "30 minutes",
+      "childFriendly": "Total winner with children! Much healthier than shop-bought versions."
     },
     {
       "id": "chicken-stir-fry",
@@ -141,11 +141,11 @@
         "Toss everything together for 2 minutes.",
         "Serve over rice."
       ],
-      "avaFriendly": "Great for Ava! Mild and slightly sweet. Cut chicken into tiny pieces.",
       "adultsVariation": "Add chili flakes or sriracha for a kick.",
       "storageNotes": "Best eaten fresh, but leftovers keep for 2 days in the fridge.",
       "prepTime": "10 minutes",
-      "cookTime": "10 minutes"
+      "cookTime": "10 minutes",
+      "childFriendly": "Great for children! Mild and slightly sweet. Cut chicken into tiny pieces."
     },
     {
       "id": "beef-chili",
@@ -179,11 +179,11 @@
         "Add kidney beans, simmer for 10 more minutes.",
         "Serve with rice or jacket potatoes."
       ],
-      "avaFriendly": "Keep Ava's portion mild - use less chili powder in her serving. She likes it with rice.",
       "adultsVariation": "Add extra chili, jalape\u00f1os, or hot sauce to adult portions.",
       "storageNotes": "Freezes perfectly for up to 3 months.",
       "prepTime": "15 minutes",
-      "cookTime": "50 minutes"
+      "cookTime": "50 minutes",
+      "childFriendly": "Keep children's portion mild - use less chili powder in her serving. They like it with rice."
     },
     {
       "id": "salmon-pasta",
@@ -214,11 +214,11 @@
         "Drain pasta and peas, add to the sauce with salmon.",
         "Toss gently and serve."
       ],
-      "avaFriendly": "Ava enjoys this! Make sure to remove any bones and check the salmon carefully.",
       "adultsVariation": "Add capers or a splash of white wine to the sauce.",
       "storageNotes": "Best eaten fresh. Leftovers keep for 1 day.",
       "prepTime": "10 minutes",
-      "cookTime": "15 minutes"
+      "cookTime": "15 minutes",
+      "childFriendly": "children enjoys this! Make sure to remove any bones and check the salmon carefully."
     },
     {
       "id": "cottage-pie",
@@ -253,11 +253,11 @@
         "Sprinkle with cheese.",
         "Bake at 200\u00b0C (180\u00b0C fan) for 25 minutes until golden."
       ],
-      "avaFriendly": "Ava loves the creamy mash topping! Make sure the meat is well-cooked and not too chunky.",
       "adultsVariation": "Add a splash of red wine to the meat mixture.",
       "storageNotes": "Freezes well for up to 2 months. Can be cooked from frozen.",
       "prepTime": "30 minutes",
-      "cookTime": "45 minutes"
+      "cookTime": "45 minutes",
+      "childFriendly": "Children love the creamy mash topping! Make sure the meat is well-cooked and not too chunky."
     },
     {
       "id": "chicken-nuggets",
@@ -289,11 +289,11 @@
         "Bake for 20-25 minutes, turning halfway, until golden and cooked through.",
         "Serve with vegetables and ketchup."
       ],
-      "avaFriendly": "These are Ava's absolute favorite! So much better than shop-bought.",
       "adultsVariation": "Make a spicy version with cayenne pepper in the breadcrumbs.",
       "storageNotes": "Freeze uncooked nuggets. Cook from frozen, adding 5 minutes to cooking time.",
       "prepTime": "15 minutes",
-      "cookTime": "25 minutes"
+      "cookTime": "25 minutes",
+      "childFriendly": "These are children's absolute favorite! So much better than shop-bought."
     },
     {
       "id": "pork-sausage-casserole",
@@ -326,11 +326,11 @@
         "Bring to a simmer, then reduce heat and cook for 30 minutes.",
         "Serve with crusty bread."
       ],
-      "avaFriendly": "Ava likes this with the sausages cut into small pieces. Very filling and comforting.",
       "adultsVariation": "Add a splash of balsamic vinegar or red wine for depth.",
       "storageNotes": "Freezes well for up to 2 months.",
       "prepTime": "15 minutes",
-      "cookTime": "35 minutes"
+      "cookTime": "35 minutes",
+      "childFriendly": "children likes this with the sausages cut into small pieces. Very filling and comforting."
     },
     {
       "id": "fish-pie",
@@ -366,11 +366,11 @@
         "Sprinkle with cheese.",
         "Bake at 200\u00b0C (180\u00b0C fan) for 25-30 minutes until golden."
       ],
-      "avaFriendly": "Ava enjoys the creamy texture. Check carefully for any fish bones before serving.",
       "adultsVariation": "Add a splash of white wine to the sauce or top with a cheese crust.",
       "storageNotes": "Freezes well for up to 1 month.",
       "prepTime": "30 minutes",
-      "cookTime": "30 minutes"
+      "cookTime": "30 minutes",
+      "childFriendly": "children enjoys the creamy texture. Check carefully for any fish bones before serving."
     },
     {
       "id": "chicken-fajitas",
@@ -400,11 +400,11 @@
         "Warm tortillas according to package instructions.",
         "Serve chicken mixture with tortillas and toppings."
       ],
-      "avaFriendly": "Ava loves making her own! Use mild seasoning and let her build her own fajita (with help).",
       "adultsVariation": "Add jalape\u00f1os, hot sauce, or extra seasoning for adults.",
       "storageNotes": "Chicken mixture keeps for 2 days. Reheat thoroughly before serving.",
       "prepTime": "10 minutes",
-      "cookTime": "15 minutes"
+      "cookTime": "15 minutes",
+      "childFriendly": "Children love making her own! Use mild seasoning and let her build her own fajita (with help)."
     },
     {
       "id": "meatballs-tomato-sauce",
@@ -439,11 +439,11 @@
         "Cover and simmer for 25 minutes.",
         "Serve with spaghetti or rice."
       ],
-      "avaFriendly": "Ava thinks these are fun! Make smaller meatballs for her portions.",
       "adultsVariation": "Add red wine to the sauce or serve with parmesan.",
       "storageNotes": "Freeze meatballs in sauce for up to 3 months.",
       "prepTime": "20 minutes",
-      "cookTime": "30 minutes"
+      "cookTime": "30 minutes",
+      "childFriendly": "children thinks these are fun! Make smaller meatballs for them portions."
     },
     {
       "id": "roast-chicken-dinner",
@@ -475,11 +475,11 @@
         "Make gravy using pan juices and gravy granules.",
         "Carve chicken and serve with roast vegetables and gravy."
       ],
-      "avaFriendly": "Ava loves roast chicken! Give her tender breast meat cut into small pieces.",
       "adultsVariation": "Stuff the cavity with lemon and herbs for extra flavor.",
       "storageNotes": "Leftover chicken is perfect for sandwiches and meals throughout the week.",
       "prepTime": "20 minutes",
-      "cookTime": "100 minutes"
+      "cookTime": "100 minutes",
+      "childFriendly": "Children love roast chicken! Give them tender breast meat cut into small pieces."
     },
     {
       "id": "pork-chops-apples",
@@ -511,11 +511,11 @@
         "Return chops to the pan, simmer for 5 minutes until cooked through.",
         "Serve with mashed potatoes and green beans."
       ],
-      "avaFriendly": "The sweet apples make this appealing to Ava. Cut the pork into small pieces for her.",
       "adultsVariation": "Add a splash of cider or cream to the sauce.",
       "storageNotes": "Best eaten fresh. Leftovers keep for 1 day.",
       "prepTime": "10 minutes",
-      "cookTime": "20 minutes"
+      "cookTime": "20 minutes",
+      "childFriendly": "The sweet apples make this appealing to children. Cut the pork into small pieces for them."
     },
     {
       "id": "tuna-pasta-bake",
@@ -547,11 +547,11 @@
         "Bake for 25-30 minutes until bubbling and golden.",
         "Serve with salad or garlic bread."
       ],
-      "avaFriendly": "Ava enjoys the cheesy topping! Make sure tuna is well mixed in.",
       "adultsVariation": "Add chili flakes or capers for extra flavor.",
       "storageNotes": "Freezes well for up to 2 months.",
       "prepTime": "15 minutes",
-      "cookTime": "30 minutes"
+      "cookTime": "30 minutes",
+      "childFriendly": "children enjoys the cheesy topping! Make sure tuna is well mixed in."
     },
     {
       "id": "chicken-curry",
@@ -582,11 +582,11 @@
         "Return chicken to the pan, simmer for 20 minutes.",
         "Serve with rice and naan bread."
       ],
-      "avaFriendly": "Very mild and slightly sweet - perfect for Ava! She likes it with plain rice.",
       "adultsVariation": "Add extra curry powder, fresh chilies, or garam masala for adults.",
       "storageNotes": "Freezes perfectly for up to 3 months. Freeze without rice.",
       "prepTime": "15 minutes",
-      "cookTime": "25 minutes"
+      "cookTime": "25 minutes",
+      "childFriendly": "Very mild and slightly sweet - perfect for children! They like it with plain rice."
     },
     {
       "id": "beef-tacos",
@@ -615,11 +615,11 @@
         "Warm taco shells according to package instructions.",
         "Serve with toppings and let everyone build their own tacos."
       ],
-      "avaFriendly": "Ava loves the interactive element! Use soft tortillas for her and mild seasoning.",
       "adultsVariation": "Add jalape\u00f1os, hot sauce, or extra seasoning.",
       "storageNotes": "Meat mixture keeps for 2 days in the fridge.",
       "prepTime": "10 minutes",
-      "cookTime": "15 minutes"
+      "cookTime": "15 minutes",
+      "childFriendly": "Children love the interactive element! Use soft tortillas for them and mild seasoning."
     },
     {
       "id": "chicken-traybake",
@@ -650,11 +650,11 @@
         "Roast for 45-50 minutes until chicken is golden and vegetables are tender.",
         "Serve straight from the tin."
       ],
-      "avaFriendly": "Easy meal with everything cooked together. Remove chicken skin for Ava if preferred.",
       "adultsVariation": "Add chili flakes or garlic for extra flavor.",
       "storageNotes": "Leftovers keep for 2 days in the fridge.",
       "prepTime": "15 minutes",
-      "cookTime": "50 minutes"
+      "cookTime": "50 minutes",
+      "childFriendly": "Easy meal with everything cooked together. Remove chicken skin for children if preferred."
     },
     {
       "id": "salmon-vegetables",
@@ -685,11 +685,11 @@
         "Roast for 15 minutes until salmon is cooked through.",
         "Serve with lemon zest sprinkled over and couscous or new potatoes."
       ],
-      "avaFriendly": "Healthy and colorful! Check salmon carefully for bones before serving to Ava.",
       "adultsVariation": "Add white wine, capers, or herbs to the roasting tray.",
       "storageNotes": "Best eaten fresh. Leftovers keep for 1 day.",
       "prepTime": "10 minutes",
-      "cookTime": "25 minutes"
+      "cookTime": "25 minutes",
+      "childFriendly": "Healthy and colorful! Check salmon carefully for bones before serving to children."
     },
     {
       "id": "shepherds-pie",
@@ -724,11 +724,2560 @@
         "Sprinkle with cheese.",
         "Bake at 200\u00b0C (180\u00b0C fan) for 25 minutes until golden."
       ],
-      "avaFriendly": "Similar to cottage pie which Ava loves. Ensure the lamb is well-cooked and tender.",
       "adultsVariation": "Add a splash of red wine or fresh rosemary to the lamb.",
       "storageNotes": "Freezes well for up to 2 months.",
       "prepTime": "30 minutes",
+      "cookTime": "45 minutes",
+      "childFriendly": "Similar to cottage pie which Children love. Ensure the lamb is well-cooked and tender."
+    },
+    {
+      "id": "chicken-pie",
+      "name": "Chicken and Mushroom Pie",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "500g chicken breast, cubed",
+        "250g mushrooms, sliced",
+        "1 onion, diced",
+        "300ml chicken stock",
+        "200ml cream",
+        "2 tbsp flour",
+        "2 sheets puff pastry",
+        "Salt and pepper"
+      ],
+      "instructions": [
+        "Cook chicken in a pan until browned",
+        "Add onions and mushrooms",
+        "Stir in flour, then add stock and cream",
+        "Simmer until thickened",
+        "Pour into pie dish, cover with pastry",
+        "Bake at 200\u00b0C for 30 minutes"
+      ],
+      "childFriendly": "Children love the creamy filling! Make sure the filling is not too hot before serving.",
+      "adultsVariation": "Add white wine and fresh tarragon for extra flavor.",
+      "storageNotes": "Freezes well unbaked. Cook from frozen, adding 10 minutes.",
+      "prepTime": "25 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "beef-stew",
+      "name": "Hearty Beef Stew",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 8,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "800g beef chunks",
+        "4 carrots, chopped",
+        "3 potatoes, cubed",
+        "2 onions, diced",
+        "400ml beef stock",
+        "2 tbsp tomato pur\u00e9e",
+        "2 tbsp flour",
+        "Salt and pepper"
+      ],
+      "instructions": [
+        "Brown beef in batches",
+        "Add onions and cook 5 minutes",
+        "Stir in flour and tomato pur\u00e9e",
+        "Add stock, carrots, and potatoes",
+        "Simmer for 2 hours until tender",
+        "Serve with crusty bread"
+      ],
+      "childFriendly": "Children enjoy the tender meat and vegetables. Cut into small pieces for younger children.",
+      "adultsVariation": "Add red wine and herbs like thyme and rosemary.",
+      "storageNotes": "Freezes perfectly for up to 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "120 minutes"
+    },
+    {
+      "id": "pork-stir-fry",
+      "name": "Pork and Vegetable Stir-Fry",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g pork tenderloin, sliced",
+        "300g mixed vegetables",
+        "2 tbsp soy sauce",
+        "1 tbsp honey",
+        "2 garlic cloves, minced",
+        "1 tbsp oil",
+        "Cooked rice"
+      ],
+      "instructions": [
+        "Heat oil in wok",
+        "Stir-fry pork 5-6 minutes",
+        "Add vegetables and garlic",
+        "Mix in soy sauce and honey",
+        "Cook 5 minutes",
+        "Serve over rice"
+      ],
+      "childFriendly": "Sweet and savory flavors appeal to children. Use mild vegetables.",
+      "adultsVariation": "Add ginger and chili for extra kick.",
+      "storageNotes": "Best eaten fresh. Leftovers keep 2 days.",
+      "prepTime": "15 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "fish-tacos",
+      "name": "Fish Tacos with Slaw",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g white fish",
+        "8 taco shells",
+        "2 cups shredded cabbage",
+        "1 lime",
+        "1/2 cup mayo",
+        "1 tsp paprika",
+        "Salt and pepper"
+      ],
+      "instructions": [
+        "Season fish with paprika",
+        "Pan-fry fish 3-4 minutes per side",
+        "Mix cabbage with mayo and lime juice",
+        "Flake fish into taco shells",
+        "Top with slaw",
+        "Serve with lime wedges"
+      ],
+      "childFriendly": "Interactive meal that children enjoy building. Use soft tortillas for easier eating.",
+      "adultsVariation": "Add jalape\u00f1os and hot sauce.",
+      "storageNotes": "Fish best eaten fresh. Slaw keeps 1 day.",
+      "prepTime": "15 minutes",
+      "cookTime": "10 minutes"
+    },
+    {
+      "id": "lamb-curry",
+      "name": "Mild Lamb Curry",
+      "protein": "lamb",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "600g lamb shoulder, cubed",
+        "2 onions, diced",
+        "2 garlic cloves",
+        "1 tbsp mild curry powder",
+        "400g tinned tomatoes",
+        "200ml coconut milk",
+        "Rice to serve"
+      ],
+      "instructions": [
+        "Brown lamb in batches",
+        "Cook onions and garlic",
+        "Add curry powder, cook 1 minute",
+        "Add tomatoes and coconut milk",
+        "Simmer 90 minutes",
+        "Serve with rice"
+      ],
+      "childFriendly": "Mild curry suitable for children. Ensure lamb is tender and cut small.",
+      "adultsVariation": "Increase spices and add fresh chili.",
+      "storageNotes": "Freezes well for 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "90 minutes"
+    },
+    {
+      "id": "chicken-quesadillas",
+      "name": "Chicken Quesadillas",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g cooked chicken, shredded",
+        "200g cheese, grated",
+        "8 flour tortillas",
+        "1 bell pepper, diced",
+        "Sour cream and salsa"
+      ],
+      "instructions": [
+        "Mix chicken with cheese and pepper",
+        "Spread on 4 tortillas",
+        "Top with remaining tortillas",
+        "Cook in pan 2-3 minutes per side",
+        "Cut into wedges",
+        "Serve with sour cream"
+      ],
+      "childFriendly": "Children love the cheesy filling. Cut into small wedges for easy eating.",
+      "adultsVariation": "Add jalape\u00f1os and spicy seasonings.",
+      "storageNotes": "Best eaten fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "chicken-soup",
+      "name": "Chicken Noodle Soup",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "400g chicken breast",
+        "2 carrots, sliced",
+        "2 celery stalks",
+        "1 onion, diced",
+        "200g egg noodles",
+        "1.5L chicken stock",
+        "2 bay leaves"
+      ],
+      "instructions": [
+        "Simmer chicken in stock 20 minutes",
+        "Remove chicken, shred",
+        "Add vegetables to stock",
+        "Cook 15 minutes",
+        "Add noodles and chicken",
+        "Cook 10 minutes more"
+      ],
+      "childFriendly": "Comforting and gentle on tummies. Perfect for children feeling unwell.",
+      "adultsVariation": "Add fresh herbs like parsley and thyme.",
+      "storageNotes": "Freezes well without noodles. Add fresh noodles when reheating.",
+      "prepTime": "15 minutes",
       "cookTime": "45 minutes"
+    },
+    {
+      "id": "chicken-tikka",
+      "name": "Chicken Tikka Masala",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "600g chicken breast, cubed",
+        "200ml yogurt",
+        "2 tbsp tikka paste (mild)",
+        "400g tinned tomatoes",
+        "200ml cream",
+        "2 onions",
+        "Rice and naan"
+      ],
+      "instructions": [
+        "Marinate chicken in yogurt and 1 tbsp paste",
+        "Cook onions, add remaining paste",
+        "Add tomatoes, simmer 10 minutes",
+        "Cook chicken separately",
+        "Combine with sauce, add cream",
+        "Serve with rice"
+      ],
+      "childFriendly": "Mild and creamy version suitable for children. Ensure chicken is tender.",
+      "adultsVariation": "Use hot tikka paste and add fresh ginger.",
+      "storageNotes": "Freezes well for 3 months.",
+      "prepTime": "20 minutes (plus marinating)",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "chicken-risotto",
+      "name": "Chicken and Mushroom Risotto",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "weeknight",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "300g chicken breast, diced",
+        "300g risotto rice",
+        "200g mushrooms",
+        "1L chicken stock",
+        "1 onion",
+        "100g parmesan",
+        "White wine (optional)"
+      ],
+      "instructions": [
+        "Cook chicken, set aside",
+        "Cook onion and mushrooms",
+        "Add rice, stir 2 minutes",
+        "Add stock gradually, stirring",
+        "Stir in chicken and parmesan",
+        "Serve immediately"
+      ],
+      "childFriendly": "Creamy and comforting. Children enjoy the soft texture.",
+      "adultsVariation": "Add white wine and fresh herbs.",
+      "storageNotes": "Best eaten fresh. Doesn't freeze well.",
+      "prepTime": "15 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "chicken-schnitzel",
+      "name": "Chicken Schnitzel",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "kid-favorite"
+      ],
+      "ingredients": [
+        "4 chicken breasts, pounded thin",
+        "100g flour",
+        "2 eggs",
+        "150g breadcrumbs",
+        "Oil for frying",
+        "Lemon wedges",
+        "Salad to serve"
+      ],
+      "instructions": [
+        "Set up flour, egg, breadcrumb stations",
+        "Coat each chicken piece",
+        "Fry in oil 3-4 minutes per side",
+        "Drain on paper towels",
+        "Serve with lemon and salad"
+      ],
+      "childFriendly": "Crispy coating and mild flavor appeal to children. Cut into strips.",
+      "adultsVariation": "Serve with potato salad and capers.",
+      "storageNotes": "Best eaten fresh. Can refrigerate 1 day.",
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "beef-lasagne",
+      "name": "Classic Beef Lasagne",
+      "protein": "beef",
+      "difficulty": "medium",
+      "servings": 8,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "sunday-special"
+      ],
+      "ingredients": [
+        "500g beef mince",
+        "1 onion",
+        "2 garlic cloves",
+        "400g tinned tomatoes",
+        "300g lasagne sheets",
+        "500ml white sauce",
+        "200g mozzarella",
+        "Parmesan"
+      ],
+      "instructions": [
+        "Make bolognese with mince, onion, garlic, tomatoes",
+        "Layer bolognese, lasagne, white sauce",
+        "Repeat layers",
+        "Top with cheese",
+        "Bake 45 minutes at 180\u00b0C"
+      ],
+      "childFriendly": "Classic family favorite. Ensure it's not too hot before serving.",
+      "adultsVariation": "Add red wine to bolognese and fresh basil.",
+      "storageNotes": "Freezes excellently for 3 months.",
+      "prepTime": "30 minutes",
+      "cookTime": "45 minutes"
+    },
+    {
+      "id": "beef-burgers",
+      "name": "Homemade Beef Burgers",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "quick-prep",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "600g beef mince",
+        "1 onion, finely diced",
+        "1 egg",
+        "Salt and pepper",
+        "6 burger buns",
+        "Lettuce, tomato, cheese",
+        "Chips to serve"
+      ],
+      "instructions": [
+        "Mix mince with onion, egg, seasoning",
+        "Form into 6 patties",
+        "Grill or fry 4-5 minutes per side",
+        "Toast buns",
+        "Build burgers with toppings",
+        "Serve with chips"
+      ],
+      "childFriendly": "Children love making their own burgers. Use mild seasonings.",
+      "adultsVariation": "Add bacon and special sauce.",
+      "storageNotes": "Raw patties freeze well for 2 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "10 minutes"
+    },
+    {
+      "id": "beef-casserole",
+      "name": "Slow-Cooked Beef Casserole",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "sunday-special"
+      ],
+      "ingredients": [
+        "700g beef chunks",
+        "3 carrots",
+        "2 onions",
+        "3 potatoes",
+        "500ml beef stock",
+        "2 tbsp tomato pur\u00e9e",
+        "2 bay leaves",
+        "Herbs"
+      ],
+      "instructions": [
+        "Brown beef in batches",
+        "Add vegetables to casserole dish",
+        "Mix stock with tomato pur\u00e9e",
+        "Pour over meat and veg",
+        "Add bay leaves",
+        "Cook 3 hours at 160\u00b0C"
+      ],
+      "childFriendly": "Tender meat and vegetables. Perfect comfort food for children.",
+      "adultsVariation": "Add red wine and worcestershire sauce.",
+      "storageNotes": "Freezes well for 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "180 minutes"
+    },
+    {
+      "id": "beef-stroganoff",
+      "name": "Beef Stroganoff",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g beef strips",
+        "250g mushrooms",
+        "1 onion",
+        "200ml sour cream",
+        "2 tbsp flour",
+        "200ml beef stock",
+        "Rice or pasta"
+      ],
+      "instructions": [
+        "Brown beef, set aside",
+        "Cook onions and mushrooms",
+        "Stir in flour",
+        "Add stock gradually",
+        "Return beef, stir in sour cream",
+        "Serve with rice"
+      ],
+      "childFriendly": "Creamy sauce appeals to children. Ensure beef is tender.",
+      "adultsVariation": "Add brandy and paprika.",
+      "storageNotes": "Best eaten fresh. Keeps 2 days.",
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "beef-meatloaf",
+      "name": "Classic Meatloaf",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "600g beef mince",
+        "1 onion, finely diced",
+        "2 garlic cloves",
+        "100g breadcrumbs",
+        "2 eggs",
+        "3 tbsp ketchup",
+        "2 tbsp worcestershire sauce"
+      ],
+      "instructions": [
+        "Mix all ingredients except 1 tbsp ketchup",
+        "Form into loaf shape in baking dish",
+        "Brush with remaining ketchup",
+        "Bake 60 minutes at 180\u00b0C",
+        "Rest 10 minutes before slicing"
+      ],
+      "childFriendly": "Mild and familiar flavors. Slice thinly for children.",
+      "adultsVariation": "Add herbs and serve with gravy.",
+      "storageNotes": "Slices freeze well. Great for sandwiches.",
+      "prepTime": "15 minutes",
+      "cookTime": "60 minutes"
+    },
+    {
+      "id": "pork-ribs",
+      "name": "BBQ Pork Ribs",
+      "protein": "pork",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "sunday-special",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "1kg pork ribs",
+        "200ml BBQ sauce",
+        "2 tbsp honey",
+        "1 tbsp paprika",
+        "Salt and pepper",
+        "Coleslaw to serve"
+      ],
+      "instructions": [
+        "Season ribs with paprika, salt, pepper",
+        "Roast at 160\u00b0C for 90 minutes",
+        "Mix BBQ sauce with honey",
+        "Brush on ribs",
+        "Roast 30 minutes more, basting",
+        "Serve with coleslaw"
+      ],
+      "childFriendly": "Sweet and sticky ribs children enjoy. Provide wet wipes!",
+      "adultsVariation": "Add chili flakes to BBQ sauce.",
+      "storageNotes": "Leftovers keep 2 days. Reheat gently.",
+      "prepTime": "15 minutes",
+      "cookTime": "120 minutes"
+    },
+    {
+      "id": "pork-meatballs",
+      "name": "Pork Meatballs in Tomato Sauce",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "500g pork mince",
+        "1 onion, finely diced",
+        "1 egg",
+        "50g breadcrumbs",
+        "400g tinned tomatoes",
+        "2 garlic cloves",
+        "Spaghetti"
+      ],
+      "instructions": [
+        "Mix mince, half onion, egg, breadcrumbs",
+        "Form 20 meatballs",
+        "Brown in pan",
+        "Make sauce with tomatoes, garlic, remaining onion",
+        "Add meatballs, simmer 25 minutes",
+        "Serve with spaghetti"
+      ],
+      "childFriendly": "Fun shape and mild flavor. Make smaller meatballs for children.",
+      "adultsVariation": "Add herbs like oregano and basil.",
+      "storageNotes": "Freezes well for 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "pork-fried-rice",
+      "name": "Pork Fried Rice",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g pork, diced",
+        "3 cups cooked rice",
+        "2 eggs",
+        "100g frozen peas",
+        "2 carrots, diced",
+        "3 tbsp soy sauce",
+        "2 garlic cloves"
+      ],
+      "instructions": [
+        "Cook pork in wok, set aside",
+        "Scramble eggs, set aside",
+        "Stir-fry carrots and peas",
+        "Add rice, break up lumps",
+        "Add pork, eggs, soy sauce",
+        "Toss everything together"
+      ],
+      "childFriendly": "Children enjoy the varied textures. Use day-old rice for best results.",
+      "adultsVariation": "Add ginger and sesame oil.",
+      "storageNotes": "Best eaten fresh. Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "pork-schnitzel",
+      "name": "Pork Schnitzel",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "4 pork chops, pounded thin",
+        "100g flour",
+        "2 eggs",
+        "150g breadcrumbs",
+        "Oil for frying",
+        "Lemon",
+        "Potato salad"
+      ],
+      "instructions": [
+        "Set up coating stations",
+        "Coat pork in flour, egg, breadcrumbs",
+        "Fry 3-4 minutes per side",
+        "Drain on paper",
+        "Serve with lemon and potato salad"
+      ],
+      "childFriendly": "Crispy and mild. Children enjoy with ketchup.",
+      "adultsVariation": "Serve with capers and anchovies.",
+      "storageNotes": "Best eaten fresh.",
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "pulled-pork",
+      "name": "Slow Cooker Pulled Pork",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 8,
+      "tags": [
+        "batch-cooking",
+        "sunday-special"
+      ],
+      "ingredients": [
+        "1.5kg pork shoulder",
+        "200ml BBQ sauce",
+        "2 onions, sliced",
+        "3 garlic cloves",
+        "1 tbsp paprika",
+        "Burger buns",
+        "Coleslaw"
+      ],
+      "instructions": [
+        "Rub pork with paprika",
+        "Place in slow cooker with onions, garlic",
+        "Cook on low 8 hours",
+        "Shred with forks",
+        "Mix with BBQ sauce",
+        "Serve in buns with coleslaw"
+      ],
+      "childFriendly": "Tender, easy to eat. Children love in buns or wraps.",
+      "adultsVariation": "Add chipotle for smoky heat.",
+      "storageNotes": "Freezes excellently for 3 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "480 minutes"
+    },
+    {
+      "id": "salmon-teriyaki",
+      "name": "Teriyaki Salmon",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight",
+        "healthy"
+      ],
+      "ingredients": [
+        "4 salmon fillets",
+        "3 tbsp teriyaki sauce",
+        "1 tbsp honey",
+        "1 tsp ginger",
+        "Rice",
+        "Broccoli"
+      ],
+      "instructions": [
+        "Mix teriyaki, honey, ginger",
+        "Marinate salmon 15 minutes",
+        "Bake at 200\u00b0C for 15 minutes",
+        "Brush with marinade halfway",
+        "Serve with rice and broccoli"
+      ],
+      "childFriendly": "Sweet glaze appeals to children. Check for bones carefully.",
+      "adultsVariation": "Add sesame seeds and spring onions.",
+      "storageNotes": "Best eaten fresh.",
+      "prepTime": "20 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "fish-cakes",
+      "name": "Salmon Fish Cakes",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "400g salmon",
+        "400g mashed potato",
+        "2 spring onions",
+        "1 egg",
+        "100g breadcrumbs",
+        "2 tbsp mayo",
+        "Salad to serve"
+      ],
+      "instructions": [
+        "Flake cooked salmon",
+        "Mix with mashed potato, spring onions, mayo",
+        "Form into 6 cakes",
+        "Coat in beaten egg and breadcrumbs",
+        "Fry or bake until golden",
+        "Serve with salad"
+      ],
+      "childFriendly": "Familiar potato base makes these popular with children.",
+      "adultsVariation": "Add lemon zest and capers.",
+      "storageNotes": "Freeze uncooked for 2 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "tuna-pasta",
+      "name": "Tuna Pasta with Tomatoes",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g pasta",
+        "2 tins tuna",
+        "400g tinned tomatoes",
+        "2 garlic cloves",
+        "100g olives (optional)",
+        "Parmesan"
+      ],
+      "instructions": [
+        "Cook pasta",
+        "Saut\u00e9 garlic",
+        "Add tomatoes, simmer 10 minutes",
+        "Stir in drained tuna",
+        "Mix with pasta",
+        "Top with parmesan"
+      ],
+      "childFriendly": "Simple and familiar. Omit olives for children if preferred.",
+      "adultsVariation": "Add chili flakes and capers.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "cod-chips",
+      "name": "Baked Cod with Chips",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "family-favorite",
+        "weeknight"
+      ],
+      "ingredients": [
+        "4 cod fillets",
+        "800g potatoes",
+        "2 tbsp olive oil",
+        "1 lemon",
+        "Peas",
+        "Tartar sauce"
+      ],
+      "instructions": [
+        "Cut potatoes into chips",
+        "Toss with oil, bake 30 minutes at 200\u00b0C",
+        "Season cod, bake 15 minutes",
+        "Serve with lemon, peas, tartar sauce"
+      ],
+      "childFriendly": "Classic combination children enjoy. Check fish for bones.",
+      "adultsVariation": "Add herb butter to fish.",
+      "storageNotes": "Best eaten fresh.",
+      "prepTime": "15 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "prawn-pasta",
+      "name": "Garlic Prawn Pasta",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g pasta",
+        "300g prawns",
+        "4 garlic cloves",
+        "100ml cream",
+        "2 tbsp butter",
+        "Parsley",
+        "Parmesan"
+      ],
+      "instructions": [
+        "Cook pasta",
+        "Melt butter, cook garlic",
+        "Add prawns, cook 3 minutes",
+        "Stir in cream",
+        "Toss with pasta",
+        "Serve with parmesan"
+      ],
+      "childFriendly": "Mild and creamy. Ensure prawns are properly cooked.",
+      "adultsVariation": "Add white wine and chili.",
+      "storageNotes": "Best eaten fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "lamb-chops",
+      "name": "Grilled Lamb Chops",
+      "protein": "lamb",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "8 lamb chops",
+        "2 garlic cloves",
+        "2 tbsp olive oil",
+        "1 tsp rosemary",
+        "Salt and pepper",
+        "Mashed potato",
+        "Green beans"
+      ],
+      "instructions": [
+        "Rub chops with garlic, oil, rosemary",
+        "Season well",
+        "Grill 4-5 minutes per side",
+        "Rest 5 minutes",
+        "Serve with mash and beans"
+      ],
+      "childFriendly": "Simple preparation. Ensure chops are not too fatty for children.",
+      "adultsVariation": "Serve with mint sauce and red wine jus.",
+      "storageNotes": "Best eaten fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "10 minutes"
+    },
+    {
+      "id": "lamb-stew",
+      "name": "Irish Lamb Stew",
+      "protein": "lamb",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "600g lamb shoulder, cubed",
+        "4 potatoes",
+        "3 carrots",
+        "2 onions",
+        "500ml lamb stock",
+        "2 bay leaves",
+        "Thyme"
+      ],
+      "instructions": [
+        "Brown lamb",
+        "Layer lamb, vegetables in pot",
+        "Pour over stock",
+        "Add herbs",
+        "Simmer 2 hours",
+        "Serve with crusty bread"
+      ],
+      "childFriendly": "Hearty and warming. Ensure lamb is very tender.",
+      "adultsVariation": "Add pearl barley and worcestershire sauce.",
+      "storageNotes": "Freezes well for 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "120 minutes"
+    },
+    {
+      "id": "lamb-kofta",
+      "name": "Lamb Kofta with Flatbread",
+      "protein": "lamb",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "interactive-meal"
+      ],
+      "ingredients": [
+        "500g lamb mince",
+        "1 onion, finely diced",
+        "2 garlic cloves",
+        "1 tsp cumin",
+        "1 tsp coriander",
+        "Flatbreads",
+        "Yogurt",
+        "Salad"
+      ],
+      "instructions": [
+        "Mix lamb with spices, onion, garlic",
+        "Form into 8 sausage shapes",
+        "Grill 10-12 minutes",
+        "Warm flatbreads",
+        "Serve with yogurt and salad"
+      ],
+      "childFriendly": "Children enjoy making their own wraps. Use mild spicing.",
+      "adultsVariation": "Add extra spices and serve with tahini.",
+      "storageNotes": "Kofta freeze well uncooked.",
+      "prepTime": "15 minutes",
+      "cookTime": "12 minutes"
+    },
+    {
+      "id": "moussaka",
+      "name": "Simple Moussaka",
+      "protein": "lamb",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "sunday-special"
+      ],
+      "ingredients": [
+        "500g lamb mince",
+        "2 aubergines, sliced",
+        "1 onion",
+        "400g tinned tomatoes",
+        "2 tbsp tomato pur\u00e9e",
+        "500ml white sauce",
+        "100g cheese"
+      ],
+      "instructions": [
+        "Grill aubergine slices",
+        "Brown lamb with onion",
+        "Add tomatoes, pur\u00e9e, simmer",
+        "Layer lamb, aubergine, white sauce",
+        "Top with cheese",
+        "Bake 45 minutes at 180\u00b0C"
+      ],
+      "childFriendly": "Rich flavors but children often enjoy this. Ensure it's not too hot.",
+      "adultsVariation": "Add cinnamon to lamb mixture.",
+      "storageNotes": "Freezes well for 2 months.",
+      "prepTime": "30 minutes",
+      "cookTime": "45 minutes"
+    },
+    {
+      "id": "vegetable-soup",
+      "name": "Hearty Vegetable Soup",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly",
+        "healthy"
+      ],
+      "ingredients": [
+        "3 carrots",
+        "2 potatoes",
+        "2 onions",
+        "2 celery stalks",
+        "400g tinned tomatoes",
+        "1L vegetable stock",
+        "Pasta or rice",
+        "Herbs"
+      ],
+      "instructions": [
+        "Chop all vegetables",
+        "Saut\u00e9 onions and celery",
+        "Add remaining veg and tomatoes",
+        "Pour in stock",
+        "Simmer 30 minutes",
+        "Add pasta/rice if desired"
+      ],
+      "childFriendly": "Nutritious and comforting. Blend smooth if children prefer.",
+      "adultsVariation": "Add beans and spices.",
+      "storageNotes": "Freezes well for 3 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "jacket-potatoes",
+      "name": "Loaded Jacket Potatoes",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "4 large potatoes",
+        "200g cheese",
+        "Butter",
+        "Various toppings: beans, tuna, chicken, coleslaw"
+      ],
+      "instructions": [
+        "Prick potatoes, bake 90 minutes at 200\u00b0C",
+        "Or microwave 15-20 minutes",
+        "Cut open, add butter",
+        "Top with chosen fillings",
+        "Serve with salad"
+      ],
+      "childFriendly": "Children love choosing their own toppings.",
+      "adultsVariation": "Add sour cream and chives.",
+      "storageNotes": "Potatoes keep 2 days. Reheat thoroughly.",
+      "prepTime": "5 minutes",
+      "cookTime": "90 minutes"
+    },
+    {
+      "id": "mac-cheese",
+      "name": "Creamy Mac and Cheese",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "kid-favorite",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "400g macaroni",
+        "50g butter",
+        "50g flour",
+        "600ml milk",
+        "300g cheddar cheese",
+        "50g breadcrumbs",
+        "Mustard (optional)"
+      ],
+      "instructions": [
+        "Cook macaroni",
+        "Make roux with butter and flour",
+        "Add milk gradually",
+        "Stir in most of cheese",
+        "Mix with pasta",
+        "Top with breadcrumbs and remaining cheese",
+        "Bake 25 minutes"
+      ],
+      "childFriendly": "Ultimate children's favorite. Creamy and comforting.",
+      "adultsVariation": "Add bacon and different cheeses.",
+      "storageNotes": "Freezes well for 2 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
+    },
+    {
+      "id": "pizza-homemade",
+      "name": "Homemade Pizza",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "interactive-meal",
+        "family-favorite",
+        "weeknight"
+      ],
+      "ingredients": [
+        "Pizza dough (homemade or bought)",
+        "200g tomato sauce",
+        "300g mozzarella",
+        "Various toppings: pepperoni, ham, vegetables, chicken"
+      ],
+      "instructions": [
+        "Roll out dough",
+        "Spread tomato sauce",
+        "Add cheese and toppings",
+        "Bake at 220\u00b0C for 12-15 minutes",
+        "Slice and serve"
+      ],
+      "childFriendly": "Children love making their own pizzas with their favorite toppings.",
+      "adultsVariation": "Try gourmet toppings like prosciutto and rocket.",
+      "storageNotes": "Dough freezes well. Cooked pizza keeps 2 days.",
+      "prepTime": "20 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "chicken-wraps",
+      "name": "Chicken Caesar Wraps",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "4 large tortillas",
+        "300g cooked chicken",
+        "Lettuce",
+        "Caesar dressing",
+        "Parmesan",
+        "Croutons (optional)"
+      ],
+      "instructions": [
+        "Slice chicken",
+        "Lay out tortillas",
+        "Add lettuce, chicken",
+        "Drizzle with dressing",
+        "Sprinkle parmesan",
+        "Roll up tightly",
+        "Slice in half"
+      ],
+      "childFriendly": "Easy to eat and customize. Children can help assemble.",
+      "adultsVariation": "Add bacon and anchovies.",
+      "storageNotes": "Best made fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "0 minutes"
+    },
+    {
+      "id": "chicken-wings",
+      "name": "Sticky Chicken Wings",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "kid-favorite"
+      ],
+      "ingredients": [
+        "1kg chicken wings",
+        "3 tbsp honey",
+        "2 tbsp soy sauce",
+        "1 tbsp garlic powder"
+      ],
+      "instructions": [
+        "Mix honey, soy, garlic",
+        "Coat wings",
+        "Bake 40 minutes at 200\u00b0C",
+        "Serve with rice"
+      ],
+      "childFriendly": "Sweet and sticky. Provide plenty of napkins!",
+      "adultsVariation": "Add hot sauce for heat.",
+      "storageNotes": "Keep 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "40 minutes"
+    },
+    {
+      "id": "chicken-burrito",
+      "name": "Chicken Burrito Bowls",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g chicken",
+        "Rice",
+        "Black beans",
+        "Corn",
+        "Salsa",
+        "Cheese",
+        "Sour cream"
+      ],
+      "instructions": [
+        "Cook chicken, dice",
+        "Prepare rice",
+        "Layer rice, beans, corn, chicken",
+        "Top with salsa, cheese, cream"
+      ],
+      "childFriendly": "Interactive meal children enjoy building.",
+      "adultsVariation": "Add jalape\u00f1os and guacamole.",
+      "storageNotes": "Components keep 2 days.",
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "chicken-satay",
+      "name": "Chicken Satay with Peanut Sauce",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g chicken",
+        "200g peanut butter",
+        "2 tbsp soy sauce",
+        "1 tbsp honey",
+        "Lime juice",
+        "Rice"
+      ],
+      "instructions": [
+        "Thread chicken on skewers",
+        "Grill 10 minutes",
+        "Mix peanut butter, soy, honey, lime",
+        "Serve chicken with sauce and rice"
+      ],
+      "childFriendly": "Children love peanut sauce. Check for allergies!",
+      "adultsVariation": "Add chili to sauce.",
+      "storageNotes": "Sauce keeps 3 days.",
+      "prepTime": "15 minutes",
+      "cookTime": "10 minutes"
+    },
+    {
+      "id": "chicken-parmesan",
+      "name": "Chicken Parmesan",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "family-favorite",
+        "weeknight"
+      ],
+      "ingredients": [
+        "4 chicken breasts",
+        "Breadcrumbs",
+        "Eggs",
+        "200g mozzarella",
+        "400g tomato sauce",
+        "Spaghetti"
+      ],
+      "instructions": [
+        "Bread chicken",
+        "Fry until golden",
+        "Top with sauce and cheese",
+        "Bake 15 minutes",
+        "Serve with spaghetti"
+      ],
+      "childFriendly": "Cheesy and delicious. Children love this.",
+      "adultsVariation": "Add fresh basil and parmesan.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "20 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "chicken-korma",
+      "name": "Mild Chicken Korma",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "600g chicken",
+        "2 onions",
+        "3 tbsp korma paste (mild)",
+        "200ml coconut milk",
+        "100ml cream",
+        "Rice",
+        "Naan"
+      ],
+      "instructions": [
+        "Cook onions",
+        "Add paste",
+        "Add chicken",
+        "Pour in coconut milk and cream",
+        "Simmer 20 minutes",
+        "Serve with rice"
+      ],
+      "childFriendly": "Very mild and creamy. Perfect for children.",
+      "adultsVariation": "Add extra spices.",
+      "storageNotes": "Freezes well 3 months.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
+    },
+    {
+      "id": "beef-stir-fry",
+      "name": "Beef and Broccoli Stir-Fry",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g beef strips",
+        "300g broccoli",
+        "3 tbsp soy sauce",
+        "2 tbsp oyster sauce",
+        "2 garlic cloves",
+        "Rice"
+      ],
+      "instructions": [
+        "Stir-fry beef",
+        "Add broccoli and garlic",
+        "Mix in sauces",
+        "Serve over rice"
+      ],
+      "childFriendly": "Simple flavors. Ensure broccoli is tender.",
+      "adultsVariation": "Add ginger and chili.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "beef-curry",
+      "name": "Mild Beef Curry",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "600g beef chunks",
+        "2 onions",
+        "2 tbsp mild curry powder",
+        "400g tinned tomatoes",
+        "200ml coconut milk",
+        "Rice"
+      ],
+      "instructions": [
+        "Brown beef",
+        "Cook onions",
+        "Add curry powder",
+        "Add tomatoes and coconut milk",
+        "Simmer 90 minutes",
+        "Serve with rice"
+      ],
+      "childFriendly": "Mild and suitable for children.",
+      "adultsVariation": "Increase spices.",
+      "storageNotes": "Freezes well 3 months.",
+      "prepTime": "20 minutes",
+      "cookTime": "90 minutes"
+    },
+    {
+      "id": "beef-pot-roast",
+      "name": "Pot Roast Beef",
+      "protein": "beef",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "sunday-special",
+        "batch-cooking"
+      ],
+      "ingredients": [
+        "1.5kg beef joint",
+        "4 carrots",
+        "3 onions",
+        "3 potatoes",
+        "500ml beef stock",
+        "Herbs"
+      ],
+      "instructions": [
+        "Brown beef",
+        "Add vegetables",
+        "Pour over stock",
+        "Roast 3 hours at 160\u00b0C",
+        "Slice and serve"
+      ],
+      "childFriendly": "Tender and flavorful. Children enjoy with gravy.",
+      "adultsVariation": "Add red wine.",
+      "storageNotes": "Leftovers great for sandwiches.",
+      "prepTime": "20 minutes",
+      "cookTime": "180 minutes"
+    },
+    {
+      "id": "beef-kebabs",
+      "name": "Beef Kebabs",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "500g beef cubes",
+        "2 bell peppers",
+        "1 onion",
+        "Marinade",
+        "Rice",
+        "Salad"
+      ],
+      "instructions": [
+        "Marinate beef 30 minutes",
+        "Thread on skewers with vegetables",
+        "Grill 10-12 minutes",
+        "Serve with rice and salad"
+      ],
+      "childFriendly": "Fun to eat. Ensure beef is tender.",
+      "adultsVariation": "Spicy marinade.",
+      "storageNotes": "Marinated beef keeps 2 days.",
+      "prepTime": "40 minutes",
+      "cookTime": "12 minutes"
+    },
+    {
+      "id": "beef-goulash",
+      "name": "Beef Goulash",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "600g beef chunks",
+        "2 onions",
+        "2 tbsp paprika",
+        "400g tinned tomatoes",
+        "300ml beef stock",
+        "Pasta or potatoes"
+      ],
+      "instructions": [
+        "Brown beef",
+        "Cook onions",
+        "Add paprika",
+        "Add tomatoes and stock",
+        "Simmer 2 hours",
+        "Serve with pasta"
+      ],
+      "childFriendly": "Rich and hearty. Ensure beef is very tender.",
+      "adultsVariation": "Add sour cream.",
+      "storageNotes": "Freezes well.",
+      "prepTime": "20 minutes",
+      "cookTime": "120 minutes"
+    },
+    {
+      "id": "pork-burgers",
+      "name": "Pork and Apple Burgers",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "500g pork mince",
+        "1 apple, grated",
+        "1 onion, diced",
+        "1 egg",
+        "Buns",
+        "Salad"
+      ],
+      "instructions": [
+        "Mix pork with apple, onion, egg",
+        "Form into patties",
+        "Grill 5 minutes per side",
+        "Serve in buns"
+      ],
+      "childFriendly": "Sweet and savory combination children enjoy.",
+      "adultsVariation": "Add sage.",
+      "storageNotes": "Raw patties freeze well.",
+      "prepTime": "15 minutes",
+      "cookTime": "10 minutes"
+    },
+    {
+      "id": "pork-noodles",
+      "name": "Pork Noodle Stir-Fry",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g pork strips",
+        "300g noodles",
+        "Mixed vegetables",
+        "3 tbsp soy sauce",
+        "1 tbsp honey",
+        "Garlic"
+      ],
+      "instructions": [
+        "Cook noodles",
+        "Stir-fry pork",
+        "Add vegetables",
+        "Mix in soy and honey",
+        "Toss with noodles"
+      ],
+      "childFriendly": "Children love noodles. Keep flavors mild.",
+      "adultsVariation": "Add chili oil.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "pork-tacos",
+      "name": "Pork Tacos",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g pork, diced",
+        "Taco seasoning",
+        "Taco shells",
+        "Lettuce",
+        "Cheese",
+        "Salsa",
+        "Sour cream"
+      ],
+      "instructions": [
+        "Cook pork with seasoning",
+        "Warm taco shells",
+        "Fill with pork and toppings",
+        "Serve"
+      ],
+      "childFriendly": "Interactive meal. Use mild seasoning for children.",
+      "adultsVariation": "Add jalape\u00f1os.",
+      "storageNotes": "Pork keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "pork-tenderloin",
+      "name": "Roast Pork Tenderloin",
+      "protein": "pork",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "sunday-special",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "600g pork tenderloin",
+        "2 tbsp honey",
+        "2 tbsp mustard",
+        "Garlic",
+        "Potatoes",
+        "Vegetables"
+      ],
+      "instructions": [
+        "Mix honey and mustard",
+        "Coat pork",
+        "Roast 25 minutes at 200\u00b0C",
+        "Rest 10 minutes",
+        "Slice and serve"
+      ],
+      "childFriendly": "Tender and slightly sweet. Children enjoy sliced thinly.",
+      "adultsVariation": "Add herbs.",
+      "storageNotes": "Leftovers great for sandwiches.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
+    },
+    {
+      "id": "salmon-rice",
+      "name": "Salmon with Lemon Rice",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "healthy"
+      ],
+      "ingredients": [
+        "4 salmon fillets",
+        "300g rice",
+        "1 lemon",
+        "Peas",
+        "Butter",
+        "Herbs"
+      ],
+      "instructions": [
+        "Cook rice with lemon zest",
+        "Pan-fry salmon 4 minutes per side",
+        "Stir butter through rice",
+        "Serve salmon on rice with peas"
+      ],
+      "childFriendly": "Light and healthy. Check salmon for bones.",
+      "adultsVariation": "Add capers and white wine.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "fish-stew",
+      "name": "Mediterranean Fish Stew",
+      "protein": "fish",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "healthy"
+      ],
+      "ingredients": [
+        "500g mixed fish",
+        "400g tinned tomatoes",
+        "1 onion",
+        "2 garlic cloves",
+        "Fish stock",
+        "Potatoes",
+        "Bread"
+      ],
+      "instructions": [
+        "Cook onion and garlic",
+        "Add tomatoes and stock",
+        "Add potatoes",
+        "Simmer 20 minutes",
+        "Add fish",
+        "Cook 10 minutes more"
+      ],
+      "childFriendly": "Rich flavors but mild. Ensure all bones removed.",
+      "adultsVariation": "Add white wine and saffron.",
+      "storageNotes": "Best fresh. Keeps 1 day.",
+      "prepTime": "20 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "tuna-melt",
+      "name": "Tuna Melt Toasties",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "2 tins tuna",
+        "4 tbsp mayo",
+        "8 slices bread",
+        "200g cheese",
+        "Tomato",
+        "Salad"
+      ],
+      "instructions": [
+        "Mix tuna with mayo",
+        "Spread on bread",
+        "Add cheese and tomato",
+        "Grill until golden",
+        "Serve with salad"
+      ],
+      "childFriendly": "Classic children's favorite. Cut into fingers.",
+      "adultsVariation": "Add spring onions and pickles.",
+      "storageNotes": "Best made fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "5 minutes"
+    },
+    {
+      "id": "prawn-curry",
+      "name": "Quick Prawn Curry",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g prawns",
+        "1 onion",
+        "2 tbsp mild curry paste",
+        "400ml coconut milk",
+        "Rice",
+        "Naan"
+      ],
+      "instructions": [
+        "Cook onion",
+        "Add curry paste",
+        "Pour in coconut milk",
+        "Add prawns",
+        "Cook 5 minutes",
+        "Serve with rice"
+      ],
+      "childFriendly": "Mild and creamy. Ensure prawns cooked through.",
+      "adultsVariation": "Add extra spices.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "lamb-burgers",
+      "name": "Lamb and Mint Burgers",
+      "protein": "lamb",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "500g lamb mince",
+        "2 tbsp mint sauce",
+        "1 onion, diced",
+        "Buns",
+        "Salad",
+        "Yogurt"
+      ],
+      "instructions": [
+        "Mix lamb with mint sauce and onion",
+        "Form patties",
+        "Grill 5 minutes per side",
+        "Serve in buns with yogurt"
+      ],
+      "childFriendly": "Flavorful but mild. Children may enjoy without mint.",
+      "adultsVariation": "Add feta cheese.",
+      "storageNotes": "Raw patties freeze well.",
+      "prepTime": "15 minutes",
+      "cookTime": "10 minutes"
+    },
+    {
+      "id": "lamb-meatballs",
+      "name": "Lamb Meatballs with Couscous",
+      "protein": "lamb",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "500g lamb mince",
+        "1 tsp cumin",
+        "Breadcrumbs",
+        "Egg",
+        "Couscous",
+        "Tomato sauce",
+        "Yogurt"
+      ],
+      "instructions": [
+        "Mix lamb with cumin, breadcrumbs, egg",
+        "Form meatballs",
+        "Bake 20 minutes",
+        "Serve with couscous and sauce"
+      ],
+      "childFriendly": "Fun shape. Use mild spicing for children.",
+      "adultsVariation": "Add mint and spices.",
+      "storageNotes": "Freeze uncooked.",
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "lamb-roast",
+      "name": "Roast Leg of Lamb",
+      "protein": "lamb",
+      "difficulty": "medium",
+      "servings": 8,
+      "tags": [
+        "sunday-special",
+        "batch-cooking"
+      ],
+      "ingredients": [
+        "1.5kg leg of lamb",
+        "Garlic",
+        "Rosemary",
+        "Potatoes",
+        "Carrots",
+        "Gravy"
+      ],
+      "instructions": [
+        "Stud lamb with garlic and rosemary",
+        "Roast 90 minutes at 190\u00b0C",
+        "Add vegetables halfway",
+        "Rest 15 minutes",
+        "Carve and serve"
+      ],
+      "childFriendly": "Special occasion meal. Ensure meat is tender for children.",
+      "adultsVariation": "Serve with mint sauce and red wine.",
+      "storageNotes": "Leftovers great for sandwiches.",
+      "prepTime": "20 minutes",
+      "cookTime": "90 minutes"
+    },
+    {
+      "id": "enchiladas",
+      "name": "Chicken Enchiladas",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "freezer-friendly"
+      ],
+      "ingredients": [
+        "400g cooked chicken",
+        "8 tortillas",
+        "400g enchilada sauce",
+        "300g cheese",
+        "Sour cream",
+        "Salad"
+      ],
+      "instructions": [
+        "Fill tortillas with chicken and cheese",
+        "Roll up",
+        "Place in dish",
+        "Cover with sauce and cheese",
+        "Bake 25 minutes"
+      ],
+      "childFriendly": "Cheesy and mild. Children enjoy with sour cream.",
+      "adultsVariation": "Add jalape\u00f1os and more spice.",
+      "storageNotes": "Freezes well.",
+      "prepTime": "20 minutes",
+      "cookTime": "25 minutes"
+    },
+    {
+      "id": "pasta-carbonara",
+      "name": "Creamy Carbonara",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g spaghetti",
+        "200g bacon",
+        "4 eggs",
+        "100g parmesan",
+        "Cream (optional)",
+        "Black pepper"
+      ],
+      "instructions": [
+        "Cook pasta",
+        "Fry bacon",
+        "Mix eggs with parmesan",
+        "Toss hot pasta with bacon",
+        "Add egg mixture off heat",
+        "Serve immediately"
+      ],
+      "childFriendly": "Rich and creamy. Children love this pasta.",
+      "adultsVariation": "Use guanciale and no cream for authentic version.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "quiche",
+      "name": "Ham and Cheese Quiche",
+      "protein": "pork",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "Pastry case",
+        "200g ham",
+        "200g cheese",
+        "4 eggs",
+        "300ml cream",
+        "Onion",
+        "Salad"
+      ],
+      "instructions": [
+        "Line tin with pastry",
+        "Add ham and cheese",
+        "Mix eggs with cream",
+        "Pour over filling",
+        "Bake 35 minutes at 180\u00b0C"
+      ],
+      "childFriendly": "Versatile meal children enjoy warm or cold.",
+      "adultsVariation": "Try different fillings like mushroom and spinach.",
+      "storageNotes": "Keeps 3 days. Serve cold or warm.",
+      "prepTime": "15 minutes",
+      "cookTime": "35 minutes"
+    },
+    {
+      "id": "frittata",
+      "name": "Vegetable Frittata",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "8 eggs",
+        "Mixed vegetables",
+        "100g cheese",
+        "Onion",
+        "Potatoes",
+        "Salad"
+      ],
+      "instructions": [
+        "Beat eggs",
+        "Cook vegetables in ovenproof pan",
+        "Pour eggs over",
+        "Top with cheese",
+        "Bake 20 minutes"
+      ],
+      "childFriendly": "Light and nutritious. Children can help choose vegetables.",
+      "adultsVariation": "Add herbs and feta.",
+      "storageNotes": "Keeps 2 days. Good cold.",
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "paella",
+      "name": "Easy Chicken and Prawn Paella",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "sunday-special",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "300g chicken",
+        "200g prawns",
+        "300g paella rice",
+        "1L chicken stock",
+        "1 onion",
+        "2 garlic cloves",
+        "1 tsp paprika",
+        "Peas",
+        "Lemon"
+      ],
+      "instructions": [
+        "Cook chicken and onion",
+        "Add rice and paprika",
+        "Pour in stock",
+        "Simmer 20 minutes",
+        "Add prawns and peas",
+        "Cook 5 minutes",
+        "Serve with lemon"
+      ],
+      "childFriendly": "Colorful and exciting. Children enjoy the variety.",
+      "adultsVariation": "Add chorizo and saffron.",
+      "storageNotes": "Best fresh. Keeps 1 day.",
+      "prepTime": "20 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "meatball-subs",
+      "name": "Meatball Sub Sandwiches",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "12 cooked meatballs",
+        "Tomato sauce",
+        "4 sub rolls",
+        "Mozzarella",
+        "Salad"
+      ],
+      "instructions": [
+        "Heat meatballs in sauce",
+        "Split rolls",
+        "Fill with meatballs",
+        "Top with cheese",
+        "Grill until melted"
+      ],
+      "childFriendly": "Fun to eat but can be messy. Provide napkins!",
+      "adultsVariation": "Add jalape\u00f1os and herbs.",
+      "storageNotes": "Meatballs freeze well.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "chicken-noodle",
+      "name": "Chicken Chow Mein",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g chicken",
+        "300g noodles",
+        "Mixed vegetables",
+        "3 tbsp soy sauce",
+        "2 garlic cloves",
+        "Ginger"
+      ],
+      "instructions": [
+        "Cook noodles",
+        "Stir-fry chicken",
+        "Add vegetables and garlic",
+        "Add noodles and soy sauce",
+        "Toss everything"
+      ],
+      "childFriendly": "Children love noodles. Keep ginger mild.",
+      "adultsVariation": "Add more ginger and chili.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "15 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "stuffed-peppers",
+      "name": "Stuffed Bell Peppers",
+      "protein": "beef",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "family-favorite",
+        "weeknight"
+      ],
+      "ingredients": [
+        "4 bell peppers",
+        "400g beef mince",
+        "1 onion",
+        "Cooked rice",
+        "Tinned tomatoes",
+        "Cheese"
+      ],
+      "instructions": [
+        "Cut tops off peppers",
+        "Brown mince with onion",
+        "Mix with rice and tomatoes",
+        "Stuff peppers",
+        "Top with cheese",
+        "Bake 30 minutes"
+      ],
+      "childFriendly": "Fun presentation. Children enjoy the pepper 'bowls'.",
+      "adultsVariation": "Add spices and herbs.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "20 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "pasta-primavera",
+      "name": "Creamy Pasta Primavera",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g pasta",
+        "Mixed vegetables",
+        "200ml cream",
+        "100g parmesan",
+        "2 garlic cloves"
+      ],
+      "instructions": [
+        "Cook pasta",
+        "Saut\u00e9 vegetables and garlic",
+        "Add cream",
+        "Toss with pasta and parmesan",
+        "Serve"
+      ],
+      "childFriendly": "Creamy and full of hidden vegetables.",
+      "adultsVariation": "Add white wine and herbs.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "15 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "chicken-pot-pie",
+      "name": "Chicken Pot Pie",
+      "protein": "chicken",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "500g chicken",
+        "Mixed vegetables",
+        "300ml chicken stock",
+        "200ml cream",
+        "2 tbsp flour",
+        "Puff pastry"
+      ],
+      "instructions": [
+        "Cook chicken, dice",
+        "Make sauce with flour, stock, cream",
+        "Add chicken and vegetables",
+        "Pour into dish",
+        "Cover with pastry",
+        "Bake 30 minutes"
+      ],
+      "childFriendly": "Comfort food children love. Ensure filling is not too hot.",
+      "adultsVariation": "Add herbs and wine.",
+      "storageNotes": "Freezes well.",
+      "prepTime": "25 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "salmon-cakes",
+      "name": "Salmon and Dill Cakes",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g tinned salmon",
+        "400g mashed potato",
+        "2 tbsp dill",
+        "1 egg",
+        "Breadcrumbs",
+        "Salad"
+      ],
+      "instructions": [
+        "Mix salmon with potato, dill",
+        "Form into cakes",
+        "Coat in breadcrumbs",
+        "Fry until golden",
+        "Serve with salad"
+      ],
+      "childFriendly": "Familiar potato base makes these popular.",
+      "adultsVariation": "Add capers and lemon.",
+      "storageNotes": "Freeze uncooked.",
+      "prepTime": "15 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "pork-ramen",
+      "name": "Quick Pork Ramen",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g pork",
+        "4 packs ramen",
+        "1L stock",
+        "2 eggs",
+        "Spring onions",
+        "Soy sauce"
+      ],
+      "instructions": [
+        "Cook pork, slice",
+        "Bring stock to boil",
+        "Add ramen noodles",
+        "Soft boil eggs",
+        "Serve with pork, eggs, onions"
+      ],
+      "childFriendly": "Children love the noodles. Adjust spice level.",
+      "adultsVariation": "Add chili oil and authentic toppings.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "lamb-tagine",
+      "name": "Moroccan Lamb Tagine",
+      "protein": "lamb",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "sunday-special"
+      ],
+      "ingredients": [
+        "600g lamb",
+        "2 onions",
+        "400g tinned tomatoes",
+        "Dried apricots",
+        "1 tbsp cumin",
+        "1 tsp cinnamon",
+        "Couscous"
+      ],
+      "instructions": [
+        "Brown lamb",
+        "Cook onions",
+        "Add spices",
+        "Add tomatoes and apricots",
+        "Simmer 90 minutes",
+        "Serve with couscous"
+      ],
+      "childFriendly": "Sweet and savory. Ensure lamb is very tender.",
+      "adultsVariation": "Add more spices and preserved lemons.",
+      "storageNotes": "Freezes well.",
+      "prepTime": "20 minutes",
+      "cookTime": "90 minutes"
+    },
+    {
+      "id": "teriyaki-chicken",
+      "name": "Teriyaki Chicken Thighs",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "8 chicken thighs",
+        "4 tbsp teriyaki sauce",
+        "2 tbsp honey",
+        "Rice",
+        "Broccoli"
+      ],
+      "instructions": [
+        "Mix teriyaki and honey",
+        "Coat chicken",
+        "Bake 35 minutes at 200\u00b0C",
+        "Serve with rice and broccoli"
+      ],
+      "childFriendly": "Sweet glaze children enjoy. Remove bones if preferred.",
+      "adultsVariation": "Add ginger and sesame.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "35 minutes"
+    },
+    {
+      "id": "beef-nachos",
+      "name": "Loaded Beef Nachos",
+      "protein": "beef",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "300g beef mince",
+        "Tortilla chips",
+        "200g cheese",
+        "Salsa",
+        "Sour cream",
+        "Guacamole"
+      ],
+      "instructions": [
+        "Brown mince with taco seasoning",
+        "Layer chips on tray",
+        "Top with mince and cheese",
+        "Grill until melted",
+        "Serve with toppings"
+      ],
+      "childFriendly": "Fun and interactive. Children love building their plates.",
+      "adultsVariation": "Add jalape\u00f1os and hot sauce.",
+      "storageNotes": "Best made fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "haddock-gratin",
+      "name": "Haddock and Potato Gratin",
+      "protein": "fish",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "comfort-food",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "400g haddock",
+        "500g potatoes, sliced",
+        "300ml cream",
+        "100g cheese",
+        "2 garlic cloves"
+      ],
+      "instructions": [
+        "Layer potatoes in dish",
+        "Place fish on top",
+        "Mix cream with garlic",
+        "Pour over",
+        "Top with cheese",
+        "Bake 40 minutes"
+      ],
+      "childFriendly": "Creamy and comforting. Check fish for bones.",
+      "adultsVariation": "Add herbs and white wine.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "20 minutes",
+      "cookTime": "40 minutes"
+    },
+    {
+      "id": "sweet-sour-pork",
+      "name": "Sweet and Sour Pork",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g pork",
+        "1 bell pepper",
+        "1 onion",
+        "200ml sweet and sour sauce",
+        "Pineapple chunks",
+        "Rice"
+      ],
+      "instructions": [
+        "Stir-fry pork",
+        "Add pepper and onion",
+        "Stir in sauce and pineapple",
+        "Heat through",
+        "Serve with rice"
+      ],
+      "childFriendly": "Sweet flavors appeal to children.",
+      "adultsVariation": "Make homemade sauce with more tang.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "chicken-fried-rice",
+      "name": "Easy Chicken Fried Rice",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g chicken",
+        "3 cups cooked rice",
+        "2 eggs",
+        "Frozen peas",
+        "2 carrots",
+        "Soy sauce"
+      ],
+      "instructions": [
+        "Cook chicken, dice",
+        "Scramble eggs",
+        "Stir-fry vegetables",
+        "Add rice",
+        "Mix in chicken, eggs",
+        "Season with soy"
+      ],
+      "childFriendly": "Children love fried rice. Great way to use leftovers.",
+      "adultsVariation": "Add ginger and sesame oil.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "10 minutes",
+      "cookTime": "15 minutes"
+    },
+    {
+      "id": "bangers-mash",
+      "name": "Bangers and Mash",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "comfort-food",
+        "family-favorite"
+      ],
+      "ingredients": [
+        "8 sausages",
+        "1kg potatoes",
+        "Butter",
+        "Milk",
+        "Onion gravy",
+        "Peas"
+      ],
+      "instructions": [
+        "Grill sausages",
+        "Boil and mash potatoes with butter and milk",
+        "Make onion gravy",
+        "Serve sausages on mash with gravy and peas"
+      ],
+      "childFriendly": "Classic British comfort food children love.",
+      "adultsVariation": "Use gourmet sausages and add onions to gravy.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
+    },
+    {
+      "id": "tuna-rice",
+      "name": "Tuna and Tomato Rice",
+      "protein": "fish",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "2 tins tuna",
+        "300g rice",
+        "400g tinned tomatoes",
+        "1 onion",
+        "Peas",
+        "Cheese"
+      ],
+      "instructions": [
+        "Cook rice",
+        "Saut\u00e9 onion",
+        "Add tomatoes and tuna",
+        "Stir in rice and peas",
+        "Top with cheese"
+      ],
+      "childFriendly": "Simple one-pot meal children enjoy.",
+      "adultsVariation": "Add olives and capers.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "chicken-orzo",
+      "name": "One-Pot Chicken and Orzo",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "300g chicken",
+        "200g orzo pasta",
+        "500ml chicken stock",
+        "Spinach",
+        "Parmesan",
+        "Lemon"
+      ],
+      "instructions": [
+        "Brown chicken",
+        "Add orzo and stock",
+        "Simmer 15 minutes",
+        "Stir in spinach",
+        "Top with parmesan and lemon"
+      ],
+      "childFriendly": "One-pot meal children enjoy. Orzo is easy to eat.",
+      "adultsVariation": "Add white wine and herbs.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "beef-pie",
+      "name": "Steak and Ale Pie",
+      "protein": "beef",
+      "difficulty": "medium",
+      "servings": 6,
+      "tags": [
+        "batch-cooking",
+        "sunday-special",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "600g beef chunks",
+        "1 onion",
+        "200g mushrooms",
+        "300ml beef stock",
+        "2 tbsp flour",
+        "Puff pastry"
+      ],
+      "instructions": [
+        "Brown beef",
+        "Cook onions and mushrooms",
+        "Stir in flour",
+        "Add stock, simmer 90 minutes",
+        "Pour into pie dish",
+        "Top with pastry, bake 30 minutes"
+      ],
+      "childFriendly": "Rich and hearty. Children enjoy with mash.",
+      "adultsVariation": "Add ale and worcestershire sauce.",
+      "storageNotes": "Freezes well.",
+      "prepTime": "25 minutes",
+      "cookTime": "120 minutes"
+    },
+    {
+      "id": "pork-sauerkraut",
+      "name": "Pork with Sauerkraut",
+      "protein": "pork",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "weeknight",
+        "comfort-food"
+      ],
+      "ingredients": [
+        "4 pork chops",
+        "400g sauerkraut",
+        "1 onion",
+        "200ml stock",
+        "Potatoes",
+        "Mustard"
+      ],
+      "instructions": [
+        "Brown pork chops",
+        "Add sauerkraut and onion",
+        "Pour in stock",
+        "Simmer 30 minutes",
+        "Serve with boiled potatoes and mustard"
+      ],
+      "childFriendly": "Unique flavor. Some children may need encouraging!",
+      "adultsVariation": "Add caraway seeds and white wine.",
+      "storageNotes": "Keeps 3 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "30 minutes"
+    },
+    {
+      "id": "thai-curry",
+      "name": "Mild Thai Green Curry",
+      "protein": "chicken",
+      "difficulty": "easy",
+      "servings": 4,
+      "tags": [
+        "quick-prep",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g chicken",
+        "2 tbsp green curry paste (mild)",
+        "400ml coconut milk",
+        "Vegetables",
+        "Rice",
+        "Lime"
+      ],
+      "instructions": [
+        "Cook curry paste 1 minute",
+        "Add chicken",
+        "Pour in coconut milk",
+        "Add vegetables",
+        "Simmer 15 minutes",
+        "Serve with rice and lime"
+      ],
+      "childFriendly": "Mild version suitable for children. Adjust spice level.",
+      "adultsVariation": "Use full-strength paste and add Thai basil.",
+      "storageNotes": "Keeps 2 days.",
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes"
+    },
+    {
+      "id": "fish-rice",
+      "name": "Smoked Haddock Kedgeree",
+      "protein": "fish",
+      "difficulty": "medium",
+      "servings": 4,
+      "tags": [
+        "family-favorite",
+        "weeknight"
+      ],
+      "ingredients": [
+        "400g smoked haddock",
+        "250g rice",
+        "3 eggs",
+        "1 onion",
+        "Butter",
+        "Parsley",
+        "Cream"
+      ],
+      "instructions": [
+        "Poach haddock, flake",
+        "Boil eggs, quarter",
+        "Cook rice with onion",
+        "Stir in fish, eggs, butter, cream",
+        "Garnish with parsley"
+      ],
+      "childFriendly": "Mild smoky flavor. Children enjoy finding the egg pieces.",
+      "adultsVariation": "Add curry powder for traditional version.",
+      "storageNotes": "Best fresh.",
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
     }
   ]
 }

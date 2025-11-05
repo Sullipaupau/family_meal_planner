@@ -32,6 +32,10 @@
                 <span class="btn-icon">🛒</span>
                 Shopping List
             </button>
+            <button id="showConfigBtn" class="btn btn-secondary">
+                <span class="btn-icon">⚙️</span>
+                Settings
+            </button>
         </section>
 
         <!-- Week Selector -->
@@ -120,9 +124,9 @@
                     </span>
                 </div>
 
-                <div class="ava-friendly-badge" id="avaFriendlySection">
-                    <h3>👧 Ava-Friendly</h3>
-                    <p id="modalAvaFriendly"></p>
+                <div class="child-friendly-badge" id="childFriendlySection">
+                    <h3>👶 Child-Friendly</h3>
+                    <p id="modalChildFriendly"></p>
                 </div>
 
                 <div class="recipe-section">
@@ -201,6 +205,54 @@
 
                 <div id="shoppingListContent" class="shopping-list-content">
                     <!-- Shopping list will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Config/Settings Modal -->
+    <div id="configModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-body">
+                <h2>⚙️ Meal Plan Settings</h2>
+
+                <div class="config-section">
+                    <h3>👥 Household Size</h3>
+                    <p class="config-description">Set the number of people in your household to help scale portions appropriately.</p>
+
+                    <div class="config-input-group">
+                        <label for="adultsCount">Number of Adults:</label>
+                        <input type="number" id="adultsCount" min="1" max="10" value="2" class="config-input">
+                    </div>
+
+                    <div class="config-input-group">
+                        <label for="childrenCount">Number of Children:</label>
+                        <input type="number" id="childrenCount" min="0" max="10" value="1" class="config-input">
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>🍽️ Portion Planning</h3>
+                    <p class="config-description">When generating your meal plan, recipes will be scaled based on your household size. Most recipes serve 4-6 people by default.</p>
+                    <div class="config-info">
+                        <strong>Current household:</strong> <span id="householdSummary">2 adults + 1 child</span>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>📝 About Leftovers</h3>
+                    <p class="config-description">Leftovers are meals made from previous dinners within the same week. They help reduce cooking time and food waste. Leftovers never carry over between weeks.</p>
+                    <ul class="config-tips">
+                        <li>Batch cooking recipes (like Sunday dinners) are designed to provide extra portions</li>
+                        <li>Lunches often use leftovers from the previous evening's dinner</li>
+                        <li>You can replace any leftover meal with a fresh recipe using the "Change" button</li>
+                        <li>Each week starts fresh - no cross-week leftovers</li>
+                    </ul>
+                </div>
+
+                <div class="config-actions">
+                    <button id="saveConfigBtn" class="btn btn-primary">Save Settings</button>
                 </div>
             </div>
         </div>
