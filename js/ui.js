@@ -149,7 +149,7 @@ const UI = {
     },
 
     /**
-     * Render the complete meal plan (batch cooking format)
+     * Render the complete meal plan (calendar grid format)
      */
     renderMealPlan(mealPlan) {
         if (!mealPlan || !mealPlan.weeks) {
@@ -192,23 +192,234 @@ const UI = {
             }
 
             container.innerHTML = '';
-            container.className = 'days-container batch-cooking-container';
+            container.className = 'days-container calendar-grid';
 
-            // Render cooking time summary
-            const timeSummary = this.createCookingTimeSummary(week);
-            container.appendChild(timeSummary);
-
-            // Render lunches section
-            const lunchesSection = this.createBatchSection('🥗 Lunches (Mon-Fri)', week.lunches, week.weekNumber);
-            container.appendChild(lunchesSection);
-
-            // Render dinners section
-            const dinnersSection = this.createBatchSection('🍽️ Dinners', week.dinners, week.weekNumber);
-            container.appendChild(dinnersSection);
+            // Create calendar grid
+            const calendarGrid = this.createCalendarGrid(week);
+            container.appendChild(calendarGrid);
         });
 
         // Make sure week 1 is active
         App.switchWeek(1);
+    },
+
+    /**
+     * Create calendar grid for a week
+     */
+    createCalendarGrid(week) {
+        const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        // Build a data structure: { day: { lunch: item, dinner: item } }
+        const dayMeals = {};
+        DAYS.forEach(day => {
+            dayMeals[day] = { lunch: null, dinner: null };
+        });
+
+        // Populate lunch slots
+        if (week.lunches) {
+            week.lunches.forEach(item => {
+                item.days.forEach((day, dayIndex) => {
+                    if (dayMeals[day]) {
+                        dayMeals[day].lunch = {
+                            ...item,
+                            isFirstDay: dayIndex === 0,
+                            isLeftover: dayIndex > 0
+                        };
+                    }
+                });
+            });
+        }
+
+        // Populate dinner slots
+        if (week.dinners) {
+            week.dinners.forEach(item => {
+                item.days.forEach((day, dayIndex) => {
+                    if (dayMeals[day]) {
+                        dayMeals[day].dinner = {
+                            ...item,
+                            isFirstDay: dayIndex === 0,
+                            isLeftover: dayIndex > 0
+                        };
+                    }
+                });
+            });
+        }
+
+        // Create grid container
+        const grid = document.createElement('div');
+        grid.className = 'calendar-week-grid';
+
+        // Create header row
+        const headerRow = document.createElement('div');
+        headerRow.className = 'calendar-header-row';
+
+        const mealTypeHeader = document.createElement('div');
+        mealTypeHeader.className = 'calendar-header-cell meal-type-header';
+        mealTypeHeader.textContent = '';
+        headerRow.appendChild(mealTypeHeader);
+
+        DAYS.forEach(day => {
+            const dayHeader = document.createElement('div');
+            dayHeader.className = 'calendar-header-cell';
+            dayHeader.textContent = day.substring(0, 3); // Mon, Tue, Wed...
+            headerRow.appendChild(dayHeader);
+        });
+        grid.appendChild(headerRow);
+
+        // Create lunch row
+        const lunchRow = this.createMealRow('🥗 Lunch', DAYS, dayMeals, 'lunch', week.weekNumber);
+        grid.appendChild(lunchRow);
+
+        // Create dinner row
+        const dinnerRow = this.createMealRow('🍽️ Dinner', DAYS, dayMeals, 'dinner', week.weekNumber);
+        grid.appendChild(dinnerRow);
+
+        return grid;
+    },
+
+    /**
+     * Create a meal row (lunch or dinner) for the calendar
+     */
+    createMealRow(label, days, dayMeals, mealType, weekNumber) {
+        const row = document.createElement('div');
+        row.className = 'calendar-meal-row';
+
+        // Meal type label cell
+        const labelCell = document.createElement('div');
+        labelCell.className = 'calendar-meal-label';
+        labelCell.textContent = label;
+        row.appendChild(labelCell);
+
+        // Day cells
+        days.forEach(day => {
+            const cell = document.createElement('div');
+            cell.className = 'calendar-day-cell';
+            cell.dataset.day = day;
+            cell.dataset.mealType = mealType;
+
+            const meal = dayMeals[day][mealType];
+            if (meal) {
+                const mealCard = this.createCalendarMealCard(meal, day, mealType, weekNumber);
+                cell.appendChild(mealCard);
+            } else {
+                cell.classList.add('empty-meal');
+                const emptyText = document.createElement('div');
+                emptyText.className = 'empty-meal-text';
+                emptyText.textContent = '—';
+                cell.appendChild(emptyText);
+            }
+
+            row.appendChild(cell);
+        });
+
+        return row;
+    },
+
+    /**
+     * Create a meal card for calendar cell
+     */
+    createCalendarMealCard(meal, day, mealType, weekNumber) {
+        const card = document.createElement('div');
+        card.className = 'calendar-meal-card';
+
+        if (meal.isFirstDay) {
+            card.classList.add('cook-today');
+        } else if (meal.isLeftover) {
+            card.classList.add('leftover');
+        }
+
+        // Badge for cooking status
+        if (meal.isFirstDay) {
+            const badge = document.createElement('div');
+            badge.className = 'meal-badge cook-badge';
+            badge.textContent = '🍳 Cook';
+            card.appendChild(badge);
+        } else if (meal.isLeftover) {
+            const badge = document.createElement('div');
+            badge.className = 'meal-badge leftover-badge';
+            badge.textContent = '📦 Leftover';
+            card.appendChild(badge);
+        }
+
+        // Recipe name
+        const name = document.createElement('div');
+        name.className = 'calendar-meal-name';
+        name.textContent = meal.recipe.name;
+        card.appendChild(name);
+
+        // Portions (only show on first day)
+        if (meal.isFirstDay) {
+            const portions = document.createElement('div');
+            portions.className = 'calendar-meal-portions';
+
+            let baseServings = 4;
+            if (typeof meal.recipe.servings === 'number') {
+                baseServings = meal.recipe.servings;
+            } else if (typeof meal.recipe.servings === 'string') {
+                const match = meal.recipe.servings.match(/(\d+)/);
+                baseServings = match ? parseInt(match[1]) : 4;
+            }
+
+            const multiplier = (meal.portions / baseServings).toFixed(1);
+            portions.textContent = multiplier === '1.0' ?
+                `${meal.portions} portions` :
+                `${multiplier}× (${meal.portions}p)`;
+            card.appendChild(portions);
+        }
+
+        // Actions
+        const actions = document.createElement('div');
+        actions.className = 'calendar-meal-actions';
+
+        const viewBtn = document.createElement('button');
+        viewBtn.className = 'calendar-action-btn';
+        viewBtn.textContent = '👁️';
+        viewBtn.title = 'View recipe';
+        viewBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.showRecipeModal(meal.recipe.id);
+        });
+        actions.appendChild(viewBtn);
+
+        const changeBtn = document.createElement('button');
+        changeBtn.className = 'calendar-action-btn';
+        changeBtn.textContent = '🔄';
+        changeBtn.title = 'Change recipe';
+        changeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.startChangingCalendarMeal(weekNumber, day, mealType, meal);
+        });
+        actions.appendChild(changeBtn);
+
+        if (meal.isFirstDay) {
+            const editBtn = document.createElement('button');
+            editBtn.className = 'calendar-action-btn';
+            editBtn.textContent = '✏️';
+            editBtn.title = 'Edit days';
+            editBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.openEditDaysModal(weekNumber, mealType, meal);
+            });
+            actions.appendChild(editBtn);
+        }
+
+        card.appendChild(actions);
+
+        return card;
+    },
+
+    /**
+     * Start changing a meal from calendar view
+     */
+    startChangingCalendarMeal(weekNumber, day, mealType, meal) {
+        this.changingMeal = {
+            weekNumber,
+            day,
+            mealType,
+            meal,
+            isCalendar: true
+        };
+        this.showRecipeBrowserModal(true);
     },
 
     /**
@@ -939,10 +1150,11 @@ const UI = {
             return;
         }
 
-        // Handle batch recipe change
-        if (this.changingMeal.isBatch) {
+        // Handle batch recipe change (from old batch view or new calendar view)
+        if (this.changingMeal.isBatch || this.changingMeal.isCalendar) {
             console.log('Handling batch recipe change');
-            const { weekNumber, mealType, item } = this.changingMeal;
+            const { weekNumber, mealType } = this.changingMeal;
+            const item = this.changingMeal.item || this.changingMeal.meal; // Handle both formats
 
             // Get the week
             const week = App.currentMealPlan.weeks.find(w => w.weekNumber === weekNumber);
