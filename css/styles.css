@@ -936,3 +936,20 @@ body {
 .config-actions .btn {
     min-width: 200px;
 }
+
+/* Ensure recipe detail modal appears above recipe browser modal */
+#recipeModal {
+    z-index: 10000;
+}
+
+#recipeModal .modal-content {
+    z-index: 10001;
+}
+
+#recipeBrowserModal {
+    z-index: 9999;
+}
+
+#recipeBrowserModal .modal-content {
+    z-index: 10000;
+}
