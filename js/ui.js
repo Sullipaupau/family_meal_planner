@@ -551,8 +551,19 @@ const UI = {
             return;
         }
 
-        // Set default week to current week
+        // Populate week dropdown based on actual number of weeks in meal plan
         const weekSelect = document.getElementById('shoppingWeekSelect');
+        weekSelect.innerHTML = ''; // Clear existing options
+
+        const numWeeks = App.currentMealPlan.weeks.length;
+        for (let i = 1; i <= numWeeks; i++) {
+            const option = document.createElement('option');
+            option.value = i.toString();
+            option.textContent = `Week ${i}`;
+            weekSelect.appendChild(option);
+        }
+
+        // Set default week to current week
         weekSelect.value = App.currentWeek.toString();
 
         // Open modal
