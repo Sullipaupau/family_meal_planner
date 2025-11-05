@@ -313,9 +313,15 @@ const UI = {
         const portions = document.createElement('div');
         portions.className = 'batch-detail-item';
 
-        // Parse recipe servings (e.g., "4-6" or "6")
-        const servingsMatch = item.recipe.servings.match(/(\d+)/);
-        const baseServings = servingsMatch ? parseInt(servingsMatch[1]) : 4;
+        // Get base servings (handle both string "4-6" and number 6)
+        let baseServings = 4; // default
+        if (typeof item.recipe.servings === 'number') {
+            baseServings = item.recipe.servings;
+        } else if (typeof item.recipe.servings === 'string') {
+            const servingsMatch = item.recipe.servings.match(/(\d+)/);
+            baseServings = servingsMatch ? parseInt(servingsMatch[1]) : 4;
+        }
+
         const multiplier = (item.portions / baseServings).toFixed(1);
 
         if (multiplier === '1.0') {
