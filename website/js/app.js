@@ -10,7 +10,11 @@ const App = {
     currentWeek: 1,
     config: {
         adults: 2,
-        children: 1
+        children: 1,
+        lunchPortions: 10,
+        dinnerRecipes: 3,
+        weekendFamilyMeals: true,
+        childSeparateWeekdays: true
     },
 
     /**
@@ -155,9 +159,8 @@ const App = {
     /**
      * Update config
      */
-    updateConfig(adults, children) {
-        this.config.adults = adults;
-        this.config.children = children;
+    updateConfig(config) {
+        this.config = { ...this.config, ...config };
         this.saveConfig();
     }
 };
