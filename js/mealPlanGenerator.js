@@ -12,6 +12,9 @@ const MealPlanGenerator = {
     WEEKDAYS: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
     WEEKEND: ['Saturday', 'Sunday'],
 
+    // Track recently used recipes to avoid repetition
+    recentlyUsed: [],
+
     /**
      * Generate complete meal plan (1-4 weeks)
      */
@@ -24,9 +27,13 @@ const MealPlanGenerator = {
             numberOfWeeks: 1
         };
 
+        // Clear recently used recipes for fresh generation
+        this.recentlyUsed = [];
+
         const plan = {
             weeks: [],
-            config: config
+            config: config,
+            generatedAt: new Date().toISOString() // Add timestamp to force uniqueness
         };
 
         // Generate each week based on config
@@ -137,6 +144,11 @@ const MealPlanGenerator = {
 
         // Filter recipes
         let candidates = recipes.filter(recipe => {
+            // Exclude recently used recipes
+            if (this.recentlyUsed.includes(recipe.id)) {
+                return false;
+            }
+
             // Exclude used proteins
             if (excludeProteins.includes(recipe.protein)) {
                 return false;
@@ -155,8 +167,33 @@ const MealPlanGenerator = {
             return true;
         });
 
+        // If no candidates, try without recently used filter
+        if (candidates.length === 0) {
+            candidates = recipes.filter(recipe => {
+                if (excludeProteins.includes(recipe.protein)) {
+                    return false;
+                }
+                if (tags.length > 0) {
+                    const hasMatchingTag = tags.some(tag =>
+                        recipe.tags && recipe.tags.includes(tag)
+                    );
+                    if (!hasMatchingTag) {
+                        return false;
+                    }
+                }
+                return true;
+            });
+        }
+
         // If no candidates, try without tag requirements
         if (candidates.length === 0 && tags.length > 0) {
+            candidates = recipes.filter(recipe =>
+                !excludeProteins.includes(recipe.protein) && !this.recentlyUsed.includes(recipe.id)
+            );
+        }
+
+        // Last resort: ignore all filters except exclude proteins
+        if (candidates.length === 0) {
             candidates = recipes.filter(recipe =>
                 !excludeProteins.includes(recipe.protein)
             );
@@ -166,12 +203,20 @@ const MealPlanGenerator = {
         if (preferProtein) {
             const preferred = candidates.filter(r => r.protein === preferProtein);
             if (preferred.length > 0) {
-                return this.getRandomElement(preferred);
+                const selected = this.getRandomElement(preferred);
+                this.recentlyUsed.push(selected.id); // Track usage
+                return selected;
             }
         }
 
         // Return random candidate
-        return candidates.length > 0 ? this.getRandomElement(candidates) : null;
+        if (candidates.length > 0) {
+            const selected = this.getRandomElement(candidates);
+            this.recentlyUsed.push(selected.id); // Track usage
+            return selected;
+        }
+
+        return null;
     },
 
     /**

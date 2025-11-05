@@ -1,18 +1,18 @@
 # Dependencies
 node_modules/
 
-# OS files
-.DS_Store
-Thumbs.db
+# Test coverage
+coverage/
 
-# IDE files
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Test coverage
-coverage/
+# OS
+.DS_Store
+Thumbs.db
 
 # Logs
 *.log
